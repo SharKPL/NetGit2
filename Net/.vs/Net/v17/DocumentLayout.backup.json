@@ -1,0 +1,517 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\UniProj\\Net\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|d:\\uniproj\\net\\assets\\myassets\\scripts\\extantions\\steamhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\extantions\\steamhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\network\\lobbysteam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\lobbysteam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\inventorylineui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\inventorylineui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\inventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\managers\\eventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\managers\\eventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\input\\charinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\input\\charinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|D:\\UniProj\\Net\\assets\\mirror\\core\\networkbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|solutionrelative:assets\\mirror\\core\\networkbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\custompool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\custompool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\playerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\playerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\gameuicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\gameuicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\player\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\gameplayerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\gameplayerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\player\\playercameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playercameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\player\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\network\\lobbyui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\lobbyui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\network\\lobbyplayerinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\lobbyplayerinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|D:\\UniProj\\Net\\assets\\mirror\\core\\networkmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|solutionrelative:assets\\mirror\\core\\networkmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\network\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\network\\lobbyspawncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\lobbyspawncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\Net\\assets\\myassets\\scripts\\lobbycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\lobbycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|D:\\UniProj\\Net\\assets\\mirror\\core\\networkidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|solutionrelative:assets\\mirror\\core\\networkidentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerCamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyAssets\\Scripts\\Player\\PlayerCamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameStateManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MyAssets\\Scripts\\Managers\\GameStateManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UniProj\\Net\\assets\\myassets\\scripts\\player\\player_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\myassets\\scripts\\player\\player_movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 30,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NetworkBehaviour.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\Mirror\\Core\\NetworkBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkBehaviour.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\Mirror\\Core\\NetworkBehaviour.cs",
+              "RelativeToolTip": "Assets\\Mirror\\Core\\NetworkBehaviour.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAASwKgAAACcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T19:04:22.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CustomPool.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\CustomPool.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\CustomPool.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\CustomPool.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\CustomPool.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBgAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T17:16:55.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InventoryLineUI.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\InventoryLineUI.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\InventoryLineUI.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\InventoryLineUI.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\InventoryLineUI.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwD8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T17:02:46.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InventoryUI.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\InventoryUI.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\InventoryUI.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\InventoryUI.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\InventoryUI.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAASwBoAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T16:55:28.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Inventory.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Inventory.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Inventory.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Inventory.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAhwC0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T13:17:32.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Item.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Item.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Item.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Item.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T13:14:24.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GamePlayerUI.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\GamePlayerUI.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\GamePlayerUI.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\GamePlayerUI.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\GamePlayerUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T10:14:36.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PlayerData.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerData.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerData.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerData.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T09:31:30.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PlayerHealth.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T22:01:04.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PlayerUI.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\PlayerUI.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\PlayerUI.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\PlayerUI.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\PlayerUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T21:21:11.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EventManager.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:40:18.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "PlayerCamera.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerCamera.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerCamera.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerCamera.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerCamera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJQAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:46:53.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InputManager.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAApwCUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T21:15:29.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Message.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Message.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Message.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Message.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T07:20:24.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MyNetworkManager.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADgvzkAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-04-15T07:10:39.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T01:10:21.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "NetworkMessages.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\Mirror\\Core\\NetworkMessages.cs",
+              "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkMessages.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\Mirror\\Core\\NetworkMessages.cs",
+              "RelativeToolTip": "Assets\\Mirror\\Core\\NetworkMessages.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAD4v7kAAAAFAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T18:55:11.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PlayerCameraController.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerCameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerCameraController.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerCameraController.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerCameraController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAIwA8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T19:44:07.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Player_Movement.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\Player_Movement.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\Player_Movement.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\Player_Movement.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\Player_Movement.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAADkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T13:20:38.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "NetworkIdentity.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\Mirror\\Core\\NetworkIdentity.cs",
+              "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkIdentity.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\Mirror\\Core\\NetworkIdentity.cs",
+              "RelativeToolTip": "Assets\\Mirror\\Core\\NetworkIdentity.cs",
+              "ViewState": "AgIAAGIBAAAAAAAAAAD4v34BAADdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T13:15:46.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CharInput.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Input\\CharInput.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Input\\CharInput.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Input\\CharInput.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Input\\CharInput.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAwwHIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T13:19:42.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Chat.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Chat.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Chat.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Chat.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Chat.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T05:31:21.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\Menu.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\Menu.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\Menu.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Network\\Menu.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAxwCUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T19:10:02.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GameUIControl.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwCoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T21:43:00.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LobbyControl.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\LobbyControl.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\LobbyControl.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\LobbyControl.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\LobbyControl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T16:42:05.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LobbyPlayerInfo.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbyPlayerInfo.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\LobbyPlayerInfo.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbyPlayerInfo.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Network\\LobbyPlayerInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwCgAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T17:46:55.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "GameStateManager.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameStateManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Managers\\GameStateManager.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameStateManager.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Managers\\GameStateManager.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-09-04T14:22:32.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LobbyUI.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbyUI.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\LobbyUI.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbyUI.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Network\\LobbyUI.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T11:19:16.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LobbySteam.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbySteam.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\LobbySteam.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbySteam.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Network\\LobbySteam.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwB8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T19:52:33.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "LobbySpawnControl.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T21:24:21.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SteamHelper.cs",
+              "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Extantions\\SteamHelper.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Extantions\\SteamHelper.cs",
+              "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Extantions\\SteamHelper.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Extantions\\SteamHelper.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T15:41:16.375Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

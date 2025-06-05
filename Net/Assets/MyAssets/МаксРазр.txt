@@ -1,0 +1,248 @@
+При разработке боевой системы в проекте TDRPG мы создали базовый класс героя, от которого легко наследуются другие герои с уникальными характеристиками и способностями. Это позволяет значительно упростить процесс расширения и модификации проекта. Ниже рассмотрим реализацию базового класса Turret и одного из его наследников, GunnerTurret, AlchemistTurret с пояснением основных методов.
+Базовый класс Turret служит основой для всех типов героев. Он включает основные параметры, такие как урон, дальность атаки, скорость стрельбы, и методы для поиска целей и стрельбы.
+Метод Awake вызывается сразу после инициализации объекта и до метода Start. В этом методе происходит получение компонента ExpManager, который управляет опытом героя.
+UpdateTarget (листинг 3) метод обновляет текущую цель героя, находя ближайшего врага в пределах дальности атаки. Он перебирает всех врагов в игре, вычисляет расстояние до каждого из них и выбирает ближайшего в пределах дальности действия.
+
+Листинг 3 – UpdateTarget метод базового класса
+protected void UpdateTarget()
+{
+GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+    float shortestDistance = Mathf.Infinity;
+    GameObject nearestEnemy = null;
+    foreach (GameObject enemy in enemies)
+    {
+        float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+        if (distanceToEnemy < shortestDistance)
+        {
+            shortestDistance = distanceToEnemy;
+            nearestEnemy = enemy;
+        }
+    }
+    if (nearestEnemy != null && shortestDistance <= range)
+    {
+        target = nearestEnemy.transform;
+    }
+    else
+    {
+        target = null;
+    }
+}
+
+Метод Update (листинг 4) вызывается каждый кадр и выполняет основную логику атаки героя. Если цель существует, он поворачивает героя в направлении цели и инициирует стрельбу, если прошел достаточный промежуток времени с последнего выстрела, так реализована скорость атаки героя.
+
+Листинг 4 – Update метод базового класса
+void Update()
+{
+    if (target == null)
+    {
+        return;
+    }
+    Vector3 dir = target.position - transform.position;
+    Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, dir);
+    partToRotate.transform.rotation = Quaternion.RotateTowards(partToRotate.transform.rotation, toRotation, turnSpeed * Time.deltaTime);
+    float scaleX = Mathf.Sign(dir.x);
+    transform.localScale = new Vector3(scaleX, 1f, 1f);
+    if (fireCountdown <= 0f)
+    {
+        Shoot();
+        fireCountdown = 1f / fireRate;
+    }
+    fireCountdown -= Time.deltaTime;
+}
+
+Метод Shoot, который указан в листинге 5, создает снаряд и запускает его в направлении цели. Он создает префаб снаряда, передает ему параметры урона и радиуса взрыва, а затем запускает метод Seek для отслеживания цели, сам скрипт снаряда включает в себя переменные для скорости пули, урона, радиуса взрыва, эффекта при попадании и владельца пули (героя). Метод Seek устанавливает цель для пули. В методе Update пуля проверяет наличие цели, перемещается к ней и вращается в её направлении. При попадании в цель вызывается метод HitTarget, который создает эффект попадания, вызывает функцию взрыва или наносит урон цели. Метод Explode наносит урон всем врагам в радиусе взрыва. Метод Damage наносит урон конкретному врагу.
+
+
+Листинг 5 – метод Shoot
+protected void Shoot()
+{
+    GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    Bullet bullet = bulletGO.GetComponent<Bullet>();
+        
+    if (bullet != null)
+    {
+        bullet.owner = this;
+        bullet.explosionRadius = explosiveRadius;
+        bullet.damage = damage;
+        bullet.Seek(target);
+    }
+}
+
+OnDrawGizmosSelected метод рисует визуальную индикацию радиуса атаки героя в редакторе Unity. Он помогает нам видеть диапазон атаки героя при настройке уровня и совершенствовании дерева прокачки.
+Метод StatsUpdate (листинг 6) обновляет характеристики героя на основе сохраненных данных. Он проверяет, сохранены ли обновленные значения для каждой характеристики, и, если да, применяет их.
+Листинг 6 – Метод StatsUpdate
+public void StatsUpdate(string name)
+{
+
+    if (PlayerPrefs.GetFloat(name + "Range") != 0f)
+    {
+        range = PlayerPrefs.GetFloat(name + "Range");
+    }
+
+    if (PlayerPrefs.GetInt(name + "Damage") != 0)
+    {
+        damage = PlayerPrefs.GetInt(name + "Damage");
+    }
+
+    if (PlayerPrefs.GetFloat(name + "FireRate") != 0)
+    {
+        fireRate = PlayerPrefs.GetFloat(name + "FireRate");
+    }
+
+    if (PlayerPrefs.GetFloat(name + "ExplosiveRadius") != 0)
+    {
+        explosiveRadius = PlayerPrefs.GetFloat(name + "ExplosiveRadius");
+    }
+
+    if (PlayerPrefs.GetFloat(name + "Cooldown") != 0)
+
+    {
+        skillTime = PlayerPrefs.GetFloat(name + "Cooldown");
+    }   
+}
+
+Класс GunnerTurret наследует все свойства и методы базового класса Turret, добавляя к ним уникальные способности и механики, такие как активация и использование специальных умений.
+Метод Start вызывается перед первым обновлением объекта. Здесь настраивается повторяющийся вызов метода UpdateTarget для обновления цели каждые 0,5 секунды, обновляются характеристики героя и подписка на событие активации умения.
+Метод Update (листинг 7) обновляет состояние героя каждый кадр. Он проверяет активацию умения, уменьшает время перезарядки умения и обрабатывает поворот героя и стрельбу по цели, аналогично базовому классу.
+
+Листинг 7 – Метод Update класса GunnerTurret
+void Update()
+{
+    if (isSkillActivated & Input.GetMouseButtonDown(0) & skillCooldown <= 0)
+    {
+        UseSkill();
+    }
+    skillCooldown -= Time.deltaTime;
+    if (target == null)
+    {
+        return;
+    }
+    Vector3 dir = target.position - transform.position;
+    Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, dir);
+    partToRotate.transform.rotation = Quaternion.RotateTowards(partToRotate.transform.rotation, toRotation, turnSpeed * Time.deltaTime);
+    float scaleX = Mathf.Sign(dir.x);
+    transform.localScale = new Vector3(scaleX, 1f, 1f);
+    if (fireCountdown <= 0f)
+    {
+        Shoot();
+        fireCountdown = 1f / fireRate;
+    }
+    fireCountdown -= Time.deltaTime;  
+}
+
+Метод UseSkill (листинг 8) активирует специальное умение героя. Он создает объект умения, направляет его в сторону указателя мыши и настраивает параметры урона. После активации умения начинается его перезарядка. Также имеется авто удаление объекта спустя некоторое время, чтобы не нагружать сцену, после того как пуля улетит за край экрана. 
+
+Листинг 8 – Метод UseSkill класса GunnerTurret
+public void UseSkill()
+{
+    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
+    GameObject skillGO = Instantiate(skillPrefab, firePoint.position, Quaternion.identity);
+    GunnerSkill skill = skillGO.GetComponent<GunnerSkill>();
+    if (skill != null)
+    {
+        skill.turret = this;
+        skill.transform.right = direction;
+        skill.damage = 100;
+    }
+    skillCooldown = skillTime;
+    onSkillUse.Invoke(skillTime, 0);
+    isSkillActivated = false;
+    Destroy(skillGO, 10f);
+}
+
+Метод ActivateSkill (листинг 9) проверяет готово ли умение к использованию, и активирует его. Если умение еще перезаряжается, выводится сообщение в лог.
+
+Листинг 9 – Метод ActivateSkill
+public void ActivateSkill()
+{
+    if(skillCooldown <= 0f)
+    {
+        isSkillActivated = true;
+    }
+    else
+    {
+        Debug.Log("Скилл перезаряжается");
+    } 
+}
+
+Эта модульная архитектура позволяет легко добавлять новых героев с уникальными способностями, что значительно упрощает расширение и обновление игры.
+Способности героя сделаны отдельным объектом и вызываются через самого героя. Класс GunnerSkill представляет собой компонент, отвечающий за поведение и действие специального умения героя. Он определяет скорость движения умения, урон, который оно наносит врагам, а также ссылку на героя, от которого произошло использование умения.
+В методе Update (листинг 10) каждый кадр происходит перемещение умения вперед по направлению, заданному вектором.
+
+Листинг 10 – Класс GunnerSkill
+public class GunnerSkill : MonoBehaviour
+{
+    public float speed = 10f;
+    public int damage = 100;
+    public Turret turret;
+
+    private void Update()
+    {
+        transform.Translate(speed * Time.deltaTime * Vector2.right);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage, turret);
+        }
+    }
+}
+
+Метод OnTriggerEnter2D вызывается при входе умения в триггерный коллайдер другого объекта. Здесь проверяется, является ли объект, с которым столкнулось умение, вражеским персонажем. Если это так, вызывается метод TakeDamage для нанесения урона врагу.
+Этот класс обеспечивает функционал для управления и обработки умения героя, что позволяет создавать разнообразные способности и механики в игре, похожим образом устроен класс турели алхимика, которую мы сейчас рассмотрим.
+Класс AlchemistTurret представляет собой специализированную башню-алхимика, основанную на базовом классе Turret. Этот класс включает основные параметры и методы, а также уникальные способности, такие как активация и использование алхимической атаки.
+Метод Start вызывается при создании объекта башни. В этом методе происходит инициализация параметров башни, обновление её характеристик, а также установка периодического вызова метода UpdateTarget каждые полсекунды для обновления цели атаки. В методе Start также происходит подписка метода ActivateSkill на событие активации способности в BuildManager, что позволяет башне реагировать на определенные игровые события.
+Метод Update (листинг 11) вызывается каждый кадр и выполняет несколько задач. Он проверяет, активирована ли способность, если нажата левая кнопка мыши, а время перезарядки способности равно или меньше нуля, вызывает метод UseSkill. Также метод уменьшает значение времени перезарядки способности. Если у башни нет текущей цели для атаки, метод завершает выполнение. Если же цель есть, метод определяет направление к цели, поворачивает башню к ней и вращает её части в этом направлении. Метод контролирует частоту стрельбы башни и вызывает метод Shoot, если время до следующего выстрела равно или меньше нуля.
+
+Листинг 11 – Метод Update Класса AlchemistTurret
+void Update()
+{
+    if (isSkillActivated & Input.GetMouseButtonDown(0) & skillCooldown <= 0)
+    {
+        UseSkill();
+    }
+    skillCooldown -= Time.deltaTime;
+    if (target == null)
+    {
+        return;
+    }
+    Vector3 dir = target.position - transform.position;
+    Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, dir);
+    partToRotate.transform.rotation = Quaternion.RotateTowards(partToRotate.transform.rotation, toRotation, turnSpeed * Time.deltaTime);
+    float scaleX = Mathf.Sign(dir.x);
+    transform.localScale = new Vector3(scaleX, 1f, 1f);
+    if (fireCountdown <= 0f)
+    {
+        Shoot();
+        fireCountdown = 1f / fireRate;
+    }
+    fireCountdown -= Time.deltaTime;
+}
+
+Метод UseSkill, который представлен в листинге 12, активирует специальную способность башни-алхимика. Этот метод определяет позицию курсора мыши на экране, создает объект способности в этой позиции и устанавливает параметры созданной способности, такие как урон и ссылка на башню-алхимика. Также метод устанавливает время перезарядки способности, вызывает событие onSkillUse, чтобы уведомить другие части игры об использовании способности, устанавливает флаг isSkillActivated в false и уничтожает объект способности через полсекунды.
+
+Листинг 12 – Метод UseSkill  алхимика
+public void UseSkill()
+{
+    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    GameObject skillGO = Instantiate(skillPrefab, mousePosition, Quaternion.identity);
+    AlchemistSkill skill = skillGO.GetComponent<AlchemistSkill>();
+
+    if (skill != null)
+    {
+        skill.turret = this;
+        skill.damage = 100;
+    }
+
+    skillCooldown = skillTime;
+    onSkillUse.Invoke(skillTime, 1);
+    isSkillActivated = false;
+    Destroy(skillGO,0.5f);
+}
+
+Метод ActiveSkill будет активировать способность при равном или меньшем времени перезарядки. В случае ещё перезаряженной способности выводится сообщение в логие о перезаряженной способности, чтобы игроку сообщить состояние способности, этот метод относится к классу Гуннер-Туррет, но немного отличается от метода класса Гуннер-Туррет, но немного похож на метод класса Гуннер-Туррет, но немного похож на метод класса Гуннер-Туррет, но немного похож на метод класса Гуннер-Туррет, но немного похож на метод класса Гуннер-Туррет, но немного похож на метод класса Гуннер-Туррет, но немного похож на метод класса Гуннер-Туррет.
+Класс «Алхимик Туррет» расширяет функционал базовых башен, добавив уникальные механизмы и возможности. Это позволяет играть более разнообразно и интересно, позволяя игрокам стратегически применять различные атаки и совершенствовать тактику в соответствии с ситуацией.

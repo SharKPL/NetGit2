@@ -1,0 +1,464 @@
+Класс MyNetworkManager является основным компонентом сетевой инфраструктуры, наследующим функциональность NetworkManager. Он управляет подключением игроков, их спавном в различных состояниях игры (лобби или игровая сессия), а также отслеживает состояние готовности игроков. Этот класс обеспечивает бесшовное переключение между сценами и поддерживает синхронизацию данных между клиентами и сервером.
+Метод OnServerAddPlayer вызывается на сервере, когда новый игрок подключается к игре. В зависимости от текущего состояния игры, он определяет, какой префаб игрока (для лобби или для игровой сессии) должен быть создан и где он должен быть размещен. Для игроков в лобби используется LobbySpawnControl.Instance.GetSpawnPoint для получения точки спавна, а также устанавливается SteamID игрока в компоненте LobbyPlayerInfo. В игровом состоянии игроку присваивается имя, полученное через SteamHelper.GetPlayerName. Реализация метода показана в Листинге 1.
+
+Листинг 1 – метод OnServerAddPlayer
+public override void OnServerAddPlayer(NetworkConnectionToClient conn)
+{
+    switch (GameManager.Instance.CurrentEnumGameState)
+    {
+        case GameState.Lobby:
+            Transform spawnTransform = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
+            Debug.Log($"OnAddPlayer1{spawnTransform}");
+            var player = Connect(conn, lobbyPlayerPref, spawnTransform);
+            
+            CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers-1);
+            
+            var playerInfo = conn.identity.GetComponent<LobbyPlayerInfo>();
+            playerInfo.SetSteamId(steamID.m_SteamID);
+            Debug.Log($"OnAddPlayer2{spawnTransform}");
+            Debug.Log($"OnAddPlayer3{spawnTransform}");
+            break;
+        case GameState.InGame:
+            Connect(conn, gamePlayerPref);
+            CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
+            var name=SteamHelper.GetPlayerName(SteamID);
+            conn.identity.GetComponent<PlayerData>().SetPlayerName(name);
+            break;
+        default:
+            break;
+    }
+
+}
+
+Метод Connect является вспомогательным методом, который инстанцирует префаб игрока, устанавливает его позицию (если указана) и добавляет игрока для сетевого соединения. Он также увеличивает счетчик игроков и устанавливает 
+private NetworkIdentity Connect(NetworkConnectionToClient conn,GameObject pref, Transform spawnTransform=null)
+{
+    Debug.Log("Connect");
+    
+
+    GameObject playerInstance = Instantiate(pref);
+
+    if (spawnTransform != null)
+    {
+        playerInstance.transform.position = spawnTransform.position;
+        playerInstance.transform.rotation = spawnTransform.rotation;
+        Debug.Log($"Setting player position to: {spawnTransform.position}");
+    }
+    
+    NetworkServer.Spawn(playerInstance, conn);
+    playerInstance.name = $"{pref.name} [connId={conn.connectionId}]";
+    NetworkServer.AddPlayerForConnection(conn, playerInstance);
+    
+    IncreaseCounter();
+    if (NetworkServer.active)
+    {
+        readyStates[conn] = true;
+    }
+    else
+    {
+        readyStates[conn] = false;
+    }
+    return playerInstance.GetComponent<NetworkIdentity>();
+
+}
+Метод OnServerDisconnect вызывается на сервере, когда клиент отключается. Он удаляет состояние готовности игрока, уменьшает счетчик игроков и удаляет игрока из сетевого соединения. Также он сбрасывает состояние курсора.
+public override void OnServerDisconnect(NetworkConnectionToClient conn)
+{
+    base.OnServerDisconnect(conn);
+    readyStates.Remove(conn);
+    DecreaseCounter();
+    NetworkServer.RemovePlayerForConnection(conn);
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+}
+Метод ChangeScene используется для изменения сцены на сервере, если игра находится в состоянии InGame.
+public void ChangeScene(GameState state)
+{
+    if(state == GameState.InGame) ServerChangeScene(mainScene);
+}
+Метод OnServerChangeScene является переопределением базового метода Mirror для обработки смены сцены на сервере.
+public override void OnServerChangeScene(string newSceneName)
+{
+    base.OnServerChangeScene(newSceneName);
+}
+Метод SetPlayerReady устанавливает состояние готовности игрока и вызывает RpcUpdateReadyStates для обновления UI лобби.
+public void SetPlayerReady(NetworkConnectionToClient conn, bool ready)
+{
+    if (readyStates.ContainsKey(conn))
+        readyStates[conn] = ready;
+    RpcUpdateReadyStates(AllPlayersReady());
+}
+Метод AllPlayersReady проверяет, все ли игроки готовы к началу игры.
+public bool AllPlayersReady()
+{
+    foreach (var state in readyStates.Values)
+        if (!state) return false;
+    return readyStates.Count > 0;
+}
+Метод RpcUpdateReadyStates является RPC-вызовом, который обновляет состояние кнопки старта в UI лобби для всех клиентов.
+private void RpcUpdateReadyStates(bool allReady)
+{
+    var lobbyUI = FindObjectOfType<LobbyUI>();
+    if (lobbyUI != null)
+        lobbyUI.UpdateStartButtonState(allReady);
+}
+Класс LobbySteam отвечает за интеграцию Steamworks API для управления лобби. Он позволяет создавать, находить, присоединяться и покидать лобби, а также обрабатывать различные события, связанные с лобби Steam, такие как создание лобби, запросы на присоединение и обновления чата лобби.
+Метод Start инициализирует обратные вызовы Steamworks для обработки событий лобби, таких как создание лобби, запросы на присоединение, вход в лобби, обновления чата и списки лобби.
+private void Start()
+{
+    if (!SteamManager.Initialized) return;
+
+    lobbyCreated = Callback<LobbyCreated_t>.Create(OnLobbyCreated);
+    joinRequested = Callback<GameLobbyJoinRequested_t>.Create(OnJoinRequest);
+    lobbyEntered = Callback<LobbyEnter_t>.Create(OnLobbyEntered);
+    lobbyMatchList = Callback<LobbyMatchList_t>.Create(OnLobbyMatchList);
+    lobbyChatUpdate = Callback<LobbyChatUpdate_t>.Create(OnLobbyChatUpdate);
+
+
+}
+Метод CreateLobby создает новое лобби Steam. Он генерирует случайный ключ для лобби, ищет существующие лобби с таким же ключом (чтобы избежать дубликатов) и запускает корутину для создания лобби через SteamMatchmaking.
+public void CreateLobby(ELobbyType lobbyType, Button btn)
+{
+    lobbyKey = GetRandomKey();
+    FindLobby(LobbyKey);
+    StartCoroutine(StartLobbyRoutine(lobbyType, btn));
+}
+Метод StartLobbyRoutine является корутиной, которая ожидает заданное время, затем делает кнопку интерактивной и вызывает SteamMatchmaking.CreateLobby для создания лобби.
+private IEnumerator StartLobbyRoutine(ELobbyType lobbyType, Button btn,float time=1f)
+{
+    yield return new WaitForSeconds(time);
+    btn.interactable = true;
+    Debug.Log("StartLobby");
+    SteamMatchmaking.CreateLobby(lobbyType, MyNetworkManager.Instance.maxConnections);
+}
+Метод OnLobbyCreated вызывается после попытки создания лобби. Он проверяет результат создания лобби, устанавливает данные лобби (адрес хоста, ключ лобби, имя) и, если сервер не активен, запускает хост через MyNetworkManager.Instance.StartHost.
+private void OnLobbyCreated(LobbyCreated_t callback)
+{
+    Debug.Log("LobbyCreated");
+    if (callback.m_eResult != EResult.k_EResultOK && CheckLobbyKey()) 
+    {
+        GameManager.Instance.SwitchState(GameState.Menu);
+        return; 
+    }
+
+    string lobbyName = SteamFriends.GetFriendPersonaName(SteamUser.GetSteamID());
+
+    LobbyID = new CSteamID(callback.m_ulSteamIDLobby);
+
+    SteamMatchmaking.SetLobbyData(LobbyID, HOST_ADDRESS_KEY, SteamUser.GetSteamID().ToString());
+    SteamMatchmaking.SetLobbyData(LobbyID, LOBBY_KEY, lobbyKey);
+    SteamMatchmaking.SetLobbyData(LobbyID, "name", lobbyName);
+
+    if (!NetworkServer.active)
+    {
+        Debug.Log("StartHost");
+        MyNetworkManager.Instance.StartHost();
+    }
+
+}
+Метод FindLobby добавляет фильтр для поиска лобби по ключу и запрашивает список лобби у SteamMatchmaking.
+private void FindLobby(string key)
+{
+    Debug.Log(LobbyKey);
+    SteamMatchmaking.AddRequestLobbyListStringFilter(LOBBY_KEY, key,ELobbyComparison.k_ELobbyComparisonEqual);
+    SteamMatchmaking.RequestLobbyList();
+}
+Метод OnLobbyMatchList вызывается после получения списка лобби. Он очищает текущий список лобби и заполняет его новыми данными, полученными от SteamMatchmaking, а затем сортирует их.
+private void OnLobbyMatchList(LobbyMatchList_t callback)
+{
+    allLobbies.Clear();
+    for (int i = 0; i < callback.m_nLobbiesMatching; i++)
+    {
+        CSteamID lobbyID = SteamMatchmaking.GetLobbyByIndex(i);
+        CSteamID ownerID = SteamMatchmaking.GetLobbyOwner(lobbyID);
+        string lobbyKey = SteamMatchmaking.GetLobbyData(lobbyID, LOBBY_KEY);
+
+        allLobbies.Add(new Lobby(lobbyID, SteamMatchmaking.GetLobbyData(lobbyID, "name"), lobbyKey));
+    }
+
+    allLobbies.Sort((a, b) => SteamMatchmaking.GetNumLobbyMembers(b.lobbyID).CompareTo(SteamMatchmaking.GetNumLobbyMembers(a.lobbyID)));
+}
+Метод OnLobbyChatUpdate вызывается при обновлении чата лобби, например, когда игрок входит или выходит из лобби.
+private void OnLobbyChatUpdate(LobbyChatUpdate_t callback)
+{
+    Debug.Log("OnLobbyChatUpdate");
+    if(callback.m_rgfChatMemberStateChange == (uint)EChatMemberStateChange.k_EChatMemberStateChangeEntered)
+    {
+        string name = SteamFriends.GetFriendPersonaName((CSteamID)callback.m_ulSteamIDUserChanged);
+        Debug.Log($"Name:{name}");
+    }
+    else if(callback.m_rgfChatMemberStateChange== (uint)EChatMemberStateChange.k_EChatMemberStateChangeLeft ||
+        callback.m_rgfChatMemberStateChange == (uint)EChatMemberStateChange.k_EChatMemberStateChangeDisconnected)
+    {
+        string name = SteamFriends.GetFriendPersonaName((CSteamID)callback.m_ulSteamIDUserChanged);
+        Debug.Log($"Name:{name}");
+    }
+}
+Метод OnLobbyEntered вызывается при входе в лобби. Он проверяет, заблокировано ли лобби, устанавливает ID лобби, и, если клиент не активен, запускает его, устанавливая сетевой адрес и ключ лобби.
+private void OnLobbyEntered(LobbyEnter_t callback)
+{
+    if (callback.m_bLocked)
+    {
+        SteamMatchmaking.LeaveLobby((CSteamID)callback.m_ulSteamIDLobby);
+        return;
+    }
+
+
+    Debug.Log($"Entered Lobby {LobbyID}");
+    LobbyID = new CSteamID(callback.m_ulSteamIDLobby);
+
+
+    if (NetworkServer.active)
+        return;
+    MyNetworkManager.Instance.SetMultiplayer(true);
+
+    MyNetworkManager.Instance.networkAddress = SteamMatchmaking.GetLobbyData(new CSteamID(LobbyID.m_SteamID), HOST_ADDRESS_KEY);
+    lobbyKey = SteamMatchmaking.GetLobbyData(new CSteamID(LobbyID.m_SteamID), LOBBY_KEY);
+    if(NetworkClient.active) return;
+    MyNetworkManager.Instance.StartClient();
+}
+Метод OnJoinRequest вызывается при запросе на присоединение к лобби. Он вызывает SteamMatchmaking.JoinLobby для присоединения к запрошенному лобби.
+private void OnJoinRequest(GameLobbyJoinRequested_t callback)
+{
+    SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
+}
+Метод JoinForKey запускает корутину для присоединения к лобби по заданному ключу.
+public void JoinForKey(string key, Button btn)
+{
+    StartCoroutine(JoinForKeyRoutine(key, btn));
+}
+Метод JoinForKeyRoutine является корутиной, которая ищет лобби по ключу, ожидает заданное время, а затем пытается присоединиться к найденному лобби. Если лобби не найдено, выводится сообщение об ошибке.
+private IEnumerator JoinForKeyRoutine(string key, Button btn, float time = 1f)
+{
+    FindLobby(key);
+    yield return new WaitForSeconds(time);
+    Lobby lobby = GetLobbyByKey(key);
+    if (lobby != null)
+    {
+        SteamMatchmaking.JoinLobby(lobby.lobbyID);
+    }
+    else
+    {
+        Debug.Log("Cant Find Lobby");
+        btn.interactable = true;
+    }
+}
+Метод Leave позволяет покинуть текущее лобби. Если активен сервер, он останавливает хост; если активен клиент, он останавливает клиент.
+public void Leave()
+{
+    SteamMatchmaking.LeaveLobby(LobbyID);
+    Debug.Log(LobbyID);
+    if (NetworkServer.active)
+    {
+        MyNetworkManager.Instance.StopHost();
+    }
+    if (NetworkClient.active)
+    {
+        MyNetworkManager.Instance.StopClient();
+    }
+
+
+}
+Класс LobbySpawnControl управляет точками спавна игроков в лобби. Он хранит список Transform-объектов, которые используются в качестве мест для появления игроков.
+Метод Awake реализует паттерн Singleton, гарантируя, что в сцене существует только один экземпляр LobbySpawnControl
+private void Awake()
+{
+    if (instance != null && instance != this) Destroy(gameObject); 
+    instance = this;
+
+}
+Метод Start при запуске собирает все дочерние Transform-компоненты и добавляет их в список spawnPoints.
+private void Start()
+{
+    
+    var points = GetComponentsInChildren<Transform>();
+    for (int i = 1; i< points.Length; i++)
+    {
+        spawnPoints.Add((Transform)points[i]);
+    }
+}
+Метод GetSpawnPoint возвращает точку спавна для игрока на основе его connectionId. Если connectionId превышает количество доступных точек спавна, используется оператор по модулю для циклического выбора точки.
+public Transform GetSpawnPoint(int connectionId)
+{
+    if (connectionId < spawnPoints.Count)
+    {
+        return spawnPoints[connectionId];
+    }
+    return spawnPoints[connectionId % spawnPoints.Count];
+}
+Класс GameManager управляет общим состоянием игры, таким как меню, лобби и игровая сессия. Он использует паттерн Singleton для обеспечения единственного экземпляра и позволяет переключать состояния игры, что влияет на поведение других систем.
+Метод Awake инициализирует экземпляр GameManager и гарантирует, что он не будет уничтожен при загрузке новых сцен, что важно для сохранения состояния игры между сценами.
+private void Awake()
+{
+    currentState = menuLobbyState;
+
+    if (instance != null && instance!=this)
+    {
+        Destroy(gameObject);
+    }
+    else
+    {
+       instance = this;
+       DontDestroyOnLoad(gameObject);
+    }
+}
+Метод SwitchState изменяет текущее состояние игры. В зависимости от переданного состояния, он устанавливает соответствующий объект ILobbyState и вызывает событие GameStateEvent, чтобы уведомить другие части системы об изменении состояния.
+public void SwitchState(GameState state)
+{
+    switch (state)
+    {
+        case GameState.Menu:
+            break;
+        case GameState.Lobby:
+            currentState = menuLobbyState;
+            break;
+        case GameState.InGame:
+            currentState = gameLobbyState;
+            break;
+        default:
+            break;
+    }
+    currentEnumGameState = state;
+    
+
+    GameStateEvent?.Invoke(currentEnumGameState);
+}
+Класс SteamHelper предоставляет статические вспомогательные методы для взаимодействия со Steamworks API, такие как получение аватара пользователя, конвертация текстуры в спрайт, получение списка участников лобби и получение имени игрока.
+Метод GetPlayerName позволяет получить имя игрока по его SteamID или по SteamID лобби и индексу участника.
+public static string GetPlayerName(CSteamID? playerid=null,CSteamID? lobbyid 
+= null, int index = -1)
+{
+    if(playerid.HasValue && playerid.Value.m_SteamID != 0){
+        var playerName = SteamFriends.GetFriendPersonaName(playerid.Value);
+        return playerName;
+    }
+    if (lobbyid != null && lobbyid.HasValue && index != -1)
+    {
+        CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(lobbyid.
+        Value, index - 1);
+        var playerName = SteamFriends.GetFriendPersonaName(steamID);
+        return playerName;
+    }
+    return null;
+}
+Класс Menu управляет пользовательским интерфейсом главного меню. Он содержит ссылки на кнопки и поля ввода, а также логику для обработки их нажатий, таких как открытие лобби, выход из игры, создание или присоединение к лобби.
+Метод StartGame инициирует процесс создания лобби. Он переключает состояние игры на GameState.Lobby через GameManager и вызывает `LobbySteam.Instance.CreateLobby.
+private void StartGame()
+{
+    createBtn.interactable = false;
+    GameManager.Instance.SwitchState(GameState.Lobby);
+    LobbySteam.Instance.CreateLobby(ELobbyType.k_ELobbyTypePublic, createBtn);
+}
+Метод ConnectGame позволяет игроку присоединиться к существующему лобби, используя введенный ключ лобби и вызывая LobbySteam.Instance.JoinForKey.
+private void ConnectGame()
+{
+    connectBtn.interactable = false;
+    LobbySteam.Instance.JoinForKey(keyField.text, connectBtn);
+}
+Эти классы в совокупности формируют основу сетевой архитектуры, обеспечивая управление игровыми сессиями, взаимодействие с Steamworks для создания и присоединения к лобби, а также синхронизацию данных между клиентами и сервером.
+### Реализация сетевой архитектуры
+
+В данном разделе рассматривается реализация сетевой архитектуры проекта, основанная на фреймворке Mirror для Unity. Основное внимание уделяется взаимодействию между клиентом и сервером, синхронизации данных и управлению игровыми сущностями в сетевой среде. Для этого были разработаны и интегрированы следующие ключевые классы:
+Класс CharInput отвечает за обработку ввода игрока и его синхронизацию по сети.  Класс управляет движением персонажа, прыжками и взаимодействием с объектами. Состояние движения и прыжков синхронизируется между сервером и клиентами, а также используется сетевой аниматор для визуализации действий. Методы, которые отправляют команды на сервер для выполнения действий, которые должны быть авторизованы сервером и распространены на всех клиентов, такие как CmdSetJump и CmdSetMove, обеспечивают согласованность игрового процесса. Например, CmdSetJump синхронизирует анимацию прыжка:
+    [Command]
+    private void CmdSetJump(bool isJump)
+    {
+        animator.SetTrigger(jumpTriggerAnim);
+        netAnimator.SetTrigger(jumpTriggerAnim);
+    }
+Метод Interact обрабатывает взаимодействие с предметами, вызывая CmdAddItem на объекте Inventory для добавления предмета в инвентарь, что происходит на сервере и клиенте.
+Класс PlayerHealth управляет здоровьем игрока и его синхронизацией по сети. Переменная currentHealth автоматически синхронизируется между сервером и клиентами, и при изменении ее значения на сервере, оно автоматически обновляется у всех клиентов, вызывая метод OnHealthChanged. Метод CmdTakeDamage является методом, который вызывается клиентом для нанесения урона игроку. Он выполняется на сервере. После получения урона, если здоровье падает до нуля, вызывается метод RpcDie, который выполняется на всех клиентах для обработки смерти игрока, включая вызов события OnDeath и телепортацию игрока на стартовую позицию:
+    [Command(requiresAuthority =false)]
+    public void CmdTakeDamage(float amount)
+    {
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            RpcDie();
+            Transform startPos = NetworkManager.singleton.GetStartPosition();
+            if (startPos != null)
+            {
+                transform.position = startPos.position;
+            }
+            else
+            {
+                transform.position = Vector3.zero;
+            }
+            GetComponent<CharacterInput>()?.ResetMovement();
+            currentHealth = maxHealth;
+        }
+    }
+
+    [ClientRpc]
+    void RpcDie()
+    {
+        if (OnDeath != null)
+            OnDeath.Invoke();
+        Debug.Log($"Player {netId} died");
+    }
+Класс Chat реализует функционал внутриигрового чата. Отправка сообщений осуществляется через метод CmdSendMessage, который принимает текст сообщения и Steam ID отправителя. Этот метод вызывается клиентом и выполняется на сервере. Сервер, в свою очередь, вызывает метод RpcSendMessage, который распространяет сообщение на всех клиентов, чтобы они могли отобразить его в своих чатах. В RpcSendMessage используется Steamworks API для получения имени отправителя по его Steam ID:
+    [Command(requiresAuthority = false)]
+    private void CmdSendMessage(string messageText, ulong senderSteamID)
+    {
+        if (string.IsNullOrEmpty(messageText)) return;
+        RpcSendMessage(messageText, senderSteamID);
+    }
+
+    [ClientRpc]
+    private void RpcSendMessage(string messageText, ulong senderSteamID)
+    {
+        CSteamID steamID = new CSteamID(senderSteamID);
+        string playerName = SteamFriends.GetFriendPersonaName(steamID);
+
+        string messageContent = messageText;
+        if (messageContent.Length > msgLong)
+        {
+            messageContent = messageContent.Substring(0, msgLong) + "...";
+        }
+
+        string msgText = $"{playerName} : {messageContent}";
+        msg.SetMsgText(msgText);
+        msg.transform.SetAsLastSibling();
+        scroll.verticalNormalizedPosition = 0;
+        ScrollToBottom();
+    }
+Класс Inventory управляет инвентарем игрока и его синхронизацией. Методы CmdAddItem и CmdRemoveItem являются методами, которые вызываются клиентом для добавления или удаления предметов. Эти команды выполняются на сервере, который затем вызывает соответствующие методы RpcAddItem и RpcRemoveItem для синхронизации состояния инвентаря на всех клиентах. Например, CmdAddItem вызывает RpcAddItem, что продемонстрировано на Листинге
+    [Command]
+    public void CmdAddItem(Item item)
+    {
+        RpcAddItem(item);
+    }
+
+    [ClientRpc]
+    private void RpcAddItem(Item item)
+    {
+        if (!isLocalPlayer) return;
+        GlobalEventManager.TakeItemEvent?.Invoke(item.ItemName);
+    }
+Класс InventoryLineUI представляет собой элемент пользовательского интерфейса для отображения одной строки инвентаря. Он взаимодействует с сетевым классом Inventory. Метод DropItem вызывает CmdRemoveItem из Inventory, инициируя сетевую операцию по удалению предмета из инвентаря:
+
+    private void DropItem() 
+    {
+        Inventory.Instance.CmdRemoveItem(itemName.text);
+        StartCoroutine(DropRoutine());
+    }
+
+Класс PlayerUI отвечает за отображение элементов пользовательского интерфейса, связанных с игроком, таких как имя игрока и полоса здоровья. Он подписывается на событие GlobalEventManager.PlayerHealthChanged, которое вызывается из сетевого класса PlayerHealth при изменении здоровья игрока. Это позволяет обновлять UI здоровья на клиенте, реагируя на сетевые изменения:
+    private void Start()
+    {
+        GlobalEventManager.PlayerHealthChanged.AddListener(SetHealthBar);
+        playerName.text = playerData.PlayerName;
+        if (isLocalPlayer)
+        {
+            playerName.gameObject.SetActive(false);
+            HealthBar.gameObject.SetActive(false);
+            HealthBackImage.gameObject.SetActive(false);
+        }
+    }
+
+    public void SetHealthBar(float normalizedValue)
+    {
+        if (HealthBar != null && isLocalPlayer)
+            HealthBar.fillAmount = normalizedValue;
+    }
+В целом, сетевая архитектура проекта построена на использовании механизмов для отправки клиентских запросов на сервер и распространения серверных обновлений на всех клиентов. Переменные автоматически синхронизируются между сервером и клиентами, обеспечивая согласованность состояния игры в сетевой среде. Взаимодействие между UI и сетевой логикой осуществляется через события, что позволяет разделить ответственность и поддерживать модульность кода.

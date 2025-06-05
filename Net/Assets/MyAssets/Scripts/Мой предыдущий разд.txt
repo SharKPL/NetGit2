@@ -1,0 +1,211 @@
+При разработке сетевой архитектуры нашего проекта мы создали набор взаимосвязанных компонентов, обеспечивающих многопользовательское взаимодействие. Основой сетевой части является библиотека Mirror, дополненная интеграцией со Steamworks для упрощения подключения и идентификации игроков. Ниже рассмотрим ключевые классы и их роль в системе.
+
+### Управление сетевым взаимодействием и состоянием игры
+
+Центральным элементом сетевой логики является класс <mcsymbol name="MyNetworkManager" filename="MyNetworkManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\MyNetworkManager.cs" startline="9" type="class"></mcsymbol>, наследуемый от `NetworkManager` из библиотеки Mirror. Этот класс отвечает за управление жизненным циклом сетевой сессии, включая запуск сервера, подключение клиентов и обработку смены сцен. Важной его функцией является управление появлением игроков: в лобби игроки появляются как объекты `LobbyPlayer`, а в основной игровой сцене — как полноценные `Player`. <mcsymbol name="MyNetworkManager" filename="MyNetworkManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\MyNetworkManager.cs" startline="9" type="class"></mcsymbol> также отслеживает количество подключенных игроков и их готовность к началу игры.
+
+```plantuml
+@startuml
+class MyNetworkManager extends NetworkManager {
+  + lobbyPlayerPrefab: GameObject
+  + gamePlayerPrefab: GameObject
+  + maxConnections: int
+  + minPlayersToStart: int
+  + OnStartHost()
+  + OnServerAddPlayer(conn: NetworkConnection)
+  + OnServerDisconnect(conn: NetworkConnection)
+  + OnServerSceneChanged(sceneName: string)
+  + ServerChangeScene(newSceneName: string)
+  + AllPlayersReady(): bool
+  + CheckPlayersReadyStateAndStartGame()
+}
+@enduml
+```
+![[MyNetworkManager.png]]
+Общее управление состоянием игры возложено на класс <mcsymbol name="GameManager" filename="GameManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Managers\GameManager.cs" startline="6" type="class"></mcsymbol>, реализованный как синглтон. Он отслеживает текущее состояние игры (например, `Menu`, `Lobby`, `InGame`) и предоставляет доступ к этому состоянию другим компонентам системы. Метод `SetGameState` позволяет изменять текущее состояние, что может инициировать различные игровые события, например, загрузку новой сцены.
+
+```plantuml
+@startuml
+class GameManager {
+  + static Instance: GameManager
+  + CurrentState: GameState
+  + SetGameState(newState: GameState)
+  + Awake()
+}
+enum GameState {
+  Menu
+  Lobby
+  InGame
+}
+GameManager o-- GameState
+@enduml
+```
+![[GameManager 1.png]]
+### Система лобби и подключение игроков
+
+Для организации лобби и подключения игроков используется класс <mcsymbol name="LobbySteam" filename="LobbySteam.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbySteam.cs" startline="12" type="class"></mcsymbol>. Он интегрируется со Steamworks API, обрабатывая колбэки создания лобби, присоединения игроков и обновления информации о лобби. <mcsymbol name="LobbySteam" filename="LobbySteam.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbySteam.cs" startline="12" type="class"></mcsymbol> хранит важные данные лобби, такие как адрес хоста и уникальный ключ лобби, который используется для присоединения. Метод `CreateLobby` инициирует создание нового лобби в Steam, а `OnLobbyCreated` обрабатывает результат этого действия, запуская хост через <mcsymbol name="MyNetworkManager" filename="MyNetworkManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\MyNetworkManager.cs" startline="9" type="class"></mcsymbol>.
+
+Пользовательский интерфейс лобби управляется классом <mcsymbol name="LobbyUI" filename="LobbyUI.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbyUI.cs" startline="10" type="class"></mcsymbol>. Этот `NetworkBehaviour` отвечает за отображение ключа лобби, управление кнопками готовности игроков и запуск игры. Он взаимодействует с <mcsymbol name="LobbySteam" filename="LobbySteam.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbySteam.cs" startline="12" type="class"></mcsymbol> для получения информации о лобби и с <mcsymbol name="MyNetworkManager" filename="MyNetworkManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\MyNetworkManager.cs" startline="9" type="class"></mcsymbol> для инициации начала матча. Метод `SetReady` позволяет игроку отметить свою готовность, а `StartGame` (доступный только хосту) запускает переход в игровую сцену.
+
+```plantuml
+@startuml
+class LobbySteam {
+  + OnLobbyCreated(callback: LobbyCreated_t, bIOFailure: bool)
+  + OnGameLobbyJoinRequested(callback: GameLobbyJoinRequested_t, bIOFailure: bool)
+  + OnLobbyEntered(callback: LobbyEnter_t, bIOFailure: bool)
+  + CreateLobby()
+  + JoinLobby(steamIDLobby: CSteamID)
+  + GetLobbyData(key: string): string
+  + SetLobbyData(key: string, value: string)
+}
+class LobbyUI extends NetworkBehaviour {
+  + lobbyKeyText: TMP_Text
+  + readyButton: Button
+  + startGameButton: Button
+  + CmdSetReady()
+  + RpcUpdateReadyButton(isReady: bool)
+  + StartGame()
+  + UpdateLobbyKeyUI(key: string)
+}
+LobbySteam --> MyNetworkManager : StartHost
+LobbyUI --> LobbySteam : GetLobbyData
+LobbyUI --> MyNetworkManager : StartGame
+@enduml
+```
+![[LobbySteam.png]]
+Информацию об игроках в лобби отображает <mcsymbol name="LobbyPlayerInfo" filename="LobbyPlayerInfo.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbyPlayerInfo.cs" startline="10" type="class"></mcsymbol>. Этот `NetworkBehaviour` использует Steam ID для получения и отображения имени и аватара игрока. Синхронизация имени происходит через `SyncVar` с хуком `OnNameChanged`, который обновляет текстовое поле с именем игрока. Размещение игроков в сцене лобби контролируется синглтоном <mcsymbol name="LobbySpawnControl" filename="LobbySpawnControl.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbySpawnControl.cs" startline="6" type="class"></mcsymbol>, который предоставляет доступные точки появления для объектов игроков.
+
+```plantuml
+@startuml
+class LobbyPlayerInfo extends NetworkBehaviour {
+  + playerNameText: TMP_Text
+  + playerAvatarImage: RawImage
+  + steamId: ulong
+  + playerName: string <<SyncVar>>
+  + OnNameChanged(oldName: string, newName: string)
+  + OnAvatarImageLoaded(callback: AvatarImageLoaded_t, bIOFailure: bool)
+  + SetSteamId(id: ulong)
+  + CmdSetPlayerName(name: string)
+}
+class LobbySpawnControl {
+  + static Instance: LobbySpawnControl
+  + spawnPoints: Transform[]
+  + GetSpawnPoint(): Transform
+}
+LobbyPlayerInfo ..> SteamHelper : GetSteamImageAsTexture
+LobbyPlayerInfo ..> SteamHelper : GetSteamUserName
+MyNetworkManager ..> LobbySpawnControl : GetSpawnPoint
+@enduml
+```
+![[LobbyPlayerInfo 1.png]]
+### Данные и взаимодействие игрока
+
+Основные данные игрока, такие как имя, хранятся в компоненте <mcsymbol name="PlayerData" filename="PlayerData.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Player\PlayerData.cs" startline="6" type="class"></mcsymbol>. Этот класс позволяет устанавливать и получать имя игрока, которое может использоваться другими системами, например, чатом или интерфейсом.
+
+Управление здоровьем игрока реализовано в <mcsymbol name="PlayerHealth" filename="PlayerHealth.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Player\PlayerHealth.cs" startline="8" type="class"></mcsymbol>, который является `NetworkBehaviour`. Он синхронизирует текущее здоровье игрока (`currentHealth`) с помощью `SyncVar` и хука `OnHealthChanged` для обновления UI. Метод `TakeDamage` вызывается на сервере (`Command`) при получении урона, а `RpcRespawn` используется для обработки возрождения игрока на всех клиентах.
+
+```plantuml
+@startuml
+class PlayerData {
+  + playerName: string
+  + SetPlayerName(name: string)
+}
+class PlayerHealth extends NetworkBehaviour {
+  + maxHealth: int
+  + currentHealth: int <<SyncVar>>
+  + OnHealthChanged(oldHealth: int, newHealth: int)
+  + CmdTakeDamage(amount: int)
+  + RpcRespawn()
+  + Die()
+}
+PlayerHealth --> PlayerData
+@enduml
+```
+![[PlayerData 1.png]]
+Ввод пользователя обрабатывается классом <mcsymbol name="CharInput" filename="CharInput.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Input\CharInput.cs" startline="7" type="class"></mcsymbol>, который считывает данные с клавиатуры и мыши для управления движением и действиями персонажа. Он работает только для локального игрока (`isLocalPlayer`). Управление камерой игрока осуществляется скриптом <mcsymbol name="PlayerCameraController" filename="PlayerCameraController.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Player\PlayerCameraController.cs" startline="5" type="class"></mcsymbol>, который также активен только для локального игрока и следует за ним, обеспечивая вид от третьего или первого лица в зависимости от настроек.
+
+### Система инвентаря
+
+Система инвентаря построена вокруг класса <mcsymbol name="Inventory" filename="Inventory.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Inventory.cs" startline="10" type="class"></mcsymbol>, являющегося `NetworkBehaviour`. Он управляет списком предметов (`itemList`), который синхронизируется между сервером и клиентами. Предметы представлены классом <mcsymbol name="Item" filename="Item.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Item.cs" startline="6" type="class"></mcsymbol>, также `NetworkBehaviour`, хранящим информацию о предмете, например, его имя. Добавление и удаление предметов происходит через серверные команды (`CmdAddItem`, `CmdRemoveItem`) и клиентские RPC (`RpcAddItem`, `RpcRemoveItem`), обеспечивая синхронизацию состояния инвентаря. Например, метод `CmdAddItem` вызывается клиентом, исполняется на сервере, который затем вызывает `RpcAddItem` на всех клиентах для обновления их локальных данных инвентаря.
+
+Пользовательский интерфейс инвентаря управляется <mcsymbol name="InventoryUI" filename="InventoryUI.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\InventoryUI.cs" startline="8" type="class"></mcsymbol>. Он отвечает за отображение предметов в инвентаре, используя пул объектов <mcsymbol name="InventoryLineUI" filename="InventoryLineUI.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\InventoryLineUI.cs" startline="8" type="class"></mcsymbol> для каждой строки предмета. <mcsymbol name="InventoryLineUI" filename="InventoryLineUI.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\InventoryLineUI.cs" startline="8" type="class"></mcsymbol> отображает название и количество предмета, а также позволяет выбросить предмет вызовом `CmdRemoveItem` на объекте инвентаря игрока.
+
+```plantuml
+@startuml
+class Inventory extends NetworkBehaviour {
+  + itemList: SyncDictionary<string, List<Item>>
+  + AddItem(item: Item)
+  + RemoveItem(itemName: string)
+  + CmdAddItem(item: Item)
+  + RpcAddItem(itemNetId: uint, itemName: string)
+  + CmdRemoveItem(itemName: string, count: int)
+  + RpcRemoveItem(itemName: string, count: int)
+}
+class Item extends NetworkBehaviour {
+  + itemName: string
+}
+class InventoryUI {
+  + inventoryPanel: GameObject
+  + linePrefab: InventoryLineUI
+  + linePool: CustomPool<InventoryLineUI>
+  + UpdateInventoryUI(inventory: Inventory)
+  + AddItemToUI(itemName: string, count: int)
+  + ToggleInventory()
+}
+class InventoryLineUI extends NetworkBehaviour {
+  + itemNameText: TMP_Text
+  + itemCountText: TMP_Text
+  + item: Item
+  + inventory: Inventory
+  + SetItem(item: Item, count: int, inventory: Inventory)
+  + DropItem()
+  + CmdRemoveItem(itemName: string, count: int)
+}
+Inventory *-- "many" Item
+InventoryUI ..> Inventory : Reads data
+InventoryUI *-- "many" InventoryLineUI
+InventoryLineUI ..> Inventory : CmdRemoveItem
+InventoryLineUI ..> Item : Displays data
+@enduml
+```
+
+### ![[Inventory.png]]Система чата
+
+Чат реализован с помощью класса <mcsymbol name="Chat" filename="Chat.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Chat.cs" startline="11" type="class"></mcsymbol>, который является `NetworkBehaviour`. Он управляет отправкой и получением сообщений. Когда игрок отправляет сообщение, вызывается серверная команда `CmdSendMessage`, которая затем транслирует это сообщение всем клиентам через `RpcReceiveMessage`. Имена игроков для сообщений получаются с использованием <mcsymbol name="SteamHelper" filename="SteamHelper.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Extantions\SteamHelper.cs" startline="7" type="class"></mcsymbol>. Сообщения отображаются с помощью объектов <mcsymbol name="Message" filename="Message.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Message.cs" startline="7" type="class"></mcsymbol>, которые создаются из пула для оптимизации.
+
+```plantuml
+@startuml
+class Chat extends NetworkBehaviour {
+  + chatPanel: GameObject
+  + messagePrefab: Message
+  + messagePool: CustomPool<Message>
+  + inputField: TMP_InputField
+  + CmdSendMessage(message: string, senderSteamId: ulong)
+  + RpcReceiveMessage(message: string, senderName: string)
+  + AddMessageToChat(text: string, senderName: string)
+}
+class Message {
+  + messageText: TMP_Text
+  + SetMessage(text: string)
+  + ReleaseToPool()
+}
+Chat *-- "many" Message
+Chat ..> SteamHelper : GetSteamUserName
+@enduml
+```
+
+### ![[Chat.png]]Вспомогательные классы
+
+Проект также использует несколько вспомогательных классов. <mcsymbol name="GlobalEventManager" filename="EventManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Managers\EventManager.cs" startline="5" type="class"></mcsymbol> (вероятно, имеется в виду `EventManager.cs` или аналогичный класс для глобальных событий) используется для управления событиями в игре, позволяя различным системам взаимодействовать без прямых зависимостей. <mcsymbol name="InputManager" filename="InputManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Input\InputManager.cs" startline="6" type="class"></mcsymbol> централизует обработку ввода. <mcsymbol name="SteamHelper" filename="SteamHelper.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Extantions\SteamHelper.cs" startline="7" type="class"></mcsymbol> предоставляет удобные методы для работы со Steamworks API, например, для получения имени пользователя или его аватара. <mcsymbol name="CustomPool" filename="CustomPool.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\CustomPool.cs" startline="7" type="class"></mcsymbol> — это универсальный класс для реализации пулов объектов, используемый, например, в инвентаре и чате для оптимизации создания и уничтожения часто используемых UI-элементов.
+
+### Упрощенная схема подключения и начала игры
+
+1.  **Запуск и меню**: Игрок запускает приложение, отображается главное меню (<mcsymbol name="Menu" filename="Menu.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\Menu.cs" startline="8" type="class"></mcsymbol>).
+2.  **Создание/Поиск лобби**: Игрок решает создать лобби или присоединиться к существующему через Steam. <mcsymbol name="LobbySteam" filename="LobbySteam.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbySteam.cs" startline="12" type="class"></mcsymbol> обрабатывает эти запросы.
+3.  **Подключение к лобби**: 
+    *   При создании: <mcsymbol name="LobbySteam" filename="LobbySteam.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbySteam.cs" startline="12" type="class"></mcsymbol> создает лобби в Steam, <mcsymbol name="MyNetworkManager" filename="MyNetworkManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\MyNetworkManager.cs" startline="9" type="class"></mcsymbol> запускает хост.
+    *   При присоединении: <mcsymbol name="LobbySteam" filename="LobbySteam.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbySteam.cs" startline="12" type="class"></mcsymbol> подключается к лобби, <mcsymbol name="MyNetworkManager" filename="MyNetworkManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\MyNetworkManager.cs" startline="9" type="class"></mcsymbol> подключается как клиент.
+4.  **Сцена лобби**: Загружается сцена лобби. <mcsymbol name="MyNetworkManager" filename="MyNetworkManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\MyNetworkManager.cs" startline="9" type="class"></mcsymbol> создает объекты `LobbyPlayer` для каждого игрока. <mcsymbol name="LobbyUI" filename="LobbyUI.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbyUI.cs" startline="10" type="class"></mcsymbol> отображает информацию о лобби и игроках (<mcsymbol name="LobbyPlayerInfo" filename="LobbyPlayerInfo.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbyPlayerInfo.cs" startline="10" type="class"></mcsymbol>).
+5.  **Готовность и старт игры**: Игроки отмечают готовность. Когда все готовы (или достигнуто минимальное количество), хост нажимает "Start Game" в <mcsymbol name="LobbyUI" filename="LobbyUI.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\LobbyUI.cs" startline="10" type="class"></mcsymbol>.
+6.  **Игровая сцена**: <mcsymbol name="MyNetworkManager" filename="MyNetworkManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Network\MyNetworkManager.cs" startline="9" type="class"></mcsymbol> загружает игровую сцену. Существующие объекты игроков заменяются на полноценные игровые префабы `Player`.
+7.  **Начало игры**: Игроки появляются в игровой сцене, <mcsymbol name="GameManager" filename="GameManager.cs" path="d:\UniProj\Net\Assets\MyAssets\Scripts\Managers\GameManager.cs" startline="6" type="class"></mcsymbol> переходит в состояние `InGame`.
