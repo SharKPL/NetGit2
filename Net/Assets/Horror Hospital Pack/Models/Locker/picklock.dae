@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.91.2 commit date:2021-01-19, commit time:16:15, hash:5be9ef417703</authoring_tool>
+    </contributor>
+    <created>2021-02-19T02:04:28</created>
+    <modified>2021-02-19T02:04:28</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="Material-effect">
+      <profile_COMMON>
+        <newparam sid="Metal3_jpg-surface">
+          <surface type="2D">
+            <init_from>Metal3_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Metal3_jpg-sampler">
+          <sampler2D>
+            <source>Metal3_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="Metal3_jpg-sampler" texcoord="UVКарта"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="Metal3_jpg" name="Metal3_jpg">
+      <init_from>Metal3.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Material-material" name="Material">
+      <instance_effect url="#Material-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Куб-mesh" name="Куб">
+      <mesh>
+        <source id="Куб-mesh-positions">
+          <float_array id="Куб-mesh-positions-array" count="36">-0.7856884 -0.7856884 -1 -0.3308736 -0.3308736 1 -0.7856884 0.7856884 -1 -0.3308736 0.3308736 1 0.7856884 -0.7856884 -1 0.3308736 -0.3308736 1 0.7856884 0.7856884 -1 0.3308736 0.3308736 1 1.348516 -0.07777625 1.18467 1.348516 0.07777625 1.18467 1.486687 0.07777625 1.178592 1.486687 -0.07777625 1.178592</float_array>
+          <technique_common>
+            <accessor source="#Куб-mesh-positions-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Куб-mesh-normals">
+          <float_array id="Куб-mesh-normals-array" count="36">-0.5353471 -0.5221931 0.6638659 -0.6272159 0.6272159 -0.4617366 -0.6272159 -0.6272159 -0.4617366 -0.5353471 0.5221931 0.6638659 0.6272159 0.6272159 -0.4617366 0.4499997 0.793794 0.4091351 0.6272159 -0.6272159 -0.4617366 0.4499997 -0.793794 0.4091351 0.873722 -0.4837226 0.05121046 -0.004669308 0.3376587 0.9412571 0.873722 0.4837226 0.05121046 -0.004669308 -0.3376587 0.9412571</float_array>
+          <technique_common>
+            <accessor source="#Куб-mesh-normals-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Куб-mesh-map-0">
+          <float_array id="Куб-mesh-map-0-array" count="120">7.57907e-5 0.4083006 0.9999243 7.57907e-5 0.9999243 0.574585 7.57907e-5 0.4083006 0.9999243 7.57907e-5 0.9999243 0.574585 7.57907e-5 0.4083006 0.9999243 7.57907e-5 0.9999242 0.574585 7.57907e-5 0.4083006 0.9999243 7.57907e-5 0.9999242 0.574585 0.375 0.5 0.125 0.75 0.125 0.5 0.999935 0.4243775 6.5135e-5 0.1623511 0.999935 6.5135e-5 0.875 0.5 0.625 0.75 0.625 0.5 0.9999458 0.2937819 5.41937e-5 0.1123958 0.9999458 5.41937e-5 2.96248e-5 0.6471307 0.0877974 0.07336515 0.0877974 0.9999704 2.96247e-5 0.3528692 0.08779734 0.9266344 0.06672757 0.9999704 7.57907e-5 0.4083006 7.57907e-5 0.1663599 0.9999243 7.57907e-5 7.57907e-5 0.4083006 7.57907e-5 0.1663599 0.9999243 7.57907e-5 7.57907e-5 0.4083006 7.57907e-5 0.1663599 0.9999243 7.57907e-5 7.57907e-5 0.4083006 7.57907e-5 0.1663599 0.9999243 7.57907e-5 0.375 0.5 0.375 0.75 0.125 0.75 0.999935 0.4243775 6.53259e-5 0.2620926 6.5135e-5 0.1623511 0.875 0.5 0.875 0.75 0.625 0.75 0.9999458 0.2937819 5.41937e-5 0.1814399 5.41937e-5 0.1123958 2.96248e-5 0.6471307 0.06672757 2.96248e-5 0.0877974 0.07336515 2.96247e-5 0.3528692 0.08779728 2.96247e-5 0.08779734 0.9266344</float_array>
+          <technique_common>
+            <accessor source="#Куб-mesh-map-0-array" count="60" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Куб-mesh-vertices">
+          <input semantic="POSITION" source="#Куб-mesh-positions"/>
+        </vertices>
+        <triangles material="Material-material" count="20">
+          <input semantic="VERTEX" source="#Куб-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Куб-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Куб-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 1 1 0 2 2 3 3 3 6 4 4 2 1 5 7 5 6 4 6 7 6 4 8 5 7 9 0 2 10 4 6 11 6 4 12 0 2 13 2 1 14 7 5 15 11 8 16 5 7 17 9 9 18 11 8 19 10 10 20 1 0 21 9 9 22 3 3 23 5 7 24 8 11 25 1 0 26 7 5 27 9 9 28 10 10 29 1 0 30 3 3 31 2 1 32 3 3 33 7 5 34 6 4 35 7 5 36 5 7 37 4 6 38 5 7 39 1 0 40 0 2 41 6 4 42 4 6 43 0 2 44 7 5 45 10 10 46 11 8 47 9 9 48 8 11 49 11 8 50 1 0 51 8 11 52 9 9 53 5 7 54 11 8 55 8 11 56 7 5 57 3 3 58 9 9 59</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Куб" name="Куб" type="NODE">
+        <matrix sid="transform">0.1136048 0 0 0 0 0.1136048 0 0 0 0 1.335361 0 0 0 0 1</matrix>
+        <instance_geometry url="#Куб-mesh" name="Куб">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVКарта" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

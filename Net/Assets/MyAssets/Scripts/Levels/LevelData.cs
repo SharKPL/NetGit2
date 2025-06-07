@@ -1,13 +1,10 @@
 namespace MUSOAR
 {
-    public enum LevelData
+    public enum LevelData // Вписываем нужные уровни
     {
         LoadingScreen,
         MainMenu,
         Level_1,
-        TestLevel_1,
-        TestLevel_2,
-        TestLevel_3,
-        TestLevel_4,
+        TestScene,
     }
 }

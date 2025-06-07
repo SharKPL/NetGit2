@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.92.0 commit date:2021-02-24, commit time:16:25, hash:02948a2cab44</authoring_tool>
+    </contributor>
+    <created>2021-05-20T20:22:38</created>
+    <modified>2021-05-20T20:22:38</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="Metal-effect">
+      <profile_COMMON>
+        <newparam sid="Metal_jpg-surface">
+          <surface type="2D">
+            <init_from>Metal_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Metal_jpg-sampler">
+          <sampler2D>
+            <source>Metal_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="Metal_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="Metal_jpg" name="Metal_jpg">
+      <init_from>Metal.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Metal-material" name="Metal">
+      <instance_effect url="#Metal-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Cube-mesh" name="Cube">
+      <mesh>
+        <source id="Cube-mesh-positions">
+          <float_array id="Cube-mesh-positions-array" count="96">1 1 1.690073 1 1 -1.795901 1 -1 1.690073 1 -1 -1.795901 0.5753135 1 1.690073 0.5753135 1 -1.795901 0.5753135 -1 1.690073 0.5753135 -1 -1.795901 1 1 1.431347 0.5753135 -1 1.431347 1 -1 1.431347 0.5753135 1 1.431347 0.5753135 22.37892 1.690073 1 22.37892 1.690073 1 22.37892 1.431347 0.5753135 22.37892 1.431347 0.5753135 20.32376 1.431347 1 20.32376 1.431347 1 20.32376 1.690073 0.5753135 20.32376 1.690073 0.5753135 22.37892 -1.795486 1 22.37892 -1.795486 0.5753135 20.32376 -1.795486 1 20.32376 -1.795486 1 20.32376 -1.549331 1 22.37892 -1.549331 0.5753135 22.37892 -1.549331 0.5753135 20.32376 -1.549331 0.5753135 0.9991462 -1.795486 1 0.9991462 -1.795486 1 0.9991462 -1.549331 0.5753135 0.9991462 -1.549331</float_array>
+          <technique_common>
+            <accessor source="#Cube-mesh-positions-array" count="32" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube-mesh-normals">
+          <float_array id="Cube-mesh-normals-array" count="15">0 0 -1 0 1 0 1 0 0 0 -1 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Cube-mesh-normals-array" count="5" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube-mesh-map-0">
+          <float_array id="Cube-mesh-map-0-array" count="264">5.32111e-5 5.31971e-5 0.07832908 0.1454215 5.32027e-5 0.1454213 0.8565384 4.18834e-5 4.19255e-5 0.123592 4.18872e-5 4.22895e-5 0.08623659 0.9999318 6.81664e-5 6.82473e-5 0.08623659 6.81579e-5 0.06260794 0.1272493 0.002162814 0.9999263 1.08705e-5 0.1271865 1.23551e-5 0.9038634 1.22055e-5 1.2219e-5 0.08527702 1.2219e-5 0.07401734 0.8910913 0.001877963 0.9999898 2.42335e-5 0.8911346 1.71214e-5 1.71177e-5 0.7669158 0.121161 1.71214e-5 0.1211658 3.02275e-5 0.07064718 0.09140586 3.02275e-5 0.09140586 0.07064718 0.0913949 0.07424491 0.09139502 0.9999698 3.03159e-5 0.9999698 4.36214e-5 4.35784e-5 0.7937946 0.1300689 4.35859e-5 0.1300689 9.58443e-5 9.58741e-5 0.6864192 0.09056031 9.58815e-5 0.09056031 0.1017153 0.9120868 1.18948e-5 0.9999883 1.16718e-5 0.9120868 1.71214e-5 1.7114e-5 0.7907227 0.1405291 1.71214e-5 0.140528 5.32111e-5 5.31971e-5 0.07832908 5.32966e-5 0.07832908 0.1454215 0.8565384 4.18834e-5 0.8565384 0.1235919 4.19255e-5 0.123592 0.08623659 0.9999318 6.81664e-5 0.9999318 6.81664e-5 6.82473e-5 0.002162635 1.08778e-5 0.06475991 7.35819e-5 0.06260794 0.1272493 0.06260794 0.1272493 0.06475996 0.9999891 0.002162814 0.9999263 1.08705e-5 0.1271865 0.002162635 1.08778e-5 0.06260794 0.1272493 0.08527702 1.2219e-5 0.08527714 0.9038634 1.23551e-5 0.9038634 0.08527714 0.9038634 0.08527719 0.9999878 1.23551e-5 0.9038634 0.08527719 0.9999878 1.2542e-5 0.9999878 1.23551e-5 0.9038634 2.42335e-5 0.8911346 0.001877725 0.1059871 0.07401734 0.8910913 0.001877725 0.1059871 7.42588e-5 5.34654e-5 0.07587087 0.1059439 0.07401734 0.8910913 0.001877725 0.1059871 0.07587087 0.1059439 7.42588e-5 5.34654e-5 0.07406729 1.0252e-5 0.07587087 0.1059439 0.07401734 0.8910913 0.0758711 0.9999464 0.001877963 0.9999898 1.71214e-5 1.71177e-5 0.7669158 1.71177e-5 0.7669158 0.121161 0.09140586 0.07064718 0.09140586 0.9257462 3.02275e-5 0.07064718 0.09140586 0.9257462 0.09140586 0.9999698 3.05481e-5 0.9257462 3.02275e-5 0.07064718 0.09140586 0.9257462 3.05481e-5 0.9257462 0.09140586 0.9999698 3.02275e-5 0.9999698 3.05481e-5 0.9257462 3.02275e-5 0.07064718 3.02275e-5 3.02676e-5 0.09140586 3.02275e-5 3.03159e-5 0.9999698 3.02257e-5 0.07424491 0.0913949 0.07424491 3.02257e-5 0.07424491 3.02357e-5 3.02257e-5 0.0913949 0.07424491 3.02357e-5 3.02257e-5 0.0913949 3.02257e-5 0.0913949 0.07424491 4.36214e-5 4.35784e-5 0.7937946 4.35784e-5 0.7937946 0.1300689 9.58443e-5 9.58741e-5 0.68642 9.58741e-5 0.6864192 0.09056031 1.16718e-5 0.9120868 1.22071e-5 0.08555418 0.1017153 0.9120868 1.22071e-5 0.08555418 1.22963e-5 1.16825e-5 0.1017159 0.08555418 0.1017153 0.9120868 1.22071e-5 0.08555418 0.1017159 0.08555418 1.22963e-5 1.16825e-5 0.1017158 1.16825e-5 0.1017159 0.08555418 0.1017153 0.9120868 0.1017156 0.9999883 1.18948e-5 0.9999883 1.71214e-5 1.7114e-5 0.7907227 1.76728e-5 0.7907227 0.1405291</float_array>
+          <technique_common>
+            <accessor source="#Cube-mesh-map-0-array" count="132" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cube-mesh-vertices">
+          <input semantic="POSITION" source="#Cube-mesh-positions"/>
+        </vertices>
+        <triangles material="Metal-material" count="44">
+          <input semantic="VERTEX" source="#Cube-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cube-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 7 0 1 5 0 2 11 1 3 1 1 4 5 1 5 8 2 6 3 2 7 1 2 8 24 2 9 29 2 10 23 2 11 23 0 12 29 0 13 28 0 14 17 2 15 13 2 16 18 2 17 11 0 18 17 0 19 8 0 20 25 1 21 20 1 22 26 1 23 9 3 24 7 3 25 3 3 26 16 3 27 24 3 28 17 3 29 17 2 30 25 2 31 14 2 32 18 4 33 12 4 34 19 4 35 27 4 36 30 4 37 24 4 38 1 0 39 3 0 40 7 0 41 11 1 42 8 1 43 1 1 44 8 2 45 10 2 46 3 2 47 21 2 48 25 2 49 24 2 50 24 2 51 30 2 52 29 2 53 23 2 54 21 2 55 24 2 56 28 0 57 22 0 58 23 0 59 22 0 60 20 0 61 23 0 62 20 0 63 21 0 64 23 0 65 18 2 66 0 2 67 17 2 68 0 2 69 2 2 70 8 2 71 17 2 72 0 2 73 8 2 74 2 2 75 10 2 76 8 2 77 17 2 78 14 2 79 13 2 80 11 0 81 16 0 82 17 0 83 26 1 84 15 1 85 25 1 86 15 1 87 12 1 88 14 1 89 25 1 90 15 1 91 14 1 92 12 1 93 13 1 94 14 1 95 25 1 96 21 1 97 20 1 98 3 3 99 10 3 100 9 3 101 10 3 102 2 3 103 9 3 104 2 3 105 6 3 106 9 3 107 16 3 108 27 3 109 24 3 110 17 2 111 24 2 112 25 2 113 19 4 114 4 4 115 18 4 116 4 4 117 6 4 118 0 4 119 18 4 120 4 4 121 0 4 122 6 4 123 2 4 124 0 4 125 18 4 126 13 4 127 12 4 128 27 4 129 31 4 130 30 4 131</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Cave" name="Cave" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 0.1264008 0 -1.308616 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Cube-mesh" name="Cave">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Metal-material" target="#Metal-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

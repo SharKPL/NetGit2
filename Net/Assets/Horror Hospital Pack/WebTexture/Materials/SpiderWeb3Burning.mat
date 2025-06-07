@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpiderWeb3Burning
+  m_Shader: {fileID: 4800000, guid: 3ceac1660bc9c1243852211e04917be4, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: 65859a535a819c54f91331fb9847bce4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0bef439339d974b45bbaffa4f0eeba27, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: cd16a298ce5a30f489a488c8f04b9afb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: f2454d04866dcce47b944f6a25e4f9bc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BurnEdgeLength: 1
+    - _CharColorFactor: 1
+    - _DissolveFactor: 1
+    - _EmberColorFactor: 1
+    - _End: 0.9
+    - _Glossiness: 0
+    - _GlowCutoff: 0.3
+    - _Metallic: 0
+    - _PixelLevel: 80
+    - _Speed: 10
+    - _Start: 0.551
+    - _TexCutoff: 0.5
+    - _Threshold: 0
+    m_Colors:
+    - _BurnCharColor: {r: 1, g: 0, b: 0, a: 1}
+    - _BurnEmberColor: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
+    - _GlowColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
