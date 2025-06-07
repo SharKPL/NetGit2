@@ -38,26 +38,31 @@ public class InventoryLineUI : NetworkBehaviour
 
     private void DropItem() 
     {
-        Inventory.Instance.CmdRemoveItem(itemName.text);
+        Inventory.Instance.CmdRemoveItem(itemName.text,true);
         StartCoroutine(DropRoutine());
     }
 
     private IEnumerator DropRoutine()
     {
-        dropBtn.interactable = false;
+        //dropBtn.interactable = false;
         yield return new WaitForSeconds(0.05f);
-        if (Inventory.Instance.GetItemCount(itemName.text) > 0)
-        {
-            SetInvLineData(itemName.text, Inventory.Instance.GetItemCount(itemName.text));
+        //if (Inventory.Instance.GetItemCount(itemName.text) > 0)
+        //{
+        //    SetInvLineData(itemName.text, Inventory.Instance.GetItemCount(itemName.text));
             
-        }
-        else
-        {
-            itemName.text = "";
-            itemCount.text = "";
-            poolLink.Release(this);
-        }
-        dropBtn.interactable = true;
+        //}
+        //else
+        //{
+        //    itemName.text = "";
+        //    itemCount.text = "";
+        //    RealeseSelf();
+        //}
+        //dropBtn.interactable = true;
+    }
+
+    public void RealeseSelf()
+    {
+        poolLink.Release(this);
     }
 
 }

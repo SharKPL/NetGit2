@@ -26,6 +26,8 @@ public class InventoryUI : MonoBehaviour
 
         GlobalEventManager.TakeItemEvent.AddListener(AddItem);
 
+        GlobalEventManager.UpdateInventoryUI.AddListener(UpdateUIInventory);
+
         gameObject.SetActive(false);
     }
 
@@ -61,5 +63,21 @@ public class InventoryUI : MonoBehaviour
                 return line;
         }
         return linesPool.Get();
+    }
+
+    public void UpdateUIInventory()
+    {
+        for (int i = 0; i < linesPool.Count(); i++)
+        {
+            var line = linesPool.GetByIndex(i).GetComponent<InventoryLineUI>();
+            line.SetInvLineData("", 0);
+            line.RealeseSelf();
+
+        }
+        foreach (var item in Inventory.Instance.ItemList)
+        {
+            Debug.Log($"Item: {item.Key}");
+            AddItem(item.Key);
+        }
     }
 }

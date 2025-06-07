@@ -5,6 +5,6 @@ namespace MUSOAR
     public interface IInteractable
     {
         public void Interact();
-        public void StopInteract();
+        //public void StopInteract();
     }
 }

@@ -80,8 +80,20 @@ namespace MUSOAR
         public Vector2 MovementInput => movementInput;
         public bool IsGrounded => isGrounded;
 
-        private void Awake()
+        //private void Awake()
+        //{
+        //    controller = GetComponent<CharacterController>();
+        //    animator = GetComponent<Animator>();
+        //    inputManager = InputManager.Instance;
+        //    playerCamera = GetComponentInChildren<PlayerCamera>();
+        //    cameraTransform = playerCamera.GetCamera().transform;
+        //    playerHealth = GetComponent<PlayerHealth>();
+        //}
+
+        public override void OnStartClient()
         {
+            base.OnStartClient();
+            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             controller = GetComponent<CharacterController>();
             animator = GetComponent<Animator>();
             inputManager = InputManager.Instance;

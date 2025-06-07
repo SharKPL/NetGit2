@@ -8,4 +8,6 @@ public static class GlobalEventManager
     public static UnityEvent<float> PlayerHealthChanged = new UnityEvent<float>();
     
     public static UnityEvent<string> TakeItemEvent = new UnityEvent<string>();
+
+    public static UnityEvent UpdateInventoryUI = new UnityEvent();
 }
