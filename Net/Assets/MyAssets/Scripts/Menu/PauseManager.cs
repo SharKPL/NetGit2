@@ -84,12 +84,12 @@ namespace MUSOAR
 
         private void OnEnable()
         {
-            GlobalEventManager.OnPlayerUseWorkbench.AddListener(OnPlayerUseWorkbench);
+            //GlobalEventManager.OnPlayerUseWorkbench.AddListener(OnPlayerUseWorkbench);
         }
 
         private void OnDisable()
         {
-            GlobalEventManager.OnPlayerUseWorkbench.RemoveListener(OnPlayerUseWorkbench);
+            //GlobalEventManager.OnPlayerUseWorkbench.RemoveListener(OnPlayerUseWorkbench);
         }
 
         private void OnPlayerUseWorkbench(bool isUsing)

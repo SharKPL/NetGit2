@@ -3,7 +3,7 @@ using Zenject;
 
 namespace MUSOAR
 {
-    public class PlayerCamera : MonoBehaviour
+    public class PlayerCamera : MonoBehaviour, ISaveable
     {
         [Header("Ссылки")]
         [SerializeField] private Camera playerCamera;
@@ -59,7 +59,7 @@ namespace MUSOAR
             GlobalEventManager.OnPauseStateChanged.AddListener(OnPause);
             GlobalEventManager.OnPlayerDie.AddListener(OnPlayerDie);
 
-            //RegisterSaveable();
+            RegisterSaveable();
         }
 
         private void OnDestroy()
@@ -68,7 +68,7 @@ namespace MUSOAR
             GlobalEventManager.OnPauseStateChanged.RemoveListener(OnPause);
             GlobalEventManager.OnPlayerDie.AddListener(OnPlayerDie);
 
-            //UnregisterSaveable();
+            UnregisterSaveable();
         }
 
         private void OnPause(bool isPaused)
@@ -123,7 +123,6 @@ namespace MUSOAR
             transform.rotation = headBone.rotation * Quaternion.Euler(cameraOffset);
         }
         
-        /*
         public void GetSaveData(SaveData saveData)
         {
             saveData.PlayerRotationX = currentRotationX;
@@ -149,6 +148,5 @@ namespace MUSOAR
         {
             SaveableRegistry.Unregister(this);
         }
-        */
     }
 }

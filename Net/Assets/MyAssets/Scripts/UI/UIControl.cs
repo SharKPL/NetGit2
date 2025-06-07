@@ -33,7 +33,6 @@ namespace MUSOAR
 
             GlobalEventManager.OnPauseStateChanged.AddListener(SetUIState);
             GlobalEventManager.OnPlayerDie.AddListener(OnPlayerDie);
-            GlobalEventManager.OnPlayerUseWorkbench.AddListener(OnPlayerUseLevelSelector);
         }
 
         private void OnDisable()
@@ -42,7 +41,6 @@ namespace MUSOAR
 
             GlobalEventManager.OnPauseStateChanged.RemoveListener(SetUIState);
             GlobalEventManager.OnPlayerDie.RemoveListener(OnPlayerDie);
-            GlobalEventManager.OnPlayerUseWorkbench.RemoveListener(OnPlayerUseLevelSelector);
         }
 
         private void SwitchUI(bool turn)

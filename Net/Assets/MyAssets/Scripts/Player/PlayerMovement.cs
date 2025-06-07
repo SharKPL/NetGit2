@@ -3,7 +3,7 @@ using Mirror;
 
 namespace MUSOAR
 {
-    public class PlayerMovement : NetworkBehaviour //ISaveable
+    public class PlayerMovement : NetworkBehaviour, ISaveable
     {
         public enum MoveState
         {
@@ -112,7 +112,7 @@ namespace MUSOAR
             GlobalEventManager.OnPauseStateChanged.AddListener(OnPause);
             GlobalEventManager.OnPlayerDie.AddListener(OnPlayerDie);
 
-            //RegisterSaveable();
+            RegisterSaveable();
         }
 
         private void OnDestroy()
@@ -121,7 +121,7 @@ namespace MUSOAR
             GlobalEventManager.OnPauseStateChanged.RemoveListener(OnPause);
             GlobalEventManager.OnPlayerDie.RemoveListener(OnPlayerDie);
 
-            //UnregisterSaveable();
+            UnregisterSaveable();
         }
 
         private void OnPause(bool isPaused)
@@ -133,11 +133,6 @@ namespace MUSOAR
         {
             enableInput = false;
             PlayDeathAnimation();
-        }
-
-        private void OnPlayerUseWorkbench(bool isUsing)
-        {
-            enableInput = !isUsing;
         }
 
         private void GetMovementInput()
@@ -311,7 +306,6 @@ namespace MUSOAR
             enableInput = true;
         }
 
-        /*
         // Save/Load
         public void GetSaveData(SaveData saveData)
         {
@@ -337,6 +331,5 @@ namespace MUSOAR
         {
             SaveableRegistry.Unregister(this);
         }
-        */
     }
 }

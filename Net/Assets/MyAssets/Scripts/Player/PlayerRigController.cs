@@ -27,16 +27,11 @@ namespace MUSOAR
         private RigBuilder rigBuilder;
         private Rig playerRig;
 
-        [Inject]
-        private void Construct(PlayerCamera playerCamera)
-        {
-            this.playerCamera = playerCamera;
-        }
-
         private void Awake()
         {
             rigBuilder = GetComponent<RigBuilder>();
             playerRig = GetComponentInChildren<Rig>();
+            playerCamera = GetComponentInChildren<PlayerCamera>();
         }
 
         private void OnEnable()
