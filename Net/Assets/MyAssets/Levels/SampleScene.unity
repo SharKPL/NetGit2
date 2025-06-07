@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.20112479
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.y
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.282
+      value: -1.6345465
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalRotation.w
@@ -475,7 +475,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -282.44, y: 300.0007}
+  m_AnchoredPosition: {x: -282.44, y: 300}
   m_SizeDelta: {x: 570, y: 590}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &370763252
@@ -678,7 +678,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 1
+  m_SoftShadowQuality: 2
 --- !u!1 &418630161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.20112479
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1197,7 +1197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.1334534
+      value: -3.05
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1845,7 +1845,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 294680922}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999983
+  m_Size: 0.9999086
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2018,7 +2018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.136
+      value: 5.2148757
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2026,7 +2026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.1334534
+      value: -3.05
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2079,7 +2079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.981
+      value: 5.0598755
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2087,7 +2087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.468
+      value: -2.3845465
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2623,7 +2623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.20112479
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2631,7 +2631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.468
+      value: -2.3845465
       objectReference: {fileID: 0}
     - target: {fileID: 4438578173197223015, guid: 12d09e40040544d468eee32491c54966, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2676,7 +2676,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1623258303}
   - component: {fileID: 1623258302}
-  - component: {fileID: 1623258304}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -2697,8 +2696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers:
-  - {fileID: 1623258304}
+  _monoInstallers: []
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -2731,18 +2729,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1623258304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623258300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d128ec65b57b2446a860e0e9c899615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1683096460
 GameObject:
   m_ObjectHideFlags: 0

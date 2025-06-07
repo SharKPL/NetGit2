@@ -1,5 +1,3 @@
-using System.IO;
-using Mirror.Examples.BilliardsPredicted;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,15 +10,14 @@ public class InputManager : MonoBehaviour
     private InputAction moveAction;
     private InputAction lookAction;
     private InputAction jumpAction;
+    private InputAction sprintAction;
     private InputAction pauseAction;
     private InputAction chatAction;
     private InputAction sendMsgAction;
     private InputAction interactAction;
     private InputAction inventoryAction;
+
     public static InputManager Instance { get { return instance; } }
-
-
-
 
     private void Awake()
     {
@@ -36,6 +33,7 @@ public class InputManager : MonoBehaviour
         moveAction = inputActions.Player.Move;
         lookAction = inputActions.Player.Look;
         jumpAction = inputActions.Player.Jump;
+        sprintAction = inputActions.Player.Sprint;
         interactAction = inputActions.Player.Interact;
 
         pauseAction = inputActions.UIControl.PauseControl;
@@ -49,6 +47,7 @@ public class InputManager : MonoBehaviour
         moveAction.Enable();
         lookAction.Enable();
         jumpAction.Enable();
+        sprintAction.Enable();
         pauseAction.Enable();
         chatAction.Enable();
         sendMsgAction.Enable();
@@ -60,7 +59,8 @@ public class InputManager : MonoBehaviour
     {
         moveAction.Disable();
         lookAction.Disable(); 
-        jumpAction.Disable(); 
+        jumpAction.Disable();
+        sprintAction.Disable();
         pauseAction.Disable();
         chatAction.Disable();
         sendMsgAction.Disable();
@@ -83,6 +83,9 @@ public class InputManager : MonoBehaviour
 
     public InputAction GetMoveAction() => moveAction;
     public InputAction GetJump() => jumpAction;
+    public bool IsJump() => jumpAction.WasPressedThisFrame();
+    public bool IsRun() => sprintAction.IsPressed();
+    public bool IsPause() => pauseAction.WasPressedThisFrame();
     public InputAction GetPause() => pauseAction;
     public InputAction GetLookAction() => lookAction;
 

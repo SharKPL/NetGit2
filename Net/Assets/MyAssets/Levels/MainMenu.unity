@@ -178,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: gamePlayerPref
       value: 
-      objectReference: {fileID: 6355073214449314544, guid: b56efd049aaf4bd4cb80af870b80eb88, type: 3}
+      objectReference: {fileID: 3843693277061433721, guid: 29928255775bb014dae76bb284384a92, type: 3}
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: maxConnections
       value: 2
@@ -194,7 +194,7 @@ PrefabInstance:
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 6355073214449314544, guid: b56efd049aaf4bd4cb80af870b80eb88, type: 3}
+      objectReference: {fileID: 3843693277061433721, guid: 29928255775bb014dae76bb284384a92, type: 3}
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[1]'
       value: 
