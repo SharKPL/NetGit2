@@ -18,7 +18,7 @@ namespace MUSOAR
             this.allLevelsConfig = allLevelsConfig;
         }
 
-        public void LoadLevel(LevelData levelData)
+        public void LoadLevel(LevelData levelData) // Используйте для загрузки уровня
         {
             Debug.Log(levelData);
             var level = GetLevelByLevelData(levelData);
