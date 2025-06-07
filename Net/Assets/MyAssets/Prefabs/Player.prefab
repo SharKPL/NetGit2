@@ -2093,6 +2093,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74931d7206cb7064087e74255f9cc6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   walkSpeed: 2
   moveSpeed: 4
   runSpeed: 6
@@ -2109,6 +2112,7 @@ MonoBehaviour:
     m_Bits: 1
   minFallDamageHeight: 2.5
   fallDamageMultiplier: 20
+  netAnimator: {fileID: 1749385878339618048}
   animationSmoothTime: 0.2
 --- !u!114 &4539730517494241937
 MonoBehaviour:

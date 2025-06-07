@@ -38,6 +38,7 @@ namespace MUSOAR
         [SerializeField] private float fallDamageMultiplier = 10f;
 
         [Header("Анимация")]
+        [SerializeField] private NetworkAnimator netAnimator;
         [SerializeField] private float animationSmoothTime = 0.1f;
 
         private InputManager inputManager;
@@ -56,7 +57,7 @@ namespace MUSOAR
 
         private Vector2 speedVelocity;
         private Vector2 movementInput;
-        private float smoothMouseX;
+        [SyncVar]private float smoothMouseX;
         private float mouseXVelocity;
         private float clampedMouseX;
 
@@ -65,9 +66,9 @@ namespace MUSOAR
         private float lastJumpTime;
         private float fallStartY;
         
-        private bool isFalling;
+        [SyncVar]private bool isFalling;
         private bool isWalkMode = true;
-        private bool isGrounded;
+        [SyncVar]private bool isGrounded;
         private bool enableInput = true;
 
         private bool isSwitchTo = false;
@@ -132,7 +133,7 @@ namespace MUSOAR
         private void OnPlayerDie()
         {
             enableInput = false;
-            PlayDeathAnimation();
+            CmdPlayDeathAnimation();
         }
 
         private void GetMovementInput()
@@ -196,8 +197,20 @@ namespace MUSOAR
 
                 velocity.y = Mathf.Sqrt(jumpForce * -2f * Physics.gravity.y);
                 lastJumpTime = Time.time;
-                animator.SetTrigger("Jump");
+                CmdJumpAnim();
             }
+        }
+        [ClientRpc]
+        private void RpcJumpAnim()
+        {
+            animator.SetTrigger("Jump");
+            netAnimator.SetTrigger("Jump");
+        }
+
+        [Command]
+        private void CmdJumpAnim()
+        {
+            RpcJumpAnim();
         }
 
         private void HandleGravity()
@@ -238,16 +251,37 @@ namespace MUSOAR
             {
                 float damage = (fallDistance - minFallDamageHeight) * fallDamageMultiplier;
                 //playerHealth.TakeDamage(damage);
-                animator.SetBool("HardLanding", true);
-                enableInput = false;
+                CmdHardLandAnim(true,false);
             }
             else
             {
-                animator.SetTrigger("Landing");
+                CmdLandingAnim();
             }
             isFalling = false;
         }
+        [ClientRpc]
+        private void RpcHardLandAnim(bool b_anim, bool b_input)
+        {
+            animator.SetBool("HardLanding", b_anim);
+            enableInput = b_input;
+        }
+        [Command]
+        private void CmdHardLandAnim(bool b_anim, bool b_input)
+        {
+            RpcHardLandAnim(b_anim,b_input);
+        }
 
+        [ClientRpc]
+        private void RpcLandingAnim()
+        {
+            netAnimator.SetTrigger("Landing");
+            animator.SetTrigger("Landing");
+        }
+        [Command]
+        private void CmdLandingAnim()
+        {
+            RpcLandingAnim();
+        }
         private void UpdateMoveState(Vector2 input)
         {
             if (!isGrounded)
@@ -280,9 +314,8 @@ namespace MUSOAR
         {
             Vector3 localVelocity = transform.InverseTransformDirection(controller.velocity);
             float diagonal = (Mathf.Abs(inputManager.GetMovementInput().x) > 0.1f && Mathf.Abs(inputManager.GetMovementInput().y) > 0.1f) ? 1.41f : 1f;
-            
-            animator.SetFloat("FB_Speed", Mathf.SmoothDamp(animator.GetFloat("FB_Speed"), localVelocity.z * diagonal, ref speedVelocity.x, animationSmoothTime));
-            animator.SetFloat("RL_Speed", Mathf.SmoothDamp(animator.GetFloat("RL_Speed"), localVelocity.x * diagonal, ref speedVelocity.y, animationSmoothTime));
+
+            CmdUpdateSpeedAnim(localVelocity, diagonal);
 
             if (enableInput)
                 clampedMouseX = Mathf.Clamp(inputManager.GetLookInput().x, -1f, 1f);
@@ -295,16 +328,38 @@ namespace MUSOAR
             animator.SetBool("IsGrounded", isGrounded);
         }
 
-        private void PlayDeathAnimation()
+        [ClientRpc]
+        private void RpcUpdateSpeedAnim(Vector3 localVelocity, float diagonal)
+        {
+            animator.SetFloat("FB_Speed", Mathf.SmoothDamp(animator.GetFloat("FB_Speed"), localVelocity.z * diagonal, ref speedVelocity.x, animationSmoothTime));
+            animator.SetFloat("RL_Speed", Mathf.SmoothDamp(animator.GetFloat("RL_Speed"), localVelocity.x * diagonal, ref speedVelocity.y, animationSmoothTime));
+        }
+
+        private void CmdUpdateSpeedAnim(Vector3 localVelocity, float diagonal)
+        {
+            RpcUpdateSpeedAnim(localVelocity, diagonal);
+        }
+        [ClientRpc]
+        private void RpcPlayDeathAnimation()
         {
             animator.SetBool("Dead", true);
         }
+
+        [Command]
+        private void CmdPlayDeathAnimation()
+        {
+            RpcPlayDeathAnimation();
+        }
+
+
 
         public void HardLandingEnd()
         {
             animator.SetBool("HardLanding", false);
             enableInput = true;
         }
+
+     
 
         // Save/Load
         public void GetSaveData(SaveData saveData)
