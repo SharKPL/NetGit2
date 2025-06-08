@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: mainScene
-      value: Assets/MyAssets/Levels/SampleScene.unity
+      value: Assets/MyAssets/Levels/TestScene.unity
       objectReference: {fileID: 0}
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: gamePlayerPref
@@ -187,6 +187,14 @@ PrefabInstance:
       propertyPath: lobbyPlayerPref
       value: 
       objectReference: {fileID: 1660949443993255983, guid: 2e40bcd5966f3144dbd17f2eb80e14c3, type: 3}
+    - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
+      propertyPath: autoCreatePlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
+      propertyPath: playerSpawnMethod
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: spawnPrefabs.Array.size
       value: 1

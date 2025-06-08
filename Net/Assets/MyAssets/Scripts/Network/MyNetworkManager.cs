@@ -37,6 +37,7 @@ public class MyNetworkManager : NetworkManager
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
+        
         switch (GameManager.Instance.CurrentEnumGameState)
         {
             case GameState.Lobby:
@@ -74,6 +75,12 @@ public class MyNetworkManager : NetworkManager
             playerInstance.transform.position = spawnTransform.position;
             playerInstance.transform.rotation = spawnTransform.rotation;
             Debug.Log($"Setting player position to: {spawnTransform.position}");
+        }
+        else
+        {
+            Debug.Log("GetPos");
+            playerInstance.transform.position = GetStartPosition().position;
+            //playerInstance.transform.rotation = spawnTransform.rotation;
         }
         
         NetworkServer.Spawn(playerInstance, conn);

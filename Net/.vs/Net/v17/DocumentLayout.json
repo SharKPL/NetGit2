@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\UniProj\\NetGIt\\NetGit\\Net\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\NetGIt\\NetGit\\Net\\assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\NetGIt\\NetGit\\Net\\assets\\myassets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|d:\\uniproj\\netgit\\netgit\\net\\assets\\myassets\\scripts\\interact\\baseinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\baseinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,11 +43,11 @@
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|d:\\uniproj\\netgit\\netgit\\net\\assets\\myassets\\scripts\\interact\\childinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\NetGIt\\NetGit\\Net\\assets\\myassets\\scripts\\interact\\childinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\childinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|d:\\uniproj\\netgit\\netgit\\net\\assets\\mirror\\core\\networkbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|D:\\UniProj\\NetGIt\\NetGit\\Net\\assets\\mirror\\core\\networkbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|solutionrelative:assets\\mirror\\core\\networkbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -57,14 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\NetGIt\\NetGit\\Net\\assets\\myassets\\scripts\\deprecated\\charinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\deprecated\\charinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\NetGIt\\NetGit\\Net\\assets\\myassets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\NetGIt\\NetGit\\Net\\assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|D:\\UniProj\\NetGIt\\NetGit\\Net\\assets\\myassets\\scripts\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -147,11 +147,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ChildInteract.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Interact\\ChildInteract.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\ChildInteract.cs",
@@ -159,12 +159,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interact\\ChildInteract.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T18:39:58.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T18:39:58.149Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "BaseInteract.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Interact\\BaseInteract.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\BaseInteract.cs",
@@ -177,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "NetworkBehaviour.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\Mirror\\Core\\NetworkBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkBehaviour.cs",
@@ -185,12 +184,11 @@
               "RelativeToolTip": "Assets\\Mirror\\Core\\NetworkBehaviour.cs",
               "ViewState": "AgIAAI4AAAAAAAAAAAASwKgAAACcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T19:04:22.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T19:04:22.852Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Inventory.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Inventory.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Inventory.cs",
@@ -198,12 +196,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Inventory.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAjwF8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T13:17:32.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T13:17:32.185Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "IInteractable.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Interface\\IInteractable.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interface\\IInteractable.cs",
@@ -211,12 +208,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interface\\IInteractable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T18:20:21.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T18:20:21.303Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "PlayerInteract.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
@@ -224,12 +220,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwCcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T17:43:11.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T17:43:11.233Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "CharInput.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\DEPRECATED\\CharInput.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\DEPRECATED\\CharInput.cs",
@@ -241,19 +236,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 1,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
               "ToolTip": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAiwE8AAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAIwE8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T17:11:23.368Z"
+              "WhenOpened": "2025-06-07T17:11:23.368Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "CustomPool.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\CustomPool.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\CustomPool.cs",
@@ -261,12 +257,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\CustomPool.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwBgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T17:16:55.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T17:16:55.02Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "InventoryLineUI.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\InventoryLineUI.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\InventoryLineUI.cs",
@@ -274,12 +269,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\InventoryLineUI.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwDAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T17:02:46.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T17:02:46.698Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "InventoryUI.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\InventoryUI.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\InventoryUI.cs",
@@ -287,12 +281,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\InventoryUI.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwE4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T16:55:28.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-27T16:55:28.567Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Item.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Item.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Item.cs",
@@ -352,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "EventManager.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
@@ -360,8 +353,7 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T13:40:18.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T13:40:18.371Z"
             },
             {
               "$type": "Document",
@@ -401,15 +393,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 0,
               "Title": "MyNetworkManager.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
               "ToolTip": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAhwG4AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAADgvzsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-04-15T07:10:39.468Z"
+              "WhenOpened": "2023-04-15T07:10:39.468Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -425,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "NetworkMessages.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\Mirror\\Core\\NetworkMessages.cs",
               "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkMessages.cs",
@@ -461,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "NetworkIdentity.cs",
               "DocumentMoniker": "D:\\UniProj\\NetGIt\\NetGit\\Net\\Assets\\Mirror\\Core\\NetworkIdentity.cs",
               "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkIdentity.cs",
