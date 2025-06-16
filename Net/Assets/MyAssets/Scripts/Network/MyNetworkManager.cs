@@ -53,7 +53,8 @@ public class MyNetworkManager : NetworkManager
                 Debug.Log($"OnAddPlayer3{spawnTransform}");
                 break;
             case GameState.InGame:
-                Connect(conn, gamePlayerPref);
+                Debug.Log("InGame");
+                Connect(conn, gamePlayerPref, GetStartPosition());
                 CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
                 var name=SteamHelper.GetPlayerName(SteamID);
                 conn.identity.GetComponent<PlayerData>().SetPlayerName(name);
@@ -68,23 +69,15 @@ public class MyNetworkManager : NetworkManager
         Debug.Log("Connect");
         
 
-        GameObject playerInstance = Instantiate(pref);
+        GameObject playerInstance = Instantiate(pref,spawnTransform);
 
-        if (spawnTransform != null)
-        {
-            playerInstance.transform.position = spawnTransform.position;
-            playerInstance.transform.rotation = spawnTransform.rotation;
-            Debug.Log($"Setting player position to: {spawnTransform.position}");
-        }
-        else
-        {
-            Debug.Log("GetPos");
-            playerInstance.transform.position = GetStartPosition().position;
-            //playerInstance.transform.rotation = spawnTransform.rotation;
-        }
-        
-        NetworkServer.Spawn(playerInstance, conn);
-        playerInstance.name = $"{pref.name} [connId={conn.connectionId}]";
+
+        playerInstance.transform.position = spawnTransform.position;
+        playerInstance.transform.rotation = spawnTransform.rotation;
+        Debug.Log($"Setting player position to: {spawnTransform.position}");
+       
+        //NetworkServer.Spawn(playerInstance, conn);
+        //playerInstance.name = $"{pref.name} [connId={conn.connectionId}]";
         NetworkServer.AddPlayerForConnection(conn, playerInstance);
         
         IncreaseCounter();
@@ -105,6 +98,7 @@ public class MyNetworkManager : NetworkManager
 
     public override void OnServerDisconnect(NetworkConnectionToClient conn)
     {
+        Debug.Log("Disc");
         base.OnServerDisconnect(conn);
         readyStates.Remove(conn);
         DecreaseCounter();
