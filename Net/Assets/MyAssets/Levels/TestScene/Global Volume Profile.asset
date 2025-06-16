@@ -82,7 +82,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 1
   contrast:
     m_OverrideState: 1
     m_Value: 5
@@ -131,10 +131,10 @@ MonoBehaviour:
     m_Value: 128
   enableAPVContribution:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   APVContributionWeight:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.5
   enableMainLightContribution:
     m_OverrideState: 1
     m_Value: 0
