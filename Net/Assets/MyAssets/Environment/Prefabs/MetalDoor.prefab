@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 4930088151882941086}
   - component: {fileID: 6157729623628512331}
   - component: {fileID: 6312502770904196254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6576015315049441005
 Transform:
@@ -144,12 +144,12 @@ GameObject:
   - component: {fileID: 2217802738946732216}
   - component: {fileID: 199811488428587729}
   - component: {fileID: 8683337012813349011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorHandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2217802738946732216
 Transform:
@@ -228,12 +228,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4045799248831489961}
-  m_Layer: 0
+  - component: {fileID: 5305191232235146415}
+  - component: {fileID: 2793002461578854658}
+  m_Layer: 8
   m_Name: MetalDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4045799248831489961
 Transform:
@@ -252,6 +254,43 @@ Transform:
   - {fileID: 5987105508703344627}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5305191232235146415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705970288623942931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 2380170087
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
+--- !u!114 &2793002461578854658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705970288623942931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6369f59e742c78a479e5a2158687b6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  needItem: 
+  door: {fileID: 3433810382711100079}
+  hisUnocked: 0
+  openAngle: 90
+  rotationSpeed: 120
 --- !u!1 &7443640395611302542
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,12 +302,12 @@ GameObject:
   - component: {fileID: 5987105508703344627}
   - component: {fileID: 6121042686662052289}
   - component: {fileID: 5372520715921290311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5987105508703344627
 Transform:

@@ -23,14 +23,15 @@ public class PlayerInteract : NetworkBehaviour
 
     private void Interact()
     {
-        Debug.Log("Interact");
         Vector3 direction = transform.forward;
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask))
         {
-            if (hitInfo.collider.gameObject.GetComponent<IInteractable>()!=null)
+            Debug.Log(hitInfo.collider.name);
+            Debug.DrawRay(cam.transform.position, direction * maxDistance, Color.green, 2f);
+            if (hitInfo.collider.gameObject.GetComponentInParent<IInteractable>()!=null)
             {
-                hitInfo.collider.gameObject.GetComponent<IInteractable>().Interact();
+                hitInfo.collider.gameObject.GetComponentInParent<IInteractable>().Interact();
                 return;
             }
             var item = hitInfo.collider.gameObject.GetComponent<Item>();
@@ -40,11 +41,11 @@ public class PlayerInteract : NetworkBehaviour
                 return;
             }
             Inventory.Instance.CmdAddItem(item);
-            Debug.DrawLine(cam.transform.position, hitInfo.point, Color.red, 2f);
+
         }
         else
         {
-            Debug.DrawRay(cam.transform.position, direction * maxDistance, Color.green, 2f);
+            Debug.DrawLine(cam.transform.position, hitInfo.point, Color.red, 2f);
         }
 
         //if (Physics.SphereCast(transform.position, radius, direction, out RaycastHit hit, maxDistance, interactMask))

@@ -1,9 +1,10 @@
 using MUSOAR;
 using UnityEngine;
+using Mirror;
 
-public class ChildInteract : MonoBehaviour,IInteractable
+public class ChildInteract : NetworkBehaviour,IInteractable
 {
-    private bool hisFix=false;
+    [SyncVar]private bool hisFix=false;
 
     public bool HisFix { get { return hisFix; } }
 
