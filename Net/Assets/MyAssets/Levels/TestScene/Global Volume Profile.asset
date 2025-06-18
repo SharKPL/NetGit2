@@ -125,7 +125,7 @@ MonoBehaviour:
     m_Value: 0
   density:
     m_OverrideState: 1
-    m_Value: 0.025
+    m_Value: 0.02
   attenuationDistance:
     m_OverrideState: 1
     m_Value: 128
@@ -345,7 +345,7 @@ MonoBehaviour:
     m_Value: {x: 0.97599626, y: 0.9840751, z: 1, w: -0.0976271}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 0.9754229, y: 0.9969538, z: 1, w: 0.021770215}
+    m_Value: {x: 0.9524329, y: 0.9853854, z: 1, w: 0.021770215}
 --- !u!114 &8922794331417836045
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -361,7 +361,7 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.98442405, y: 0.90525407, z: 1, w: -0.09507638}
+    m_Value: {x: 0.9803346, y: 0.92740625, z: 1, w: -0.09507638}
   midtones:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0.09168072}
