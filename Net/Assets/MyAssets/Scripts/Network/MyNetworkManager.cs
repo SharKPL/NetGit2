@@ -92,19 +92,6 @@ public class MyNetworkManager : NetworkManager
 
     }
 
-    private IEnumerator TeleportPlayerRepeatedly(Transform playerTransform, Vector3 position, Quaternion rotation)
-    {
-        float endTime = Time.time + 0.5f;
-
-        while (Time.time < endTime)
-        {
-            playerTransform.position = position;
-            playerTransform.rotation = rotation;
-            yield return null;
-        }
-    }
-
-
 
 
     public override void OnServerDisconnect(NetworkConnectionToClient conn)

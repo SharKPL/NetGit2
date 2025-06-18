@@ -15,17 +15,21 @@ public class LobbySpawnControl : MonoBehaviour
     {
         if (instance != null && instance != this) Destroy(gameObject); 
         instance = this;
-
-    }
-    private void Start()
-    {
-        
         var points = GetComponentsInChildren<Transform>();
-        for (int i = 1; i< points.Length; i++)
+        for (int i = 1; i < points.Length; i++)
         {
             spawnPoints.Add((Transform)points[i]);
         }
     }
+    //private void Start()
+    //{
+        
+    //    var points = GetComponentsInChildren<Transform>();
+    //    for (int i = 1; i< points.Length; i++)
+    //    {
+    //        spawnPoints.Add((Transform)points[i]);
+    //    }
+    //}
 
     public Transform GetSpawnPoint(int connectionId)
     {

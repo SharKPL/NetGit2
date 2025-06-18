@@ -1399,6 +1399,7 @@ MonoBehaviour:
   PausePanel: {fileID: 8870834273340009640}
   continueBtn: {fileID: 4827444985300154757}
   leaveBtn: {fileID: 5291715857708133460}
+  interBtn: {fileID: 0}
 --- !u!1 &7408062403734854137
 GameObject:
   m_ObjectHideFlags: 0

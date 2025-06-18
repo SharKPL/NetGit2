@@ -45,7 +45,7 @@ public class GameControlManager : NetworkBehaviour
     private IEnumerator TeleportPlayerRepeatedly(NetworkIdentity player, Vector3 position, Quaternion rotation)
     {
         Debug.Log($"CorStart, pos{position}");
-        float endTime = Time.time + 1f;
+        float endTime = Time.time + 2f;
 
         while (Time.time < endTime)
         {
