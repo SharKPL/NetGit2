@@ -356,10 +356,12 @@ namespace MUSOAR
             animator.SetFloat("RL_Speed", Mathf.SmoothDamp(animator.GetFloat("RL_Speed"), localVelocity.x * diagonal, ref speedVelocity.y, animationSmoothTime));
         }
 
+        [Command]
         private void CmdUpdateSpeedAnim(Vector3 localVelocity, float diagonal)
         {
             RpcUpdateSpeedAnim(localVelocity, diagonal);
         }
+
         [ClientRpc]
         private void RpcPlayDeathAnimation()
         {
