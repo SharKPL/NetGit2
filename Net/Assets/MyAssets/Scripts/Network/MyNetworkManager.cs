@@ -1,4 +1,5 @@
 using Mirror;
+using MUSOAR;
 using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
@@ -45,8 +46,9 @@ public class MyNetworkManager : NetworkManager
             case GameState.Lobby:
 
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
-                Debug.Log($"OnAddPlayer1{currentSpawnTran}");
+                Debug.Log($"OnAddPlayer1 {currentSpawnTran.position}");
                 var player = Connect(conn, lobbyPlayerPref, currentSpawnTran);
+
                 
                 CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers-1);
                 
@@ -70,22 +72,13 @@ public class MyNetworkManager : NetworkManager
     }
     private NetworkIdentity Connect(NetworkConnectionToClient conn,GameObject pref, Transform spawnTransform=null)
     {
-        Debug.Log("Connect");
-        
 
-        GameObject playerInstance = Instantiate(pref,spawnTransform);
-
-
-        playerInstance.transform.position = spawnTransform.position;
-        playerInstance.transform.rotation = spawnTransform.rotation;
-        Debug.Log($"Setting player position to: {spawnTransform.position}");
-       
-        //NetworkServer.Spawn(playerInstance, conn);
-        //playerInstance.name = $"{pref.name} [connId={conn.connectionId}]";
+        GameObject playerInstance = Instantiate(pref);
         NetworkServer.AddPlayerForConnection(conn, playerInstance);
 
-        //NetworkServer.Spawn(playerInstance, conn);
+        var netIdent = playerInstance.GetComponent<NetworkIdentity>();
 
+        GameControlManager.Instance.InitializePlayer(conn, netIdent, spawnTransform);
         IncreaseCounter();
         if (NetworkServer.active)
         {
@@ -97,6 +90,18 @@ public class MyNetworkManager : NetworkManager
         }
         return playerInstance.GetComponent<NetworkIdentity>();
 
+    }
+
+    private IEnumerator TeleportPlayerRepeatedly(Transform playerTransform, Vector3 position, Quaternion rotation)
+    {
+        float endTime = Time.time + 0.5f;
+
+        while (Time.time < endTime)
+        {
+            playerTransform.position = position;
+            playerTransform.rotation = rotation;
+            yield return null;
+        }
     }
 
 
