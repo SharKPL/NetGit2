@@ -37,7 +37,7 @@ public class MyNetworkManager : NetworkManager
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
-        
+        base.OnServerAddPlayer(conn);
         switch (GameManager.Instance.CurrentEnumGameState)
         {
             case GameState.Lobby:
@@ -80,7 +80,7 @@ public class MyNetworkManager : NetworkManager
         //playerInstance.name = $"{pref.name} [connId={conn.connectionId}]";
         NetworkServer.AddPlayerForConnection(conn, playerInstance);
 
-        NetworkServer.Spawn(playerInstance, conn);
+        //NetworkServer.Spawn(playerInstance, conn);
 
         IncreaseCounter();
         if (NetworkServer.active)

@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "E:\\Gity\\NetGit2\\Net\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\managers\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\managers\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\managers\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\interact\\childinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\childinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\player\\playerrigcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -99,11 +99,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "InputManager.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
@@ -111,12 +111,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAA9wFAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T01:48:02.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T01:48:02.502Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Managers\\AudioManager.cs",
@@ -124,8 +123,7 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Managers\\AudioManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T01:07:12.893Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-18T01:07:12.893Z"
             },
             {
               "$type": "Document",
@@ -197,12 +195,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerRigController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAowBAAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T21:53:22.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T21:53:22.229Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ChildInteract.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\ChildInteract.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\ChildInteract.cs",
@@ -210,8 +207,7 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interact\\ChildInteract.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T18:39:58.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T18:39:58.149Z"
             },
             {
               "$type": "Document",
@@ -251,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerInteract.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
@@ -276,13 +272,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "DoorInteract.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
               "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwDUAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T18:38:13.072Z",
               "EditorCaption": ""
