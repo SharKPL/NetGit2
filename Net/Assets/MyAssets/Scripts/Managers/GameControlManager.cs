@@ -27,6 +27,7 @@ public class GameControlManager : NetworkBehaviour
         Debug.Log($"[Server] Initializing player {player.netId}");
 
 
+        
         TargetSetupPlayer(conn, player, tran.position, tran.rotation);
 
     }

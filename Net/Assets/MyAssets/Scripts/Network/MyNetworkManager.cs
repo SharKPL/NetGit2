@@ -59,7 +59,7 @@ public class MyNetworkManager : NetworkManager
                 break;
             case GameState.InGame:
 
-                currentSpawnTran = GetStartPosition();
+                currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
                 Connect(conn, gamePlayerPref, currentSpawnTran);
                 CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
                 var name=SteamHelper.GetPlayerName(SteamID);
