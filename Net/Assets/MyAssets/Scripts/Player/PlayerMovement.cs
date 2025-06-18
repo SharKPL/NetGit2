@@ -99,17 +99,18 @@ namespace MUSOAR
 
             playerCamera = GetComponentInChildren<PlayerCamera>();
             cameraTransform = playerCamera.GetCamera().transform;
+
+            if (!isLocalPlayer)
+            {
+                playerCamera.enabled = false;
+            }
             //inputManager = InputManager.Instance;
 
             //cameraTransform = playerCamera.GetCamera().transform;
 
         }
 
-        public override void OnStartLocalPlayer()
-        {
-            base.OnStartLocalPlayer();
 
-        }
 
         private void Update()
         {
