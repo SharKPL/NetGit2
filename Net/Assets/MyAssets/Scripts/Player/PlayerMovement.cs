@@ -41,15 +41,15 @@ namespace MUSOAR
         [SerializeField] private NetworkAnimator netAnimator;
         [SerializeField] private float animationSmoothTime = 0.1f;
 
-        private InputManager inputManager;
-        private PlayerCamera playerCamera;
+        private InputManager inputManager = InputManager.Instance;
+        [SerializeField] private PlayerCamera playerCamera;
         //private PlayerSuitEnergy playerSuitEnergy;
-        private PlayerHealth playerHealth;
+        [SerializeField] private PlayerHealth playerHealth;
         //private PlayerEnergyConsumptionConfig playerEnergyConsumptionConfig;
-        private CharacterController controller;
-        private Animator animator;
+        [SerializeField] private CharacterController controller;
+        [SerializeField] private Animator animator;
         private MoveState currentMoveState;
-        private Transform cameraTransform;
+        [SerializeField] private Transform cameraTransform;
 
         private Vector3 moveDirection;
         private Vector3 lastMoveDirection;
@@ -82,25 +82,23 @@ namespace MUSOAR
 
         //private void Awake()
         //{
+        //    if (!isLocalPlayer) return;
         //    controller = GetComponent<CharacterController>();
         //    animator = GetComponent<Animator>();
-        //    inputManager = InputManager.Instance;
         //    playerCamera = GetComponentInChildren<PlayerCamera>();
         //    cameraTransform = playerCamera.GetCamera().transform;
         //    playerHealth = GetComponent<PlayerHealth>();
         //}
 
-        public override void OnStartClient()
-        {
-            base.OnStartClient();
-            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
-            controller = GetComponent<CharacterController>();
-            animator = GetComponent<Animator>();
-            inputManager = InputManager.Instance;
-            playerCamera = GetComponentInChildren<PlayerCamera>();
-            cameraTransform = playerCamera.GetCamera().transform;
-            playerHealth = GetComponent<PlayerHealth>();
-        }
+        //public override void OnStartClient()
+        //{
+        //    base.OnStartClient();
+        //    if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
+        //    inputManager = InputManager.Instance;
+
+        //    cameraTransform = playerCamera.GetCamera().transform;
+
+        //}
 
         private void Update()
         {

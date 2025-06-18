@@ -79,7 +79,9 @@ public class MyNetworkManager : NetworkManager
         //NetworkServer.Spawn(playerInstance, conn);
         //playerInstance.name = $"{pref.name} [connId={conn.connectionId}]";
         NetworkServer.AddPlayerForConnection(conn, playerInstance);
-        
+
+        NetworkServer.Spawn(playerInstance, conn);
+
         IncreaseCounter();
         if (NetworkServer.active)
         {

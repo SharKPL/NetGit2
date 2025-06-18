@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "E:\\Gity\\NetGit2\\Net\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\gameuicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\gameuicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\interact\\interactbtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\interactbtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\managers\\eventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\managers\\eventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|e:\\gity\\netgit2\\net\\assets\\mirror\\core\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF36A7CE-D9CF-6D54-C7ED-3F95E848ADE3}|Mirror.csproj|solutionrelative:assets\\mirror\\core\\networkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\interact\\childinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\childinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{112AA8DA-233F-755F-5C95-3A6B38FC9F52}|Mirror.Editor.csproj|E:\\Gity\\NetGit2\\Net\\assets\\mirror\\editor\\networkscenepostprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,11 +91,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "GameUIControl.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T00:24:10.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EventManager.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Managers\\EventManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T00:15:57.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InteractBtn.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\InteractBtn.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\InteractBtn.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\InteractBtn.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interact\\InteractBtn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T00:10:43.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "NetworkManager.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\Mirror\\Core\\NetworkManager.cs",
               "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkManager.cs",
@@ -96,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "NetworkScenePostProcess.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\Mirror\\Editor\\NetworkScenePostProcess.cs",
               "RelativeDocumentMoniker": "Assets\\Mirror\\Editor\\NetworkScenePostProcess.cs",
@@ -108,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "PlayerRigController.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerRigController.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerRigController.cs",
@@ -120,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ChildInteract.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\ChildInteract.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\ChildInteract.cs",
@@ -132,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "BaseInteract.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\BaseInteract.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\BaseInteract.cs",
@@ -144,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "NetworkBehaviour.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\Mirror\\Core\\NetworkBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkBehaviour.cs",
@@ -156,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "IInteractable.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interface\\IInteractable.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interface\\IInteractable.cs",
@@ -174,13 +225,14 @@
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
               "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T17:43:11.233Z"
+              "WhenOpened": "2025-06-07T17:43:11.233Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "CharInput.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\DEPRECATED\\CharInput.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\DEPRECATED\\CharInput.cs",
@@ -192,20 +244,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "DoorInteract.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
               "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAowBgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowEUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T18:38:13.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
@@ -213,12 +265,11 @@
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
               "ViewState": "AgIAADABAAAAAAAAAAAmwFkBAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T17:11:23.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T17:11:23.368Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "MyNetworkManager.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
@@ -230,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "GameManager.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
@@ -242,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "NetworkMessages.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\Mirror\\Core\\NetworkMessages.cs",
               "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkMessages.cs",
@@ -254,27 +305,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "PlayerCameraController.cs",
               "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerCameraController.cs",
               "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerCameraController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T19:44:07.378Z"
+              "WhenOpened": "2025-05-24T19:44:07.378Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Player_Movement.cs",
               "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\Player_Movement.cs",
               "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Player\\Player_Movement.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAAADkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T13:20:38.932Z"
+              "WhenOpened": "2025-05-16T13:20:38.932Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "NetworkIdentity.cs",
               "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\Mirror\\Core\\NetworkIdentity.cs",
               "RelativeDocumentMoniker": "Assets\\Mirror\\Core\\NetworkIdentity.cs",
@@ -286,13 +339,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "GameStateManager.cs",
               "DocumentMoniker": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameStateManager.cs",
               "ToolTip": "D:\\UniProj\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameStateManager.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwA0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-04T14:22:32.147Z"
+              "WhenOpened": "2023-09-04T14:22:32.147Z",
+              "EditorCaption": ""
             }
           ]
         }

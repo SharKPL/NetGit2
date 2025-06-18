@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 334562030208109122}
   - component: {fileID: 1304809985993171502}
   - component: {fileID: 4816234351524593890}
+  - component: {fileID: 8818953722936876405}
   m_Layer: 7
   m_Name: Camera
   m_TagString: Untagged
@@ -468,6 +469,14 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!81 &8818953722936876405
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768341785307211582}
+  m_Enabled: 1
 --- !u!1 &847482182638385546
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2145,11 @@ MonoBehaviour:
   fallDamageMultiplier: 20
   netAnimator: {fileID: 1749385878339618048}
   animationSmoothTime: 0.2
+  playerCamera: {fileID: 4240887098768484084}
+  playerHealth: {fileID: 6169082249918739515}
+  controller: {fileID: 1068207021323427330}
+  animator: {fileID: 8950157303348004569}
+  cameraTransform: {fileID: 334562030208109122}
 --- !u!114 &4539730517494241937
 MonoBehaviour:
   m_ObjectHideFlags: 0
