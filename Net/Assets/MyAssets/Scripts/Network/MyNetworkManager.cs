@@ -16,7 +16,7 @@ public class MyNetworkManager : NetworkManager
 
     [SerializeField] private int playerCount = 0;
 
-    [SyncVar] private Transform currentSpawnTran;
+    private Transform currentSpawnTran;
 
     public int PlayerCount { get { return playerCount; } }
 

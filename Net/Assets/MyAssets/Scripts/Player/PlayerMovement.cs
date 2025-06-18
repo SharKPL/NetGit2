@@ -42,14 +42,14 @@ namespace MUSOAR
         [SerializeField] private float animationSmoothTime = 0.1f;
 
         private InputManager inputManager = InputManager.Instance;
-        [SerializeField] private PlayerCamera playerCamera;
+        private PlayerCamera playerCamera;
         //private PlayerSuitEnergy playerSuitEnergy;
         [SerializeField] private PlayerHealth playerHealth;
         //private PlayerEnergyConsumptionConfig playerEnergyConsumptionConfig;
         [SerializeField] private CharacterController controller;
         [SerializeField] private Animator animator;
         private MoveState currentMoveState;
-        [SerializeField] private Transform cameraTransform;
+        private Transform cameraTransform;
 
         private Vector3 moveDirection;
         private Vector3 lastMoveDirection;
@@ -96,6 +96,9 @@ namespace MUSOAR
             base.OnStartClient();
             if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             Debug.Log($"{netIdentity} OnStartMove2");
+
+            playerCamera = GetComponentInChildren<PlayerCamera>();
+            cameraTransform = playerCamera.GetCamera().transform;
             //inputManager = InputManager.Instance;
 
             //cameraTransform = playerCamera.GetCamera().transform;
