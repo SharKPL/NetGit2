@@ -9,13 +9,18 @@ public class DoorInteract : NetworkBehaviour,IInteractable
 {
     [SerializeField] string needItem;
 
+    [SerializeField] private AudioClip doorFix;
+    [SerializeField] private AudioClip doorOpenClose;
+
+    [SerializeField] private AudioSource doorSource;
+
     [SerializeField] GameObject door;
 
     [SerializeField] [SyncVar] private bool hisUnocked;
 
     [SerializeField] private float openAngle = 90f;
 
-    [SerializeField] private float rotationSpeed = 120f;
+    [SerializeField] private float rotationSpeed = 250f;
 
     [SyncVar] private bool hisOpen = false;
 
@@ -41,6 +46,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         {
             Inventory.Instance.CmdRemoveItem(needItem, false);
             hisUnocked = true;
+            CmdPlayDoorFix();
             Debug.Log("DoorOpen");
         }
     }
@@ -49,10 +55,12 @@ public class DoorInteract : NetworkBehaviour,IInteractable
     {
         if (hisOpen)
         {
+            CmdPlayDoorOpenClose();
             StartCoroutine(RotateDoor(startRotation, rotationSpeed));
         }
         else
         {
+            CmdPlayDoorOpenClose();
             StartCoroutine(RotateDoor(targetRotation, rotationSpeed));
         }
 
@@ -76,6 +84,37 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         }
         canTrigger = true;
         door.transform.rotation = target;
+    }
+
+    [ClientRpc]
+    private void RpcPlayDoorFix()
+    {
+        PlaySound(doorSource,doorFix);
+    }
+
+    [Command(requiresAuthority =false)]
+    private void CmdPlayDoorFix()
+    {
+        RpcPlayDoorFix();
+    }
+
+    [ClientRpc]
+    private void RpcPlayDoorOpenClose()
+    {
+        PlaySound(doorSource, doorOpenClose);
+    }
+
+    [Command(requiresAuthority = false)]
+    private void CmdPlayDoorOpenClose()
+    {
+        RpcPlayDoorOpenClose();
+    }
+
+    private void PlaySound(AudioSource source, AudioClip clip)
+    {
+        Debug.Log("PlaySoundDoor");
+        source.clip = clip;
+        source.PlayOneShot(clip);
     }
 
 

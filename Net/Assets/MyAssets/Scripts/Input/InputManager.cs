@@ -78,6 +78,11 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public bool GetPLayerCanMove()
+    {
+        return inputActions.Player.enabled;
+    }
+
     public Vector2 GetMovementInput() => moveAction.ReadValue<Vector2>();
     public Vector2 GetLookInput()=> lookAction.ReadValue<Vector2>();
 

@@ -23,7 +23,8 @@ public class PlayerInteract : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        GlobalEventManager.showInteract?.Invoke(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask));
+
+        GlobalEventManager.showInteract?.Invoke(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask) && InputManager.Instance.GetPLayerCanMove());
     }
 
     private void Interact()
