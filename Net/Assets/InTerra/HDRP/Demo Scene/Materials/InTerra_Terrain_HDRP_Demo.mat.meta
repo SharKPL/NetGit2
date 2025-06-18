@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 12f80a56778f60648b4838d0a02fa859
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Demo Scene/Materials/InTerra_Terrain_HDRP_Demo.mat
+  uploadId: 725164

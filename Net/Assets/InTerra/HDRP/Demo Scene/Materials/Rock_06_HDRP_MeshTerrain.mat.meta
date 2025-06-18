@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4f7f106698c26ed4fbd01832fbcdf251
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Demo Scene/Materials/Rock_06_HDRP_MeshTerrain.mat
+  uploadId: 725164

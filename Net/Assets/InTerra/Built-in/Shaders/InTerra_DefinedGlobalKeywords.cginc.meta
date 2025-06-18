@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 65f19d179cedadd4fb935fcf538b409b
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/Built-in/Shaders/InTerra_DefinedGlobalKeywords.cginc
+  uploadId: 725164

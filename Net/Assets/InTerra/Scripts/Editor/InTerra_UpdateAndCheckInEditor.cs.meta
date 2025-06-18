@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 80f0e1324b87e0b4d81d1f7a095e2aa2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/Scripts/Editor/InTerra_UpdateAndCheckInEditor.cs
+  uploadId: 725164

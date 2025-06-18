@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bc1c87fef3111ee48a8291672637cd90
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/URP/Shaders/InTerra_LayersProperties.hlsl
+  uploadId: 725164

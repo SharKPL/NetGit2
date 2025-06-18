@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c36a203f991e1a04d96b74b845feebf9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Demo Scene/Materials/Rock_06_HDRP.mat
+  uploadId: 725164

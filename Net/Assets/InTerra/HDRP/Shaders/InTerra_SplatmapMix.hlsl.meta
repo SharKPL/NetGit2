@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 37cd5e5a8470be24c8ac91e2e46d4041
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/InTerra_SplatmapMix.hlsl
+  uploadId: 725164

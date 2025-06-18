@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4264164dd82f6254ba8910703feeb965
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/Demo Assets/Terrain/TerrainLayers/Rock.terrainlayer
+  uploadId: 725164

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 5f9faf6c05cbc884bbbb4ff6736b1d31
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/Built-in/Shaders/InTerra_MeshTerrain.shader
+  uploadId: 725164

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4409c2b295054124d85e96c916d40e42
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/Object into Terrain Integration Tessellation.shadergraph
+  uploadId: 725164

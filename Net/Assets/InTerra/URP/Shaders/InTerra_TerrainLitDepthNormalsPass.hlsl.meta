@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f03fdf1d6291fee4f9c6cae9fb00b794
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/URP/Shaders/InTerra_TerrainLitDepthNormalsPass.hlsl
+  uploadId: 725164

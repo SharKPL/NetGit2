@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f89b5cb120b7b0a4c944740e8e86534f
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/URP/Shaders/InTerra_URP_DefinedGlobalKeywords.hlsl
+  uploadId: 725164

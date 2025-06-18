@@ -17,12 +17,12 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject menuPrefab;
     void Start()
     {
-        playBtn.onClick.AddListener(OpenLobby);
-        quitBtn.onClick.AddListener(QuitGame);
+        //playBtn.onClick.AddListener(OpenLobby);
+        //quitBtn.onClick.AddListener(QuitGame);
 
         createBtn.onClick.AddListener(StartGame);
         connectBtn.onClick.AddListener(ConnectGame);
-        closeConnectUIBtn.onClick.AddListener(CloseLobby);
+        //closeConnectUIBtn.onClick.AddListener(CloseLobby);
 
     }
 

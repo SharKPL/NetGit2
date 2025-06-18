@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 03dd58fd2184f59499af75ee3692d4ee
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/InTerra_TerrainLitTemplate.hlsl
+  uploadId: 725164

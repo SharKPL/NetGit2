@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9436253e55f95d94097e61364dc6aee0
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/InTerra_SplatMapControl.hlsl
+  uploadId: 725164

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 67bfa3c5f1c85364aaf122764a6e0f77
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/Demo Assets/Terrain/TerrainLayers/Snow.terrainlayer
+  uploadId: 725164

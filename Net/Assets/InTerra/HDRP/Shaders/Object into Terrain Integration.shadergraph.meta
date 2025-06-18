@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 504934c1bd974d74ba2b592052bc5872
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/Object into Terrain Integration.shadergraph
+  uploadId: 725164

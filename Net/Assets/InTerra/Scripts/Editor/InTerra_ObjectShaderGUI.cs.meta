@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e54668e83672f7c4ba3228bec242ca67
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/Scripts/Editor/InTerra_ObjectShaderGUI.cs
+  uploadId: 725164

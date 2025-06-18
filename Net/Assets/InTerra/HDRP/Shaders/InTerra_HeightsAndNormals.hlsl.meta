@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 53fd34e39a797594aa304eaa717212e2
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/InTerra_HeightsAndNormals.hlsl
+  uploadId: 725164

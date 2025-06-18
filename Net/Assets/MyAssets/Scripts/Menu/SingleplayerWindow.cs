@@ -13,10 +13,11 @@ namespace MUSOAR
         [SerializeField] private Button backButton;
 
         private IReturnableWindow menuManager;
-        private LevelsManager levelsManager;
-        private SaveController saveController;
-        private SaveLoadWindow saveLoadWindow;
+        //private LevelsManager levelsManager;
+        //private SaveController saveController;
+        //private SaveLoadWindow saveLoadWindow;
 
+        /*
         [Inject]
         private void Construct(LevelsManager levelsManager, SaveController saveController, SaveLoadWindow saveLoadWindow)
         {
@@ -24,22 +25,23 @@ namespace MUSOAR
             this.saveController = saveController;
             this.saveLoadWindow = saveLoadWindow;
         }
+        */
 
         public void Initialize(IReturnableWindow manager)
         {
             menuManager = manager;
-            CheckSave();
+            //CheckSave();
             OpenWindow();
         }
 
         private void Awake()
         {
-            newGameButton.onClick.AddListener(OnNewGameButtonClick);
-            continueButton.onClick.AddListener(OnContinueButtonClick);
-            loadingButton.onClick.AddListener(OnLoadingButtonClick);
+            //newGameButton.onClick.AddListener(OnNewGameButtonClick);
+            //continueButton.onClick.AddListener(OnContinueButtonClick);
+            //loadingButton.onClick.AddListener(OnLoadingButtonClick);
             backButton.onClick.AddListener(OnBackButtonClick);
         }
-
+        /*
         private void CheckSave()
         {
             if (!saveController.HasSaveFile())
@@ -53,12 +55,15 @@ namespace MUSOAR
                 loadingButton.gameObject.SetActive(true);
             }
         }
+        */
 
         private void OnNewGameButtonClick()
         {
-            levelsManager.LoadLevel(LevelData.Level_1);
+            //levelsManager.LoadLevel(LevelData.Level_1);
+
         }
 
+        /*
         private void OnContinueButtonClick()
         {
             saveController.LoadSaveLevel();
@@ -69,7 +74,7 @@ namespace MUSOAR
             saveLoadWindow.InitializeLoadWindow(this);
             CloseWindow();
         }
-
+        */
         private void OnBackButtonClick()
         {
             menuManager?.ReturnToPrevious();
@@ -78,7 +83,7 @@ namespace MUSOAR
 
         public void ReturnToPrevious()
         {
-            CheckSave();
+            //CheckSave();
             OpenWindow();
         }
     }

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5c658511231d75a41842b6b64f0cf718
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/InTerra_HDRP_DefinedGlobalKeywords.hlsl
+  uploadId: 725164

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ae07e757c37f211478480e68586ea6ba
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/URP/Demo Scene/Materials/InTerra_Rock_06_URP_Demo.mat
+  uploadId: 725164

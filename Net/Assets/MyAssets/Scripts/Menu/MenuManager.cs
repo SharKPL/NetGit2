@@ -13,11 +13,12 @@ namespace MUSOAR
         [SerializeField] private Button settingsButton;
         [SerializeField] private Button exitButton;
 
-        private SingleplayerWindow singleplayerWindow;
-        private MultiplayerWindow multiplayerWindow;
-        private CreditsWindow creditsWindow;
-        private SettingsWindow settingsWindow;
+        [SerializeField] private SingleplayerWindow singleplayerWindow;
+        [SerializeField] private MultiplayerWindow multiplayerWindow;
+        [SerializeField] private CreditsWindow creditsWindow;
+        [SerializeField] private SettingsWindow settingsWindow;
 
+        /*
         [Inject]
         private void Construct(SingleplayerWindow singleplayerWindow, MultiplayerWindow multiplayerWindow, CreditsWindow creditsWindow, SettingsWindow settingsWindow)
         {
@@ -26,6 +27,7 @@ namespace MUSOAR
             this.creditsWindow = creditsWindow;
             this.settingsWindow = settingsWindow;
         }
+        */
 
         private void Awake()
         {

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c89bc74e98b23434f9168ad32486a090
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/Built-in/Demo Scene/Materials/InTerra_Terrain_Demo.mat
+  uploadId: 725164

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 29ed88605abdf904eae3c4e43ceab7c1
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/Mesh Terrain.shadergraph
+  uploadId: 725164

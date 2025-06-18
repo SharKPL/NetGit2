@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5eca6cd3d758b2d43a363fd3140359ed
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/InTerra_MeshTerrainTessellation.hlsl
+  uploadId: 725164

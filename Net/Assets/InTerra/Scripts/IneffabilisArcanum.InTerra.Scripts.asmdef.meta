@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7831dabb486a2144fb61c5ebf92556eb
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/Scripts/IneffabilisArcanum.InTerra.Scripts.asmdef
+  uploadId: 725164

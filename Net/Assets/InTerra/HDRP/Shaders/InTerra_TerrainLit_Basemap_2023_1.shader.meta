@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 50fbcf700580f8a4ea1b0adaeeb6fc04
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Shaders/InTerra_TerrainLit_Basemap_2023_1.shader
+  uploadId: 725164

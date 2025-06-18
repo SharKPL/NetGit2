@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9a81bc2a64564274b8e88f5f2b139746
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196455
+  packageName: InTerra ~ Shaders for Terrain & its Objects
+  packageVersion: 4.2.1
+  assetPath: Assets/InTerra/HDRP/Demo Scene/DemoScene HDRP.unity
+  uploadId: 725164
