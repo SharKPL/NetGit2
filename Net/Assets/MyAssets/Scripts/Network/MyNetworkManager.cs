@@ -37,10 +37,11 @@ public class MyNetworkManager : NetworkManager
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
-        base.OnServerAddPlayer(conn);
+        //base.OnServerAddPlayer(conn);
         switch (GameManager.Instance.CurrentEnumGameState)
         {
             case GameState.Lobby:
+
                 Transform spawnTransform = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
                 Debug.Log($"OnAddPlayer1{spawnTransform}");
                 var player = Connect(conn, lobbyPlayerPref, spawnTransform);
@@ -53,6 +54,7 @@ public class MyNetworkManager : NetworkManager
                 Debug.Log($"OnAddPlayer3{spawnTransform}");
                 break;
             case GameState.InGame:
+
                 Debug.Log("InGame");
                 Connect(conn, gamePlayerPref, GetStartPosition());
                 CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);

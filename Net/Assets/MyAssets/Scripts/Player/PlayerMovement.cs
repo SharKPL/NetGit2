@@ -90,15 +90,23 @@ namespace MUSOAR
         //    playerHealth = GetComponent<PlayerHealth>();
         //}
 
-        //public override void OnStartClient()
-        //{
-        //    base.OnStartClient();
-        //    if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
-        //    inputManager = InputManager.Instance;
+        public override void OnStartClient()
+        {
+            Debug.Log("OnStartMove1");
+            base.OnStartClient();
+            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
+            Debug.Log("OnStartMove2");
+            //inputManager = InputManager.Instance;
 
-        //    cameraTransform = playerCamera.GetCamera().transform;
+            //cameraTransform = playerCamera.GetCamera().transform;
 
-        //}
+        }
+
+        public override void OnStartLocalPlayer()
+        {
+            base.OnStartLocalPlayer();
+
+        }
 
         private void Update()
         {

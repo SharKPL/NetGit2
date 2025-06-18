@@ -32,9 +32,9 @@ namespace MUSOAR
         private void Awake()
         {
             playSingleButton.onClick.AddListener(OnPlaySingleButtonClick);
-            playMultiButton.onClick.AddListener(OnPlayMultiButtonClick);
-            creditsButton.onClick.AddListener(OnCreditsButtonClick);
-            settingsButton.onClick.AddListener(OnSettingsButtonClick);
+            //playMultiButton.onClick.AddListener(OnPlayMultiButtonClick);
+            //creditsButton.onClick.AddListener(OnCreditsButtonClick);
+            //settingsButton.onClick.AddListener(OnSettingsButtonClick);
             exitButton.onClick.AddListener(OnExitButtonClick);
         }
 
