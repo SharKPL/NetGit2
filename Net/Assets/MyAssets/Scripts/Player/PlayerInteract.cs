@@ -21,6 +21,11 @@ public class PlayerInteract : NetworkBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        GlobalEventManager.showInteract?.Invoke(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask));
+    }
+
     private void Interact()
     {
         Vector3 direction = transform.forward;
@@ -48,21 +53,6 @@ public class PlayerInteract : NetworkBehaviour
             Debug.DrawLine(cam.transform.position, hitInfo.point, Color.red, 2f);
         }
 
-        //if (Physics.SphereCast(transform.position, radius, direction, out RaycastHit hit, maxDistance, interactMask))
-        //{
-        //    var item = hit.collider.gameObject.GetComponent<Item>();
-        //    if (item == null)
-        //    {
-        //        Debug.Log("NoItem");
-        //        return;
-        //    }
-        //    Inventory.Instance.CmdAddItem(item);
-
-        //    Debug.DrawLine(transform.position, hit.point, Color.red, 2f);
-        //}
-        //else
-        //{
-        //    Debug.DrawRay(transform.position, direction * maxDistance, Color.green, 2f);
-        //}
+        
     }
 }

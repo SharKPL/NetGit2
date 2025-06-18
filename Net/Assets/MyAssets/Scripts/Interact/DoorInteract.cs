@@ -19,6 +19,8 @@ public class DoorInteract : NetworkBehaviour,IInteractable
 
     [SyncVar] private bool hisOpen = false;
 
+    private bool canTrigger=true;
+
 
     private Quaternion targetRotation; 
     private Quaternion startRotation;
@@ -31,7 +33,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
     public void Interact()
     {
         Debug.Log("DoorInteract");
-        if (hisUnocked)
+        if (hisUnocked && canTrigger)
         {
             ToggleDoor();
         }
@@ -59,6 +61,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
 
     IEnumerator RotateDoor(Quaternion target, float speed)
     {
+        canTrigger = false;
         while (Quaternion.Angle(door.transform.rotation, target) > 0.1f)
         {
             Quaternion newRotation = Quaternion.RotateTowards(
@@ -71,7 +74,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
 
             yield return null;
         }
-
+        canTrigger = true;
         door.transform.rotation = target;
     }
 

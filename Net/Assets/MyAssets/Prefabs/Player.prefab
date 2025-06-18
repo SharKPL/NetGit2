@@ -2099,7 +2099,7 @@ MonoBehaviour:
   syncInterval: 0
   cam: {fileID: 1304809985993171502}
   radius: 2
-  maxDistance: 5
+  maxDistance: 3
   interactMask:
     serializedVersion: 2
     m_Bits: 256

@@ -10,4 +10,6 @@ public static class GlobalEventManager
     public static UnityEvent<string> TakeItemEvent = new UnityEvent<string>();
 
     public static UnityEvent UpdateInventoryUI = new UnityEvent();
+
+    public static UnityEvent<bool> showInteract = new UnityEvent<bool>();
 }

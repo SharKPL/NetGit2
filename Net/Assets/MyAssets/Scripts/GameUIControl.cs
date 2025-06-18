@@ -10,6 +10,8 @@ public class GameUIControl: MonoBehaviour
     [SerializeField] private Button continueBtn;
     [SerializeField] private Button leaveBtn;
 
+    [SerializeField] private GameObject interBtn;
+
     private System.Action<InputAction.CallbackContext> pauseDelegate;
 
     private void Start()
@@ -25,7 +27,12 @@ public class GameUIControl: MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
 
+        GlobalEventManager.showInteract.AddListener(ShowBtn);
+    }
 
+    private void ShowBtn(bool vis)
+    {
+        interBtn.SetActive(vis);
     }
 
     private void OnDestroy()

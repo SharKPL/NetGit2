@@ -176,6 +176,10 @@ PrefabInstance:
       value: Assets/MyAssets/Levels/TestScene.unity
       objectReference: {fileID: 0}
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 7603802050405253154, guid: 56bdd6b5cc9833d44b976500795b4718, type: 3}
+    - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: gamePlayerPref
       value: 
       objectReference: {fileID: 3843693277061433721, guid: 29928255775bb014dae76bb284384a92, type: 3}
@@ -202,11 +206,11 @@ PrefabInstance:
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3843693277061433721, guid: 29928255775bb014dae76bb284384a92, type: 3}
+      objectReference: {fileID: 1660949443993255983, guid: 2e40bcd5966f3144dbd17f2eb80e14c3, type: 3}
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3843693277061433721, guid: 29928255775bb014dae76bb284384a92, type: 3}
     - target: {fileID: 8966926931537810463, guid: 6ce6b5e49a4ee4e46813c74ac1dc782d, type: 3}
       propertyPath: 'spawnPrefabs.Array.data[2]'
       value: 
