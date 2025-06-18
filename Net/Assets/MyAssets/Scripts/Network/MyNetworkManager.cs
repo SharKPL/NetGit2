@@ -16,6 +16,8 @@ public class MyNetworkManager : NetworkManager
 
     [SerializeField] private int playerCount = 0;
 
+    [SyncVar] private Transform currentSpawnTran;
+
     public int PlayerCount { get { return playerCount; } }
 
     public static bool isMulitplayer;
@@ -42,21 +44,21 @@ public class MyNetworkManager : NetworkManager
         {
             case GameState.Lobby:
 
-                Transform spawnTransform = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
-                Debug.Log($"OnAddPlayer1{spawnTransform}");
-                var player = Connect(conn, lobbyPlayerPref, spawnTransform);
+                currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
+                Debug.Log($"OnAddPlayer1{currentSpawnTran}");
+                var player = Connect(conn, lobbyPlayerPref, currentSpawnTran);
                 
                 CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers-1);
                 
                 var playerInfo = conn.identity.GetComponent<LobbyPlayerInfo>();
                 playerInfo.SetSteamId(steamID.m_SteamID);
-                Debug.Log($"OnAddPlayer2{spawnTransform}");
-                Debug.Log($"OnAddPlayer3{spawnTransform}");
+                Debug.Log($"OnAddPlayer2{currentSpawnTran}");
+                Debug.Log($"OnAddPlayer3{currentSpawnTran}");
                 break;
             case GameState.InGame:
 
-                Debug.Log("InGame");
-                Connect(conn, gamePlayerPref, GetStartPosition());
+                currentSpawnTran = GetStartPosition();
+                Connect(conn, gamePlayerPref, currentSpawnTran);
                 CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
                 var name=SteamHelper.GetPlayerName(SteamID);
                 conn.identity.GetComponent<PlayerData>().SetPlayerName(name);

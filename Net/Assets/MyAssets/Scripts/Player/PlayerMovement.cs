@@ -92,10 +92,10 @@ namespace MUSOAR
 
         public override void OnStartClient()
         {
-            Debug.Log("OnStartMove1");
+            Debug.Log($"{netIdentity} OnStartMove1");
             base.OnStartClient();
             if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
-            Debug.Log("OnStartMove2");
+            Debug.Log($"{netIdentity} OnStartMove2");
             //inputManager = InputManager.Instance;
 
             //cameraTransform = playerCamera.GetCamera().transform;
