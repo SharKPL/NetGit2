@@ -1,14 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\",
+  "WorkspaceRootPath": "E:\\Gity\\NetGit2\\Net\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\unity\\unity projects\\netgit2\\net\\assets\\myassets\\scripts\\managers\\gamecontrolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\gity\\netgit2\\net\\assets\\myassets\\scripts\\deprecated\\charinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\deprecated\\charinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\managers\\gamecontrolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\managers\\gamecontrolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Unity\\Unity Projects\\NetGit2\\Net\\assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\mynetworkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\network\\lobbyspawncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\lobbyspawncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\menu\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\menu\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\doorinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\ui\\noteui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\ui\\noteui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\interact\\noteinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\interact\\noteinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Gity\\NetGit2\\Net\\assets\\myassets\\scripts\\gameuicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\gameuicontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\GameManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -18,18 +62,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\CustomNetworkManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\unity\\unity projects\\netgit2\\net\\assets\\myassets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|e:\\unity\\unity projects\\netgit2\\net\\assets\\myassets\\scripts\\network\\lobbyspawncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\network\\lobbyspawncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|E:\\Unity\\Unity Projects\\NetGit2\\Net\\assets\\myassets\\scripts\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA7DE33-E523-B24B-7C68-50E360F9AF8D}|Assembly-CSharp.csproj|solutionrelative:assets\\myassets\\scripts\\managers\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,17 +71,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MyNetworkManager.cs",
-              "DocumentMoniker": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
-              "ToolTip": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Network\\MyNetworkManager.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAA3wD0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAwEEAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T10:39:30.161Z",
               "IsPinned": true,
@@ -57,13 +89,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "GameControlManager.cs",
-              "DocumentMoniker": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameControlManager.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameControlManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Managers\\GameControlManager.cs",
-              "ToolTip": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameControlManager.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameControlManager.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Managers\\GameControlManager.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwC4AAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwCAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T13:05:28.066Z",
               "IsPinned": true,
@@ -71,26 +103,124 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlayerHealth.cs",
-              "DocumentMoniker": "E:\\Unity\\Unity Projects\\BlindSnitch\\Blind\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
-              "RelativeDocumentMoniker": "..\\..\\BlindSnitch\\Blind\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
-              "ToolTip": "E:\\Unity\\Unity Projects\\BlindSnitch\\Blind\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
-              "RelativeToolTip": "..\\..\\BlindSnitch\\Blind\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CharInput.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\DEPRECATED\\CharInput.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\DEPRECATED\\CharInput.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\DEPRECATED\\CharInput.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\DEPRECATED\\CharInput.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAQwEoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T14:11:46.41Z",
+              "WhenOpened": "2025-06-19T20:42:29.973Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MenuManager.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Menu\\MenuManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Menu\\MenuManager.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Menu\\MenuManager.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Menu\\MenuManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:21:07.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NoteUI.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\UI\\NoteUI.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\UI\\NoteUI.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\UI\\NoteUI.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\UI\\NoteUI.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCEAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:05:17.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DoorInteract.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwDEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T15:51:06.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NoteInteract.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\NoteInteract.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\NoteInteract.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\NoteInteract.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interact\\NoteInteract.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T15:48:48.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameUIControl.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\GameUIControl.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAA5wBsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T15:33:29.288Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "InputManager.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Input\\InputManager.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAlwJUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T15:30:13.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlayerInteract.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
+              "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
+              "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerInteract.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T15:28:38.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PlayerHealth.cs",
+              "DocumentMoniker": "E:\\Unity\\Unity Projects\\BlindSnitch\\Blind\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Unity\\Unity Projects\\BlindSnitch\\Blind\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
+              "ToolTip": "E:\\Unity\\Unity Projects\\BlindSnitch\\Blind\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
+              "RelativeToolTip": "..\\..\\..\\Unity\\Unity Projects\\BlindSnitch\\Blind\\Assets\\MyAssets\\Scripts\\Player\\PlayerHealth.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T14:11:46.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "PlayerMovement.cs",
-              "DocumentMoniker": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
-              "ToolTip": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Player\\PlayerMovement.cs",
-              "ViewState": "AgIAADcBAAAAAAAAAAAUwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAA7wG0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T14:10:11.823Z",
               "EditorCaption": ""
@@ -99,52 +229,46 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "LobbySpawnControl.cs",
-              "DocumentMoniker": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
-              "ToolTip": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Network\\LobbySpawnControl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAWwDcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T13:50:10.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 13,
               "Title": "GameManager.cs",
               "DocumentMoniker": "E:\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\GameManager.cs",
-              "RelativeDocumentMoniker": "..\\..\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\GameManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\GameManager.cs",
               "ToolTip": "E:\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\GameManager.cs",
-              "RelativeToolTip": "..\\..\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\GameManager.cs",
+              "RelativeToolTip": "..\\..\\..\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\GameManager.cs",
               "ViewState": "AgIAAFkCAAAAAAAAAAAuwHECAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T13:43:12.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T13:43:12.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CustomNetworkManager.cs",
+              "DocumentMoniker": "E:\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\CustomNetworkManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\CustomNetworkManager.cs",
+              "ToolTip": "E:\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\CustomNetworkManager.cs",
+              "RelativeToolTip": "..\\..\\..\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\CustomNetworkManager.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T13:43:10.404Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CustomNetworkManager.cs",
-              "DocumentMoniker": "E:\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\CustomNetworkManager.cs",
-              "RelativeDocumentMoniker": "..\\..\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\CustomNetworkManager.cs",
-              "ToolTip": "E:\\Unity\\Unity Projects\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\CustomNetworkManager.cs",
-              "RelativeToolTip": "..\\..\\Unity_MP_Git\\Unity_MP\\Assets\\MyAssets\\Scripts\\Game\\CustomNetworkManager.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T13:43:10.404Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "GameManager.cs",
-              "DocumentMoniker": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
+              "DocumentMoniker": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
-              "ToolTip": "E:\\Unity\\Unity Projects\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
+              "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Managers\\GameManager.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

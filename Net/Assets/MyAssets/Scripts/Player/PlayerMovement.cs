@@ -92,6 +92,8 @@ namespace MUSOAR
         public Vector2 MovementInput => movementInput;
         public bool IsGrounded => isGrounded;
 
+        [SyncVar] bool teleport = false;
+
         //private void Awake()
         //{
         //    if (!isLocalPlayer) return;
@@ -108,9 +110,9 @@ namespace MUSOAR
             base.OnStartClient();
             Debug.Log($"{netIdentity} OnStartMove2");
 
-            //playerCamera = GetComponentInChildren<PlayerCamera>();
+            playerCamera = GetComponentInChildren<PlayerCamera>();
             playerCamera.gameObject.SetActive(false);
-           // if(!isLocalPlayer) inputManager.TurnAllControl(false);
+            inputManager.TurnAllControl(false);
 
         }
 
@@ -138,12 +140,14 @@ namespace MUSOAR
 
         public void RpcTeleport(Vector3 pos)
         {
+            teleport = true;
             animator.applyRootMotion = false;
             controller.enabled = false;
             transform.position = pos;
             //controller.Move(pos);
             controller.enabled = true;
             animator.applyRootMotion = true;
+            teleport = false;
         }
 
 
@@ -151,6 +155,7 @@ namespace MUSOAR
 
         private void Update()
         {
+            if (teleport) return;
             if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             //if (!isSwitchTo) return;
             GetMovementInput();
