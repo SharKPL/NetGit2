@@ -110,7 +110,7 @@ namespace MUSOAR
 
             //playerCamera = GetComponentInChildren<PlayerCamera>();
             playerCamera.gameObject.SetActive(false);
-            inputManager.TurnAllControl(false);
+           // if(!isLocalPlayer) inputManager.TurnAllControl(false);
 
         }
 
@@ -118,6 +118,7 @@ namespace MUSOAR
         {
             base.OnStartAuthority();
             if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
+            Debug.Log("StartAuth");
             playerCamera.gameObject.SetActive(true);
             inputManager.TurnAllControl(true);
         }
