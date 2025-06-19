@@ -32,6 +32,7 @@ public class NoteUI : MonoBehaviour
         note.SetActive(false);
         GameManager.Instance.SetGamePause(false);
         GlobalEventManager.TurnPlayerControl?.Invoke(false);
+        InputManager.Instance.TurnCursor(false);
         //GlobalEventManager.showInteract?.Invoke(true);
     }
 

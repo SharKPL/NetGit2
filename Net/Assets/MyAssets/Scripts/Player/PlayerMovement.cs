@@ -22,6 +22,11 @@ namespace MUSOAR
         [SerializeField] private float moveSpeed = 4f;
         [SerializeField] private float runSpeed = 6f;
 
+        [Header("Параметры приседания")]
+        [SerializeField] private float standingHeight = 1.8f;
+        [SerializeField] private float crouchingHeight = 1.0f;
+        [SerializeField] private float crouchTransitionSpeed = 10f;
+
         [Header("Инерция")]
         [SerializeField] private float acceleration = 10f;
         [SerializeField] private float deceleration = 8f;
@@ -42,6 +47,11 @@ namespace MUSOAR
         [Header("Анимация")]
         [SerializeField] private NetworkAnimator netAnimator;
         [SerializeField] private float animationSmoothTime = 0.1f;
+
+        [Header("Параметры камеры")]
+        [SerializeField] private float cameraStandingHeight = 0f;
+        [SerializeField] private float cameraCrouchingHeight = -0.2f;
+        [SerializeField] private float cameraPlayerDeadHeight = 0.3f;
 
         private InputManager inputManager = InputManager.Instance;
         [SerializeField]private PlayerCamera playerCamera;
@@ -102,11 +112,6 @@ namespace MUSOAR
             playerCamera.gameObject.SetActive(false);
             inputManager.TurnAllControl(false);
 
-            //cameraTransform = playerCamera.GetCamera().transform;
-            //inputManager = InputManager.Instance;
-
-            //cameraTransform = playerCamera.GetCamera().transform;
-
         }
 
         public override void OnStartAuthority()
@@ -130,6 +135,63 @@ namespace MUSOAR
             HandleGravity();
             UpdateAnimator();
             CheckGround();
+
+            HandleCrouch();
+            HandleCameraPosition();
+        }
+
+        private void HandleCrouch()
+        {
+
+            float targetHeight = InputManager.Instance.GetCrouchAction() ? crouchingHeight : standingHeight;
+            float currentHeight = controller.height;
+
+            if (Mathf.Abs(currentHeight - targetHeight) > 0.01f)
+            {
+                controller.height = Mathf.Lerp(currentHeight, targetHeight, crouchTransitionSpeed * Time.deltaTime);
+                controller.center = new Vector3(0, controller.height / 2, 0);
+
+                float targetCameraHeight = InputManager.Instance.GetCrouchAction() ? cameraCrouchingHeight : cameraStandingHeight;
+                Vector3 currentCameraPos = cameraTransform.localPosition;
+                Vector3 targetCameraPos = new Vector3(currentCameraPos.x, targetCameraHeight, currentCameraPos.z);
+
+                cameraTransform.localPosition = Vector3.Lerp(currentCameraPos, targetCameraPos, crouchTransitionSpeed * Time.deltaTime);
+            }
+        }
+
+        private void HandleCameraPosition()
+        {
+            float targetHeight;
+
+            if (InputManager.Instance.GetCrouchAction())
+            {
+                targetHeight = cameraCrouchingHeight;
+            }
+            else
+            {
+                targetHeight = cameraStandingHeight;
+            }
+
+            Vector3 currentCameraPos = cameraTransform.localPosition;
+            Vector3 targetCameraPos = new Vector3(currentCameraPos.x, targetHeight, currentCameraPos.z);
+
+            cameraTransform.localPosition = Vector3.Lerp(currentCameraPos, targetCameraPos, crouchTransitionSpeed * Time.deltaTime);
+        }
+
+        [Command]
+        private void CmdSetCrouchAnimation(bool isCrouching)
+        {
+            animator.SetBool("Crouch", isCrouching);
+            RpcSetCrouchAnimation(isCrouching);
+        }
+
+        [ClientRpc]
+        private void RpcSetCrouchAnimation(bool isCrouching)
+        {
+            if (!isLocalPlayer)
+            {
+                animator.SetBool("Crouch", isCrouching);
+            }
         }
 
         private void DisableMovement(bool turn)
@@ -346,6 +408,7 @@ namespace MUSOAR
             float diagonal = (Mathf.Abs(inputManager.GetMovementInput().x) > 0.1f && Mathf.Abs(inputManager.GetMovementInput().y) > 0.1f) ? 1.41f : 1f;
 
             CmdUpdateSpeedAnim(localVelocity, diagonal);
+            CmdSetCrouchAnimation(InputManager.Instance.GetCrouchAction());
 
             if (enableInput)
                 clampedMouseX = Mathf.Clamp(inputManager.GetLookInput().x, -1f, 1f);

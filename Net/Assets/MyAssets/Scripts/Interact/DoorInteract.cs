@@ -11,6 +11,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
 
     [SerializeField] private AudioClip doorFix;
     [SerializeField] private AudioClip doorOpenClose;
+    [SerializeField] private AudioClip doorLock;
 
     [SerializeField] private AudioSource doorSource;
 
@@ -48,6 +49,10 @@ public class DoorInteract : NetworkBehaviour,IInteractable
             hisUnocked = true;
             CmdPlayDoorFix();
             Debug.Log("DoorOpen");
+        }
+        else if (!hisUnocked)
+        {
+            CmdPlayDoorLock();
         }
     }
 
@@ -108,6 +113,18 @@ public class DoorInteract : NetworkBehaviour,IInteractable
     private void CmdPlayDoorOpenClose()
     {
         RpcPlayDoorOpenClose();
+    }
+
+    [ClientRpc]
+    private void RpcPlayDoorLock()
+    {
+        AudioManager.PlaySound(doorSource, doorLock);
+    }
+
+    [Command(requiresAuthority = false)]
+    private void CmdPlayDoorLock()
+    {
+        RpcPlayDoorLock();
     }
 
 

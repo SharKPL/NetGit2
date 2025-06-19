@@ -55,6 +55,7 @@ public class GameUIControl: MonoBehaviour
     private void ControlUI(bool isActive){
         InputManager.Instance.TurnPlayerControls(!isActive);
         var curCount = InputManager.Instance.TurnCursor(isActive);
+        Debug.Log($"curCount:{curCount}");
         if (curCount > 0)
         {
             point.SetActive(false);

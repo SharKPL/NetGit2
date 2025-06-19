@@ -30,7 +30,6 @@ public class PlayerInteract : NetworkBehaviour
     {
     
         if (!isLocalPlayer || !InputManager.Instance.GetPLayerCanMove() || GameManager.Instance.GameInPause) return;
-        Debug.Log("ShowInter");
         GlobalEventManager.showInteract?.Invoke(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask));
 
     }

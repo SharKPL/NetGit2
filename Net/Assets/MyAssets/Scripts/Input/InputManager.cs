@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +11,8 @@ public class InputManager : MonoBehaviour
     private InputAction lookAction;
     private InputAction jumpAction;
     private InputAction sprintAction;
+    private InputAction crouchAction;
+
     private InputAction pauseAction;
     private InputAction chatAction;
     private InputAction sendMsgAction;
@@ -39,6 +40,8 @@ public class InputManager : MonoBehaviour
         lookAction = inputActions.Player.Look;
         jumpAction = inputActions.Player.Jump;
         sprintAction = inputActions.Player.Sprint;
+        crouchAction = inputActions.Player.Duck;
+
         interactAction = inputActions.Player.Interact;
 
         pauseAction = inputActions.UIControl.PauseControl;
@@ -53,6 +56,8 @@ public class InputManager : MonoBehaviour
         lookAction.Enable();
         jumpAction.Enable();
         sprintAction.Enable();
+        crouchAction.Enable();
+
         pauseAction.Enable();
         chatAction.Enable();
         sendMsgAction.Enable();
@@ -66,6 +71,8 @@ public class InputManager : MonoBehaviour
         lookAction.Disable(); 
         jumpAction.Disable();
         sprintAction.Disable();
+        crouchAction.Disable();
+
         pauseAction.Disable();
         chatAction.Disable();
         sendMsgAction.Disable();
@@ -82,6 +89,7 @@ public class InputManager : MonoBehaviour
         }
         else{
             stopControlCount++;
+            GlobalEventManager.showInteract?.Invoke(false);
             inputActions.Player.Disable();
         }
     }
@@ -110,12 +118,18 @@ public class InputManager : MonoBehaviour
         }
         else
         {
-            cursorCount--;
-            if (cursorCount > 0) return cursorCount;
+
+            if (cursorCount > 0)
+            {
+                cursorCount--;
+                return cursorCount;
+            }
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = turn;
 
         }
+
+        
         return cursorCount;
     }
 
@@ -132,6 +146,7 @@ public class InputManager : MonoBehaviour
     public bool IsJump() => jumpAction.WasPressedThisFrame();
     public bool IsRun() => sprintAction.IsPressed();
     public bool IsPause() => pauseAction.WasPressedThisFrame();
+    public bool GetCrouchAction() => crouchAction.IsPressed();
     public InputAction GetPause() => pauseAction;
     public InputAction GetLookAction() => lookAction;
 

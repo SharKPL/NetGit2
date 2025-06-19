@@ -2262,6 +2262,9 @@ MonoBehaviour:
   walkSpeed: 3
   moveSpeed: 0
   runSpeed: 8
+  standingHeight: 2.1
+  crouchingHeight: 1.4
+  crouchTransitionSpeed: 10
   acceleration: 10
   deceleration: 8
   turnSpeed: 5
@@ -2277,6 +2280,9 @@ MonoBehaviour:
   fallDamageMultiplier: 20
   netAnimator: {fileID: 1749385878339618048}
   animationSmoothTime: 0.2
+  cameraStandingHeight: 0
+  cameraCrouchingHeight: 0
+  cameraPlayerDeadHeight: 0.3
   playerCamera: {fileID: 4240887098768484084}
   playerHealth: {fileID: 6169082249918739515}
   controller: {fileID: 1068207021323427330}
