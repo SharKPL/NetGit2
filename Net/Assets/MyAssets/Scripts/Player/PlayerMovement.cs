@@ -104,15 +104,25 @@ namespace MUSOAR
         //    playerHealth = GetComponent<PlayerHealth>();
         //}
 
-        public override void OnStartClient()
+        private void Awake()
         {
-            Debug.Log($"{netIdentity} OnStartMove1");
-            base.OnStartClient();
-            Debug.Log($"{netIdentity} OnStartMove2");
-
             playerCamera = GetComponentInChildren<PlayerCamera>();
             playerCamera.gameObject.SetActive(false);
             inputManager.TurnAllControl(false);
+        }
+        public override void OnStartClient()
+        {
+            //Debug.Log($"{netIdentity} OnStartMove1");
+            //base.OnStartClient();
+            //Debug.Log($"{netIdentity} OnStartMove2");
+
+            //playerCamera = GetComponentInChildren<PlayerCamera>();
+            //playerCamera.gameObject.SetActive(false);
+            //inputManager.TurnAllControl(false);
+            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
+            Debug.Log("StartAuth");
+            playerCamera.gameObject.SetActive(true);
+            inputManager.TurnAllControl(true);
 
         }
 
