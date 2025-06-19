@@ -96,22 +96,24 @@ namespace MUSOAR
         {
             Debug.Log($"{netIdentity} OnStartMove1");
             base.OnStartClient();
-            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             Debug.Log($"{netIdentity} OnStartMove2");
 
-            playerCamera = GetComponentInChildren<PlayerCamera>();
+            //playerCamera = GetComponentInChildren<PlayerCamera>();
+            playerCamera.gameObject.SetActive(false);
+            inputManager.TurnAllControl(false);
 
-            if (!isLocalPlayer)
-            {
-                playerCamera.gameObject.SetActive(false);
-                inputManager.TurnAllControl(false);
-                return;
-            }
-            cameraTransform = playerCamera.GetCamera().transform;
+            //cameraTransform = playerCamera.GetCamera().transform;
             //inputManager = InputManager.Instance;
 
             //cameraTransform = playerCamera.GetCamera().transform;
 
+        }
+
+        public override void OnStartAuthority()
+        {
+            base.OnStartAuthority();
+            playerCamera.gameObject.SetActive(true);
+            inputManager.TurnAllControl(true);
         }
 
 
