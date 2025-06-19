@@ -9,6 +9,8 @@ public class GameUIControl: MonoBehaviour
     [SerializeField] private GameObject PausePanel;
     [SerializeField] private Button continueBtn;
     [SerializeField] private Button leaveBtn;
+    [SerializeField] private GameObject playerUI;
+    [SerializeField] private GameObject dot;
 
     [SerializeField] private GameObject interBtn;
 
@@ -50,6 +52,16 @@ public class GameUIControl: MonoBehaviour
         GlobalEventManager.TurnSettings?.Invoke(PausePanel.activeSelf);
         GlobalEventManager.TurnPlayerControl?.Invoke(PausePanel.activeSelf);
         GameManager.Instance.SetGamePause(PausePanel.activeSelf);
+        if (continueBtn.IsActive())
+        {
+            playerUI.SetActive(false);
+            dot.SetActive(false);
+        }
+        else
+        {
+            playerUI.SetActive(true);
+            dot.SetActive(true);
+        }
     }
 
     private void ControlUI(bool isActive){
