@@ -122,6 +122,29 @@ namespace MUSOAR
             inputManager.TurnAllControl(true);
         }
 
+        public void Teleport(Vector3 pos)
+        {
+            if(!isServer) return;
+            RpcTeleport(pos);
+        }
+        [Command(requiresAuthority = false)]
+        public void CmdTeleport(Vector3 pos)
+        {
+            Teleport(pos);
+        }
+
+        [ClientRpc]
+
+        public void RpcTeleport(Vector3 pos)
+        {
+            animator.applyRootMotion = false;
+            controller.enabled = false;
+            transform.position = pos;
+            //controller.Move(pos);
+            controller.enabled = true;
+            animator.applyRootMotion = true;
+        }
+
 
 
 

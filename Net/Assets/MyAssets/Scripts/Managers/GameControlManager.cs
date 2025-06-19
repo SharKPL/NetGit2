@@ -2,6 +2,8 @@ using UnityEngine;
 using Mirror;
 using System.Collections;
 using System.Collections.Generic;
+using Mirror.Examples.Benchmark;
+using MUSOAR;
 
 public class GameControlManager : NetworkBehaviour
 {
@@ -28,6 +30,13 @@ public class GameControlManager : NetworkBehaviour
     {
         curTrans= tran;
         Debug.Log($"[Server] Initializing player {player.netId}");
+
+        if (GameManager.Instance.CurrentEnumGameState == GameState.InGame)
+        {
+            conn.identity.GetComponent<MUSOAR.PlayerMovement>().CmdTeleport(curTrans.position);
+            return;
+        }
+
         //TargetSetupPlayer(conn, player, curTrans.position, curTrans.rotation);
         RpcSetPlayer(player, curTrans.position, curTrans.rotation);
     }
