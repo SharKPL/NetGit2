@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -36,6 +37,9 @@ namespace MUSOAR
             //creditsButton.onClick.AddListener(OnCreditsButtonClick);
             //settingsButton.onClick.AddListener(OnSettingsButtonClick);
             exitButton.onClick.AddListener(OnExitButtonClick);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         private void OnPlaySingleButtonClick()

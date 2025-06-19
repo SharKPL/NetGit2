@@ -100,45 +100,20 @@ namespace MUSOAR
             Debug.Log($"{netIdentity} OnStartMove2");
 
             playerCamera = GetComponentInChildren<PlayerCamera>();
-            cameraTransform = playerCamera.GetCamera().transform;
 
             if (!isLocalPlayer)
             {
                 playerCamera.enabled = false;
+                inputManager.TurnAllControl(false);
+                return;
             }
+            cameraTransform = playerCamera.GetCamera().transform;
             //inputManager = InputManager.Instance;
 
             //cameraTransform = playerCamera.GetCamera().transform;
 
         }
 
-        //[ClientRpc]
-        //private void RpcTeleportPlayer(NetworkConnection conn, Transform playerTransform, Vector3 position, Quaternion rotation)
-        //{
-        //    if (isLocalPlayer)
-        //    {
-        //        StartCoroutine(TeleportPlayerRepeatedly(playerTransform, position, rotation));
-        //    }
-        //}
-
-        //[Command(requiresAuthority = false)]
-
-        //public void CmdTeleportPlayer(NetworkConnectionToClient conn,Transform playerTransform, Vector3 position, Quaternion rotation)
-        //{
-        //    RpcTeleportPlayer(conn,playerTransform, position, rotation);
-        //}
-
-        //private IEnumerator TeleportPlayerRepeatedly(Transform playerTransform, Vector3 position, Quaternion rotation)
-        //{
-        //    float endTime = Time.time + 0.5f;
-
-        //    while (Time.time < endTime)
-        //    {
-        //        playerTransform.position = position;
-        //        playerTransform.rotation = rotation;
-        //        yield return null;
-        //    }
-        //}
 
 
 
