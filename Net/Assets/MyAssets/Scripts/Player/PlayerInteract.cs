@@ -13,22 +13,32 @@ public class PlayerInteract : NetworkBehaviour
 
     private System.Action<InputAction.CallbackContext> interactDelegate;
 
-    private void Start()
+    //private void Start()
+    //{
+    //    interactDelegate = ctx => Interact();
+
+    //    InputManager.Instance.GetInteractAction().performed += interactDelegate;
+
+    //}
+
+    public override void OnStartClient()
     {
+        base.OnStartClient();
+        if(!isLocalPlayer)return;
         interactDelegate = ctx => Interact();
 
         InputManager.Instance.GetInteractAction().performed += interactDelegate;
-
     }
 
     private void FixedUpdate()
     {
-
+        if(!isLocalPlayer) return;
         GlobalEventManager.showInteract?.Invoke(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask) && InputManager.Instance.GetPLayerCanMove());
     }
 
     private void Interact()
     {
+        if(!isLocalPlayer) return ;
         Vector3 direction = transform.forward;
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask))

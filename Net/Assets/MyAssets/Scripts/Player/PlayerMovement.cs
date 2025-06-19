@@ -103,7 +103,7 @@ namespace MUSOAR
 
             if (!isLocalPlayer)
             {
-                playerCamera.enabled = false;
+                playerCamera.gameObject.SetActive(false);
                 inputManager.TurnAllControl(false);
                 return;
             }

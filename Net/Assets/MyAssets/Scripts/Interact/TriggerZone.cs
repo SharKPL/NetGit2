@@ -10,7 +10,7 @@ public class TriggerZone : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        EndGame();
+        CmdEndGame();
     }
 
     private IEnumerator EndGameRoutine()
@@ -24,7 +24,13 @@ public class TriggerZone : NetworkBehaviour
     }
 
     [Command(requiresAuthority = false)]
-    private void EndGame()
+    private void CmdEndGame()
+    {
+        RpcEndGame();
+    }
+
+    [ClientRpc]
+    private void RpcEndGame()
     {
         StartCoroutine(EndGameRoutine());
     }
