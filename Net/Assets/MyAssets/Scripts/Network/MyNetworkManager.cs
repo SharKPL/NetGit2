@@ -56,8 +56,10 @@ public class MyNetworkManager : NetworkManager
                 playerInfo.SetSteamId(steamID.m_SteamID);
                 break;
             case GameState.InGame:
-
+                Debug.Log(GameManager.Instance.CurrentEnumGameState);
+                LobbySpawnControl.Instance.RefreshSpawnPoints(); 
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
+                Debug.Log(currentSpawnTran);
                 Connect(conn, gamePlayerPref, currentSpawnTran);
                 CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
                 var name=SteamHelper.GetPlayerName(SteamID);
@@ -68,7 +70,7 @@ public class MyNetworkManager : NetworkManager
         }
 
     }
-    private NetworkIdentity Connect(NetworkConnectionToClient conn,GameObject pref, Transform spawnTransform=null)
+    private NetworkIdentity Connect(NetworkConnectionToClient conn,GameObject pref, Transform spawnTransform)
     {
 
         GameObject playerInstance = Instantiate(pref);
@@ -86,9 +88,7 @@ public class MyNetworkManager : NetworkManager
             readyStates[conn] = false;
         }
         return playerInstance.GetComponent<NetworkIdentity>();
-
     }
-
 
 
     public override void OnServerDisconnect(NetworkConnectionToClient conn)

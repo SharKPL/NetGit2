@@ -29,31 +29,34 @@ public class GameControlManager : NetworkBehaviour
         curTrans= tran;
         Debug.Log($"[Server] Initializing player {player.netId}");
         TargetSetupPlayer(conn, player, curTrans.position, curTrans.rotation);
-
     }
 
     [TargetRpc]
     public void TargetSetupPlayer(NetworkConnection target, NetworkIdentity player, Vector3 position, Quaternion rotation)
     {
-        Debug.Log("TargetSetupPlayer вызван " + player.name);
+        Debug.Log("TargetSetupPlayer" + player.name);
 
-        StartCoroutine(TeleportPlayerRepeatedly(player, position, rotation));
-
- 
+        StartCoroutine(TeleportPlayerRepeatedly(player.transform, position, rotation));
     }
 
-    private IEnumerator TeleportPlayerRepeatedly(NetworkIdentity player, Vector3 position, Quaternion rotation)
+    private IEnumerator TeleportPlayerRepeatedly(Transform player, Vector3 position, Quaternion rotation)
     {
         //yield return new WaitForSeconds(1);
+        Debug.Log(player.position);
         Debug.Log($"CorStart, pos{position}");
-        float endTime = Time.time + 1f;
+        float endTime = Time.time + 0.5f;
+        player.SetParent(curTrans);
 
         while (Time.time < endTime)
         {
-            player.transform.position = position;
-            player.transform.rotation = rotation;
+            //player.transform.position = position;
+            //player.transform.rotation = rotation;
+            player.localPosition = Vector3.zero;
+            player.localRotation = Quaternion.identity;
+            Debug.Log("11");
             yield return null;
         }
+        player.GetComponent<Animator>().applyRootMotion = true;
 
         Debug.Log($"CorStart, pos{position} end");
     }

@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+using Mirror;
 
 public class LobbySpawnControl : MonoBehaviour
 {
@@ -40,5 +41,28 @@ public class LobbySpawnControl : MonoBehaviour
         return spawnPoints[connectionId % spawnPoints.Count];
     }
 
+    public Transform GetOnlySpawnPoint()
+    {
+        if (spawnPoints == null || spawnPoints.Count == 0)
+        {
+            Debug.LogWarning("Spawn points list is empty.");
+            return null;
+        }
 
+        int randomIndex = Random.Range(0, spawnPoints.Count);
+        return spawnPoints[randomIndex];
+    }
+
+    public void RefreshSpawnPoints()
+    {
+        spawnPoints.Clear();
+        NetworkStartPosition[] networkSpawnPositions = FindObjectsOfType<NetworkStartPosition>();
+        
+        foreach (NetworkStartPosition spawnPosition in networkSpawnPositions)
+        {
+            spawnPoints.Add(spawnPosition.transform);
+        }
+        
+        spawnCount = spawnPoints.Count;
+    }
 }
