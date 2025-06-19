@@ -2145,9 +2145,11 @@ MonoBehaviour:
   fallDamageMultiplier: 20
   netAnimator: {fileID: 1749385878339618048}
   animationSmoothTime: 0.2
+  playerCamera: {fileID: 4240887098768484084}
   playerHealth: {fileID: 6169082249918739515}
   controller: {fileID: 1068207021323427330}
   animator: {fileID: 8950157303348004569}
+  cameraTransform: {fileID: 334562030208109122}
 --- !u!114 &4539730517494241937
 MonoBehaviour:
   m_ObjectHideFlags: 0
