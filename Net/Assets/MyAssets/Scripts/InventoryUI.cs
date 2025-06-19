@@ -28,6 +28,8 @@ public class InventoryUI : MonoBehaviour
 
         GlobalEventManager.UpdateInventoryUI.AddListener(UpdateUIInventory);
 
+        GlobalEventManager.TurnSettings.AddListener(CloseInventoryBySettings);
+
         gameObject.SetActive(false);
     }
 
@@ -45,6 +47,12 @@ public class InventoryUI : MonoBehaviour
         Debug.Log("OpenChat");
         gameObject.SetActive(!gameObject.activeSelf);
         GlobalEventManager.TurnPlayerControl?.Invoke(gameObject.activeSelf);
+    }
+
+    private void CloseInventoryBySettings(bool turnSet)
+    {
+        if (!gameObject.activeSelf) return;
+        OpenCloseInventory();
     }
 
 

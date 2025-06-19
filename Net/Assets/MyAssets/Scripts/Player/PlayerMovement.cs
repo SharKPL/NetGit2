@@ -112,6 +112,7 @@ namespace MUSOAR
         public override void OnStartAuthority()
         {
             base.OnStartAuthority();
+            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             playerCamera.gameObject.SetActive(true);
             inputManager.TurnAllControl(true);
         }

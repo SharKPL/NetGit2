@@ -75,7 +75,7 @@ public class MyNetworkManager : NetworkManager
         NetworkServer.AddPlayerForConnection(conn, playerInstance);
 
         var netIdent = playerInstance.GetComponent<NetworkIdentity>();
-        GameControlManager.Instance.InitializePlayer(conn, netIdent, spawnTransform);
+        GameControlManager.Instance.InitializePlayer(conn, ref netIdent, spawnTransform);
         IncreaseCounter();
         if (NetworkServer.active)
         {

@@ -53,9 +53,13 @@ public class GameUIControl: MonoBehaviour
 
     private void ControlUI(bool isActive){
         InputManager.Instance.TurnPlayerControls(!isActive);
-        Cursor.lockState = isActive ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = isActive;
-        point.SetActive(!isActive);
+        var curCount = InputManager.Instance.TurnCursor(isActive);
+        if (curCount > 0)
+        {
+            point.SetActive(false);
+            return;
+        }
+        point.SetActive(true);
     }
 
     private void LeaveToMenu()

@@ -23,8 +23,6 @@ public class NoteUI : MonoBehaviour
         note.SetActive(true);
         GlobalEventManager.TurnPlayerControl?.Invoke(true);
         GlobalEventManager.showInteract?.Invoke(false);
-        Cursor.lockState = note.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = note.activeSelf;
     }
 
     private void CloseNote()
@@ -32,8 +30,6 @@ public class NoteUI : MonoBehaviour
         note.SetActive(false);
         GlobalEventManager.TurnPlayerControl?.Invoke(false);
         GlobalEventManager.showInteract?.Invoke(true);
-        Cursor.lockState = note.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = note.activeSelf;
     }
 
 

@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,8 @@ public class InputManager : MonoBehaviour
     private InputAction inventoryAction;
 
     private int stopControlCount = 0;
+
+    private int cursorCount = 0;
 
     public static InputManager Instance { get { return instance; } }
 
@@ -95,6 +98,25 @@ public class InputManager : MonoBehaviour
             inputActions.Player.Disable();
             inputActions.UIControl.Disable();
         }
+    }
+
+    public int TurnCursor(bool turn)
+    {
+        if (turn)
+        {
+            cursorCount++;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = turn;
+        }
+        else
+        {
+            cursorCount--;
+            if (cursorCount > 0) return cursorCount;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = turn;
+
+        }
+        return cursorCount;
     }
 
     public bool GetPLayerCanMove()

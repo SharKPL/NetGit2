@@ -7,6 +7,8 @@ public class GameControlManager : NetworkBehaviour
 {
     public static GameControlManager Instance { get; private set; }
 
+    [SyncVar] private Transform curTrans;
+
 
     private void Awake()
     {
@@ -22,10 +24,11 @@ public class GameControlManager : NetworkBehaviour
     }
 
     [Server]
-    public void InitializePlayer(NetworkConnection conn, NetworkIdentity player, Transform tran)
+    public void InitializePlayer(NetworkConnection conn, ref NetworkIdentity player, Transform tran)
     {
+        curTrans= tran;
         Debug.Log($"[Server] Initializing player {player.netId}");
-        TargetSetupPlayer(conn, player, tran.position, tran.rotation);
+        TargetSetupPlayer(conn, player, curTrans.position, curTrans.rotation);
 
     }
 
@@ -51,5 +54,7 @@ public class GameControlManager : NetworkBehaviour
             player.transform.rotation = rotation;
             yield return null;
         }
+
+        Debug.Log($"CorStart, pos{position} end");
     }
 }
