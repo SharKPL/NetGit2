@@ -214,8 +214,8 @@ RectTransform:
   m_GameObject: {fileID: 2621375043183515338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: -1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: -0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 323274737143429434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -406,6 +406,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5592470289592327336}
     m_Modifications:
+    - target: {fileID: 3464390159009269896, guid: 332021674eca3bb4c9598d8fd3d2974f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b137b653da9c50488352b1ccaafb4c7, type: 2}
+    - target: {fileID: 5782278708990651055, guid: 332021674eca3bb4c9598d8fd3d2974f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8076bac05b02ff84ebecc96006a43022, type: 2}
     - target: {fileID: 7119611572648581784, guid: 332021674eca3bb4c9598d8fd3d2974f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
