@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent<GameState> GameStateEvent;
     public static GameManager Instance=>instance;
 
-    private bool gameInPause = false;
+    [SerializeField] private bool gameInPause;
 
     public bool GameInPause { get { return gameInPause; } }
 
@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
            instance = this;
            DontDestroyOnLoad(gameObject);
         }
+
+        gameInPause = false;
     }
 
     public void SwitchState(GameState state)
@@ -71,6 +73,7 @@ public class GameManager : MonoBehaviour
     public void SetGamePause(bool pause)
     {
         gameInPause = pause;
+        GlobalEventManager.showInteract?.Invoke(!pause);
     }
 
 

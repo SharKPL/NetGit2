@@ -34,6 +34,7 @@ public class GameUIControl: MonoBehaviour
 
     private void ShowBtn(bool vis)
     {
+        Debug.Log("ShowBtn");
         interBtn.SetActive(vis);
     }
 

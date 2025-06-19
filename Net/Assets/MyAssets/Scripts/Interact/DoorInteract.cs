@@ -89,7 +89,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
     [ClientRpc]
     private void RpcPlayDoorFix()
     {
-        PlaySound(doorSource,doorFix);
+        AudioManager.PlaySound(doorSource,doorFix);
     }
 
     [Command(requiresAuthority =false)]
@@ -101,7 +101,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
     [ClientRpc]
     private void RpcPlayDoorOpenClose()
     {
-        PlaySound(doorSource, doorOpenClose);
+        AudioManager.PlaySound(doorSource, doorOpenClose);
     }
 
     [Command(requiresAuthority = false)]
@@ -110,12 +110,6 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         RpcPlayDoorOpenClose();
     }
 
-    private void PlaySound(AudioSource source, AudioClip clip)
-    {
-        Debug.Log("PlaySoundDoor");
-        source.clip = clip;
-        source.PlayOneShot(clip);
-    }
 
 
 }

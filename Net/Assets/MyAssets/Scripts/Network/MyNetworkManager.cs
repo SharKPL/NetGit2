@@ -94,6 +94,7 @@ public class MyNetworkManager : NetworkManager
     public override void OnServerDisconnect(NetworkConnectionToClient conn)
     {
         Debug.Log("Disc");
+        GameManager.Instance.SetGamePause(false);
         base.OnServerDisconnect(conn);
         readyStates.Remove(conn);
         DecreaseCounter();

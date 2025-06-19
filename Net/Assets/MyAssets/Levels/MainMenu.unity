@@ -3051,6 +3051,7 @@ MonoBehaviour:
   GameStateEvent:
     m_PersistentCalls:
       m_Calls: []
+  gameInPause: 0
 --- !u!4 &667467542
 Transform:
   m_ObjectHideFlags: 0
@@ -6274,9 +6275,9 @@ MonoBehaviour:
   MaterialTerrain:
     keys:
     - {fileID: 2100000, guid: 86948c7ad464fe847853a953ec1b2729, type: 2}
-    - {fileID: 2100000, guid: 8f0887924d784104d9bd6fd59508ca2e, type: 2}
-    - {fileID: 2100000, guid: b955a9e6cfb668348a9ae55112574521, type: 2}
     - {fileID: 2100000, guid: 59e100908ea488b4f8dd898f2cd9771d, type: 2}
+    - {fileID: 2100000, guid: b955a9e6cfb668348a9ae55112574521, type: 2}
+    - {fileID: 2100000, guid: 8f0887924d784104d9bd6fd59508ca2e, type: 2}
     values:
     - {fileID: 1019880764}
     - {fileID: 1019880764}
@@ -6306,7 +6307,7 @@ Transform:
   m_GameObject: {fileID: 1945395358}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -110.5, z: 0}
+  m_LocalPosition: {x: 1.6601562, y: -110.5, z: 12.109375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

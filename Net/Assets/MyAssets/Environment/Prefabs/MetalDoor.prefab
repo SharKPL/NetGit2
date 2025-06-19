@@ -289,7 +289,7 @@ MonoBehaviour:
   syncInterval: 0
   needItem: 
   doorFix: {fileID: 8300000, guid: b637f2edfad557e46a8d39c71ef5368e, type: 3}
-  doorOpenClose: {fileID: 8300000, guid: c4bd896bf273f6f4aaf4e9edda40b78a, type: 3}
+  doorOpenClose: {fileID: 8300000, guid: a769154703c1f7045857e31c03e0b28b, type: 3}
   doorSource: {fileID: -3713182027772712677}
   door: {fileID: 3433810382711100079}
   hisUnocked: 0
@@ -352,7 +352,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -72,6 +72,7 @@ public class Chat : NetworkBehaviour
 
     private void OpenChat()
     {
+        Debug.Log($"chat {GameManager.Instance.GameInPause}");
         if (GameManager.Instance.GameInPause) return;
         Debug.Log("OpenChat");
         gameObject.SetActive(!gameObject.activeSelf);

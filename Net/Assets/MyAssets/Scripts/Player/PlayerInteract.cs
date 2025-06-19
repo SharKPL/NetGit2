@@ -11,15 +11,11 @@ public class PlayerInteract : NetworkBehaviour
     [SerializeField] float maxDistance = 5f;
     [SerializeField] LayerMask interactMask;
 
+    [SerializeField] private AudioSource itemSource;
+    [SerializeField] private AudioClip takeClip;
+
     private System.Action<InputAction.CallbackContext> interactDelegate;
 
-    //private void Start()
-    //{
-    //    interactDelegate = ctx => Interact();
-
-    //    InputManager.Instance.GetInteractAction().performed += interactDelegate;
-
-    //}
 
     public override void OnStartClient()
     {
@@ -30,10 +26,25 @@ public class PlayerInteract : NetworkBehaviour
         InputManager.Instance.GetInteractAction().performed += interactDelegate;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if(!isLocalPlayer) return;
-        GlobalEventManager.showInteract?.Invoke(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask) && InputManager.Instance.GetPLayerCanMove());
+    
+        if (!isLocalPlayer || !InputManager.Instance.GetPLayerCanMove() || GameManager.Instance.GameInPause) return;
+        Debug.Log("ShowInter");
+        GlobalEventManager.showInteract?.Invoke(Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask));
+
+    }
+
+    [ClientRpc]
+    private void RpcTakeItemSound()
+    {
+        AudioManager.PlaySound(itemSource, takeClip);
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdTakeItemSound()
+    {
+        RpcTakeItemSound();
     }
 
     private void Interact()
@@ -56,6 +67,7 @@ public class PlayerInteract : NetworkBehaviour
                 Debug.Log("NoItem");
                 return;
             }
+            CmdTakeItemSound();
             Inventory.Instance.CmdAddItem(item);
 
         }
