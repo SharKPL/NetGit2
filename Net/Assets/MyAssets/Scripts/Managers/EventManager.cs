@@ -12,4 +12,8 @@ public static class GlobalEventManager
     public static UnityEvent UpdateInventoryUI = new UnityEvent();
 
     public static UnityEvent<bool> showInteract = new UnityEvent<bool>();
+
+    public static UnityEvent<string> ShowNote = new UnityEvent<string>();
+
+    public static UnityEvent<string> ShowEndGameText = new UnityEvent<string>();
 }

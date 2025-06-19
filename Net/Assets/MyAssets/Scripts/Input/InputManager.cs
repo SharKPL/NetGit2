@@ -17,6 +17,8 @@ public class InputManager : MonoBehaviour
     private InputAction interactAction;
     private InputAction inventoryAction;
 
+    private int stopControlCount = 0;
+
     public static InputManager Instance { get { return instance; } }
 
     private void Awake()
@@ -27,7 +29,7 @@ public class InputManager : MonoBehaviour
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         inputActions = new InputSystem_Actions();
 
         moveAction = inputActions.Player.Move;
@@ -71,10 +73,27 @@ public class InputManager : MonoBehaviour
     public void TurnPlayerControls(bool turn){
         if (turn)
         {
+            stopControlCount--;
+            if (stopControlCount > 0) return;
             inputActions.Player.Enable();
         }
         else{
+            stopControlCount++;
             inputActions.Player.Disable();
+        }
+    }
+
+    public void TurnAllControl(bool turn)
+    {
+        if (turn)
+        {
+            inputActions.Player.Enable();
+            inputActions.UIControl.Enable();
+        }
+        else
+        {
+            inputActions.Player.Disable();
+            inputActions.UIControl.Disable();
         }
     }
 

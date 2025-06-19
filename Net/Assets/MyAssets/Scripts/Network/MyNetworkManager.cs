@@ -13,6 +13,7 @@ public class MyNetworkManager : NetworkManager
 
     [Header("SceneLink")]
     [Scene] [SerializeField] private string mainScene = string.Empty;
+    [Scene][SerializeField] private string menuScene = string.Empty;
 
 
     [SerializeField] private int playerCount = 0;
@@ -49,13 +50,10 @@ public class MyNetworkManager : NetworkManager
                 Debug.Log($"OnAddPlayer1 {currentSpawnTran.position}");
                 var player = Connect(conn, lobbyPlayerPref, currentSpawnTran);
 
-                
                 CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers-1);
                 
                 var playerInfo = conn.identity.GetComponent<LobbyPlayerInfo>();
                 playerInfo.SetSteamId(steamID.m_SteamID);
-                Debug.Log($"OnAddPlayer2{currentSpawnTran}");
-                Debug.Log($"OnAddPlayer3{currentSpawnTran}");
                 break;
             case GameState.InGame:
 
@@ -77,7 +75,6 @@ public class MyNetworkManager : NetworkManager
         NetworkServer.AddPlayerForConnection(conn, playerInstance);
 
         var netIdent = playerInstance.GetComponent<NetworkIdentity>();
-
         GameControlManager.Instance.InitializePlayer(conn, netIdent, spawnTransform);
         IncreaseCounter();
         if (NetworkServer.active)
@@ -108,6 +105,7 @@ public class MyNetworkManager : NetworkManager
     public void ChangeScene(GameState state)
     {
         if(state == GameState.InGame) ServerChangeScene(mainScene);
+        if(state == GameState.Menu) StopHost();
     }
     public override void OnServerChangeScene(string newSceneName)
     {

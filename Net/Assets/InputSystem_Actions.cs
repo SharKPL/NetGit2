@@ -1040,7 +1040,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1a469fc5-05fc-4238-b256-d4cdc36d7f6a"",
-                    ""path"": ""<Keyboard>/t"",
+                    ""path"": ""<Keyboard>/backquote"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

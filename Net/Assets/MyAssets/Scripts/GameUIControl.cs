@@ -12,6 +12,8 @@ public class GameUIControl: MonoBehaviour
 
     [SerializeField] private GameObject interBtn;
 
+    [SerializeField] private GameObject point;
+
     private System.Action<InputAction.CallbackContext> pauseDelegate;
 
     private void Start()
@@ -53,6 +55,7 @@ public class GameUIControl: MonoBehaviour
         InputManager.Instance.TurnPlayerControls(!isActive);
         Cursor.lockState = isActive ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = isActive;
+        point.SetActive(!isActive);
     }
 
     private void LeaveToMenu()
