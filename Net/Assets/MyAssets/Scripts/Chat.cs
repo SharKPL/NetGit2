@@ -75,8 +75,8 @@ public class Chat : NetworkBehaviour
         Debug.Log($"chat {GameManager.Instance.GameInPause}");
         if (GameManager.Instance.GameInPause) return;
         Debug.Log("OpenChat");
+        GlobalEventManager.TurnPlayerControl?.Invoke(!gameObject.activeSelf);
         gameObject.SetActive(!gameObject.activeSelf);
-        GlobalEventManager.TurnPlayerControl?.Invoke(gameObject.activeSelf);
 
     }
 

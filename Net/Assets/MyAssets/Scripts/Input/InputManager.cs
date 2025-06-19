@@ -110,27 +110,28 @@ public class InputManager : MonoBehaviour
 
     public int TurnCursor(bool turn)
     {
+
         if (turn)
         {
             cursorCount++;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = turn;
+            return cursorCount;
+        }
+        else if(--cursorCount > 0)
+        {
+            Debug.Log($"TurnCursor2: {turn}");
+            return cursorCount;
         }
         else
         {
-
-            if (cursorCount > 0)
-            {
-                cursorCount--;
-                return cursorCount;
-            }
+            cursorCount = 0;
+            Debug.Log($"TurnCursor: {turn}");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = turn;
-
+            return cursorCount;
         }
 
-        
-        return cursorCount;
     }
 
     public bool GetPLayerCanMove()

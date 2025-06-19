@@ -94,22 +94,7 @@ namespace MUSOAR
 
         [SyncVar] bool teleport = false;
 
-        //private void Awake()
-        //{
-        //    if (!isLocalPlayer) return;
-        //    controller = GetComponent<CharacterController>();
-        //    animator = GetComponent<Animator>();
-        //    playerCamera = GetComponentInChildren<PlayerCamera>();
-        //    cameraTransform = playerCamera.GetCamera().transform;
-        //    playerHealth = GetComponent<PlayerHealth>();
-        //}
-
-        private void Awake()
-        {
-            playerCamera = GetComponentInChildren<PlayerCamera>();
-            playerCamera.gameObject.SetActive(false);
-            inputManager.TurnAllControl(false);
-        }
+        
         public override void OnStartClient()
         {
             //Debug.Log($"{netIdentity} OnStartMove1");
@@ -119,10 +104,13 @@ namespace MUSOAR
             //playerCamera = GetComponentInChildren<PlayerCamera>();
             //playerCamera.gameObject.SetActive(false);
             //inputManager.TurnAllControl(false);
-            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
-            Debug.Log("StartAuth");
-            playerCamera.gameObject.SetActive(true);
-            inputManager.TurnAllControl(true);
+            if (!netIdentity.isLocalPlayer)
+            {
+                playerCamera.gameObject.SetActive(false);
+                inputManager.TurnAllControl(false);
+                
+            }
+
 
         }
 

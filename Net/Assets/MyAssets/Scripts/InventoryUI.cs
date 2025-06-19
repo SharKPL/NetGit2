@@ -45,8 +45,8 @@ public class InventoryUI : MonoBehaviour
     {
         if (GameManager.Instance.GameInPause) return;
         Debug.Log("OpenChat");
+        GlobalEventManager.TurnPlayerControl?.Invoke(!gameObject.activeSelf);
         gameObject.SetActive(!gameObject.activeSelf);
-        GlobalEventManager.TurnPlayerControl?.Invoke(gameObject.activeSelf);
     }
 
     private void CloseInventoryBySettings(bool turnSet)
