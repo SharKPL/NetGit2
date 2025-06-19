@@ -28,14 +28,21 @@ public class GameControlManager : NetworkBehaviour
     {
         curTrans= tran;
         Debug.Log($"[Server] Initializing player {player.netId}");
-        TargetSetupPlayer(conn, player, curTrans.position, curTrans.rotation);
+        //TargetSetupPlayer(conn, player, curTrans.position, curTrans.rotation);
+        RpcSetPlayer(player, curTrans.position, curTrans.rotation);
     }
+
 
     [TargetRpc]
     public void TargetSetupPlayer(NetworkConnection target, NetworkIdentity player, Vector3 position, Quaternion rotation)
     {
         Debug.Log("TargetSetupPlayer" + player.name);
 
+        StartCoroutine(TeleportPlayerRepeatedly(player.transform, position, rotation));
+    }
+    [ClientRpc]
+    private void RpcSetPlayer(NetworkIdentity player, Vector3 position, Quaternion rotation)
+    {
         StartCoroutine(TeleportPlayerRepeatedly(player.transform, position, rotation));
     }
 
