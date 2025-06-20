@@ -53,10 +53,8 @@ public class MyNetworkManager : NetworkManager
         switch (GameManager.Instance.CurrentEnumGameState)
         {
             case GameState.Lobby:
-                GetStartPosition();
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
                 var telIdentity = currentSpawnTran.GetComponent<NetworkIdentity>();
-                //currentSpawnTran = GetStartPosition();
                 var player = Connect(conn, lobbyPlayerPref, telIdentity);
 
                 CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers-1);

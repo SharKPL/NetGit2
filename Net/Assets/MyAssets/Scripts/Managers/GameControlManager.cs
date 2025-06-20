@@ -57,11 +57,11 @@ public class GameControlManager : NetworkBehaviour
 
 
     [TargetRpc]
-    public void TargetSetupPlayer(NetworkConnection target, NetworkIdentity player, Transform teleportTran)
+    public void TargetSetupPlayer(NetworkIdentity player, NetworkIdentity teleportIden)
     {
         Debug.Log("TargetSetupPlayer" + player.name);
 
-        StartCoroutine(TeleportPlayerRepeatedly(player.transform, teleportTran));
+        StartCoroutine(TeleportPlayerRepeatedly(player.transform, teleportIden.transform));
     }
     [ClientRpc]
     private void RpcSetPlayer(NetworkIdentity player, NetworkIdentity teleportIden)
