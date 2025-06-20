@@ -56,6 +56,7 @@ namespace MUSOAR
 
         private void LateUpdate()
         {
+            if (!isLocalPlayer) return;
             GetCameraInput();
             ApplyRotation();
             ApplyDeathRotation();
