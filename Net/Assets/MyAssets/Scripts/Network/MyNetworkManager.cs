@@ -45,6 +45,7 @@ public class MyNetworkManager : NetworkManager
         switch (GameManager.Instance.CurrentEnumGameState)
         {
             case GameState.Lobby:
+                
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
                 var telIdentity = currentSpawnTran.GetComponent<NetworkIdentity>();
                 //currentSpawnTran = GetStartPosition();
@@ -75,7 +76,7 @@ public class MyNetworkManager : NetworkManager
     private NetworkIdentity Connect(NetworkConnectionToClient conn,GameObject pref, NetworkIdentity teleportIden)
     {
         
-        GameObject playerInstance = Instantiate(pref);
+        GameObject playerInstance = Instantiate(pref, teleportIden.transform);
         NetworkServer.AddPlayerForConnection(conn, playerInstance);
 
         var netIdent = playerInstance.GetComponent<NetworkIdentity>();
