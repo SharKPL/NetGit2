@@ -134,18 +134,32 @@ namespace MUSOAR
             Teleport(pos);
         }
 
-        [ClientRpc]
 
+        [ClientRpc]
         public void RpcTeleport(Vector3 pos)
+        {
+            StartCoroutine(TeleportCoroutine(pos));
+        }
+
+        private IEnumerator TeleportCoroutine(Vector3 pos)
         {
             teleport = true;
             animator.applyRootMotion = false;
+
+            // Останавливаем текущее движение
+            velocity = Vector3.zero;
+
             controller.enabled = false;
             transform.position = pos;
-            //controller.Move(pos);
+
+            // Небольшая задержка для синхронизации
+            yield return new WaitForFixedUpdate();
+
             controller.enabled = true;
             animator.applyRootMotion = true;
             teleport = false;
+
+            Debug.Log($"Player teleported to {pos}");
         }
 
 

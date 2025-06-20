@@ -45,10 +45,11 @@ public class MyNetworkManager : NetworkManager
         switch (GameManager.Instance.CurrentEnumGameState)
         {
             case GameState.Lobby:
-
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
+                var telIdentity = currentSpawnTran.GetComponent<NetworkIdentity>();
+                //currentSpawnTran = GetStartPosition();
                 Debug.Log($"OnAddPlayer1 {currentSpawnTran.position}");
-                var player = Connect(conn, lobbyPlayerPref, currentSpawnTran);
+                var player = Connect(conn, lobbyPlayerPref, telIdentity);
 
                 CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers-1);
                 
@@ -57,10 +58,12 @@ public class MyNetworkManager : NetworkManager
                 break;
             case GameState.InGame:
                 Debug.Log(GameManager.Instance.CurrentEnumGameState);
-                LobbySpawnControl.Instance.RefreshSpawnPoints(); 
+                LobbySpawnControl.Instance.RefreshSpawnPoints();
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
+                var telIdent = currentSpawnTran.GetComponent<NetworkIdentity>();
+                //currentSpawnTran = GetStartPosition();
                 Debug.Log(currentSpawnTran);
-                var play = Connect(conn, gamePlayerPref, currentSpawnTran);
+                var play = Connect(conn, gamePlayerPref, telIdent);
                 CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
                 var name=SteamHelper.GetPlayerName(SteamID);
                 play.GetComponent<PlayerData>().SetPlayerName(name);
@@ -70,7 +73,7 @@ public class MyNetworkManager : NetworkManager
         }
 
     }
-    private NetworkIdentity Connect(NetworkConnectionToClient conn,GameObject pref, Transform spawnTransform)
+    private NetworkIdentity Connect(NetworkConnectionToClient conn,GameObject pref, NetworkIdentity teleportIden)
     {
         
         GameObject playerInstance = Instantiate(pref);
@@ -83,7 +86,7 @@ public class MyNetworkManager : NetworkManager
         }
         else
         {
-            GameControlManager.Instance.InitializePlayer(conn, ref netIdent, spawnTransform);
+            GameControlManager.Instance.InitializePlayer(conn, ref netIdent, teleportIden);
         }
         //GameControlManager.Instance.InitializePlayer(conn, ref netIdent, spawnTransform);
         IncreaseCounter();
