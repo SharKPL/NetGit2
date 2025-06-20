@@ -52,7 +52,7 @@ public class MyNetworkManager : NetworkManager
 
                 CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers-1);
                 
-                var playerInfo = conn.identity.GetComponent<LobbyPlayerInfo>();
+                var playerInfo = player.GetComponent<LobbyPlayerInfo>();
                 playerInfo.SetSteamId(steamID.m_SteamID);
                 break;
             case GameState.InGame:
@@ -60,10 +60,10 @@ public class MyNetworkManager : NetworkManager
                 LobbySpawnControl.Instance.RefreshSpawnPoints(); 
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
                 Debug.Log(currentSpawnTran);
-                Connect(conn, gamePlayerPref, currentSpawnTran);
+                var play = Connect(conn, gamePlayerPref, currentSpawnTran);
                 CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
                 var name=SteamHelper.GetPlayerName(SteamID);
-                conn.identity.GetComponent<PlayerData>().SetPlayerName(name);
+                play.GetComponent<PlayerData>().SetPlayerName(name);
                 break;
             default:
                 break;
@@ -72,12 +72,20 @@ public class MyNetworkManager : NetworkManager
     }
     private NetworkIdentity Connect(NetworkConnectionToClient conn,GameObject pref, Transform spawnTransform)
     {
-
+        
         GameObject playerInstance = Instantiate(pref);
         NetworkServer.AddPlayerForConnection(conn, playerInstance);
 
         var netIdent = playerInstance.GetComponent<NetworkIdentity>();
-        GameControlManager.Instance.InitializePlayer(conn, ref netIdent, spawnTransform);
+        if (GameControlManager.Instance == null)
+        {
+            Debug.LogError("GameControlManager.Instance is NULL");
+        }
+        else
+        {
+            GameControlManager.Instance.InitializePlayer(conn, ref netIdent, spawnTransform);
+        }
+        //GameControlManager.Instance.InitializePlayer(conn, ref netIdent, spawnTransform);
         IncreaseCounter();
         if (NetworkServer.active)
         {
