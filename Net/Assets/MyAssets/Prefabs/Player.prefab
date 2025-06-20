@@ -2275,13 +2275,13 @@ MonoBehaviour:
   groundCheckOffset: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 257
   minFallDamageHeight: 2.5
   fallDamageMultiplier: 20
   netAnimator: {fileID: 1749385878339618048}
   animationSmoothTime: 0.2
   cameraStandingHeight: 0
-  cameraCrouchingHeight: 0
+  cameraCrouchingHeight: -0.25
   cameraPlayerDeadHeight: 0.3
   playerCamera: {fileID: 4240887098768484084}
   playerHealth: {fileID: 6169082249918739515}

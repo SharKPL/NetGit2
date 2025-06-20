@@ -25,6 +25,7 @@ public class StickInteract : NetworkBehaviour, IInteractable
             Inventory.Instance.CmdRemoveItem(needItem, false);
             stickRenderer.material = stickFixMat;
             stickCol.isTrigger = false;
+            gameObject.layer = 0;
         }
     }
 

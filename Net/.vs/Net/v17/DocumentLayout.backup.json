@@ -131,7 +131,7 @@
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\StickInteract.cs",
               "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\StickInteract.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interact\\StickInteract.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T22:33:36.088Z",
               "EditorCaption": ""
@@ -240,9 +240,10 @@
               "RelativeDocumentMoniker": "Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
               "ToolTip": "E:\\Gity\\NetGit2\\Net\\Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
               "RelativeToolTip": "Assets\\MyAssets\\Scripts\\Interact\\DoorInteract.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwDEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T15:51:06.665Z"
+              "WhenOpened": "2025-06-19T15:51:06.665Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
