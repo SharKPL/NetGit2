@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Mirror;
 
-public class LobbySpawnControl : MonoBehaviour
+public class LobbySpawnControl : NetworkBehaviour
 {
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
 
@@ -12,19 +12,40 @@ public class LobbySpawnControl : MonoBehaviour
     private static LobbySpawnControl instance;
     public static LobbySpawnControl Instance {  get { return instance; } }
 
-    private void Awake()
+    //private void Awake()
+    //{
+
+    //    if (instance != null && instance != this) Destroy(gameObject); 
+    //    instance = this;
+    //    var points = GetComponentsInChildren<Transform>();
+    //    for (int i = 1; i < points.Length; i++)
+    //    {
+    //        spawnPoints.Add((Transform)points[i]);
+    //    }
+    //    if (spawnPoints.Count > 0) 
+    //    {
+    //        Debug.LogError("LobbySpawnControlAwake");
+    //    }
+    //}
+
+    public override void OnStartServer()
     {
-        if (instance != null && instance != this) Destroy(gameObject); 
+        base.OnStartServer();
+        if (instance != null && instance != this) Destroy(gameObject);
         instance = this;
         var points = GetComponentsInChildren<Transform>();
         for (int i = 1; i < points.Length; i++)
         {
             spawnPoints.Add((Transform)points[i]);
         }
+        if (spawnPoints.Count > 0)
+        {
+            Debug.LogError("LobbySpawnControlAwake");
+        }
     }
     //private void Start()
     //{
-        
+
     //    var points = GetComponentsInChildren<Transform>();
     //    for (int i = 1; i< points.Length; i++)
     //    {
@@ -35,6 +56,11 @@ public class LobbySpawnControl : MonoBehaviour
     public Transform GetSpawnPoint(int connectionId)
     {
         Debug.LogError("GetSpawnPoint");
+        if (spawnPoints == null || spawnPoints.Count == 0)
+        {
+            Debug.LogError("Spawn points list is empty.");
+            return null;
+        }
         if (connectionId < spawnPoints.Count)
         {
             return spawnPoints[connectionId];
@@ -57,12 +83,13 @@ public class LobbySpawnControl : MonoBehaviour
     public void RefreshSpawnPoints()
     {
         spawnPoints.Clear();
-        NetworkStartPosition[] networkSpawnPositions = FindObjectsOfType<NetworkStartPosition>();
-        
-        foreach (NetworkStartPosition spawnPosition in networkSpawnPositions)
+
+        var points = GetComponentsInChildren<Transform>();
+        for (int i = 1; i < points.Length; i++)
         {
-            spawnPoints.Add(spawnPosition.transform);
+            spawnPoints.Add((Transform)points[i]);
         }
+        
         
         spawnCount = spawnPoints.Count;
     }
