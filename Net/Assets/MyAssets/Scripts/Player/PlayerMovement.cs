@@ -95,6 +95,7 @@ namespace MUSOAR
         [SyncVar] bool teleport = false;
 
         
+        /*
         public override void OnStartClient()
         {
             //Debug.Log($"{netIdentity} OnStartMove1");
@@ -110,8 +111,6 @@ namespace MUSOAR
                 inputManager.TurnAllControl(false);
                 
             }
-
-
         }
 
         public override void OnStartAuthority()
@@ -122,6 +121,7 @@ namespace MUSOAR
             playerCamera.gameObject.SetActive(true);
             inputManager.TurnAllControl(true);
         }
+        */
 
         public void Teleport(Vector3 pos)
         {
@@ -168,8 +168,9 @@ namespace MUSOAR
         private void Update()
         {
             if (teleport) return;
-            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
+            //if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             //if (!isSwitchTo) return;
+            if (!isLocalPlayer) return;
             GetMovementInput();
             HandleMovement();
             HandleJump();
