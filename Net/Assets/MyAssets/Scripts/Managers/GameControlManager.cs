@@ -9,7 +9,7 @@ public class GameControlManager : NetworkBehaviour
 {
     public static GameControlManager Instance { get; private set; }
 
-    [SyncVar] private Transform curTrans;
+    [SyncVar] private NetworkIdentity curIdentity;
 
 
     private void Awake()
@@ -28,7 +28,7 @@ public class GameControlManager : NetworkBehaviour
     [Server]
     public void InitializePlayer(NetworkConnection conn, ref NetworkIdentity player, NetworkIdentity teleportIden)
     {
-        
+
         //curTrans= teleportIden.transform;
         //Debug.Log($"[Server] Initializing player {player.netId}");
 
@@ -37,9 +37,10 @@ public class GameControlManager : NetworkBehaviour
         //    player.GetComponent<MUSOAR.PlayerMovement>().CmdTeleport(curTrans.position);
         //    return;
         //}
+        curIdentity = teleportIden;
 
         //TargetSetupPlayer(conn, player, curTrans.position, curTrans.rotation);
-        if (teleportIden == null)
+        if (curIdentity == null)
         {
             Debug.LogError("teleportIden is NULL");
             
@@ -50,7 +51,7 @@ public class GameControlManager : NetworkBehaviour
         }
         else
         {
-            RpcSetPlayer(player, teleportIden);
+            RpcSetPlayer(player, curIdentity);
         }
     }
 

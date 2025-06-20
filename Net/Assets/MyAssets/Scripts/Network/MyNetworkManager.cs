@@ -109,6 +109,7 @@ public class MyNetworkManager : NetworkManager
         readyStates.Remove(conn);
         DecreaseCounter();
         NetworkServer.RemovePlayerForConnection(conn);
+        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
