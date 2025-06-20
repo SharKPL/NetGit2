@@ -1824,6 +1824,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b58447ddb9f4547883c2478d165cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   playerCamera: {fileID: 1304809985993171502}
   rotationSpeed: 0.2
   minVerticalAngle: -75

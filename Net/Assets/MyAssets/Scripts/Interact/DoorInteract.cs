@@ -41,7 +41,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         Debug.Log("DoorInteract");
         if (hisUnocked && canTrigger)
         {
-            ToggleDoor();
+            CmdToggleDoor();
         }
         else if(Inventory.Instance.TryGetItem(needItem) && !hisUnocked)
         {
@@ -70,6 +70,18 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         }
 
         hisOpen = !hisOpen;
+    }
+
+    [ClientRpc]
+    private void RpcToggleDoor()
+    {
+        ToggleDoor();
+    }
+
+    [Command(requiresAuthority = false)]
+    private void CmdToggleDoor()
+    {
+        RpcToggleDoor();
     }
 
     IEnumerator RotateDoor(Quaternion target, float speed)
