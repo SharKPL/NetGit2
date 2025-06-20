@@ -14,4 +14,11 @@ public class AudioManager : NetworkBehaviour
     }
 
 
+    public static void PlayLoopSound(AudioSource source, AudioClip clip)
+    {
+        Debug.Log("PlaySound");
+        source.clip = clip;
+        source.Play();
+    }
+
 }
