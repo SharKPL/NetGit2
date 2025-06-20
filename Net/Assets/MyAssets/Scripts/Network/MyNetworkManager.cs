@@ -39,8 +39,16 @@ public class MyNetworkManager : NetworkManager
 
     private Dictionary<NetworkConnectionToClient, bool> readyStates = new Dictionary<NetworkConnectionToClient, bool>();
 
+
+    public override void OnServerConnect(NetworkConnectionToClient conn)
+    {
+        base.OnServerConnect(conn);
+        Debug.LogError("OnServerConnect");
+       
+    }
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
+        Debug.LogError("OnServerAddPlayer");
         //base.OnServerAddPlayer(conn);
         switch (GameManager.Instance.CurrentEnumGameState)
         {
