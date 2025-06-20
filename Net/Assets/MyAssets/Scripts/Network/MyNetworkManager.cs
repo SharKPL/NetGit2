@@ -54,7 +54,7 @@ public class MyNetworkManager : NetworkManager
         {
             case GameState.Lobby:
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
-                var telIdentity = currentSpawnTran.GetComponent<NetworkIdentity>();
+                var telIdentity = currentSpawnTran.gameObject.GetComponent<NetworkIdentity>();
                 var player = Connect(conn, lobbyPlayerPref, telIdentity);
 
                 CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers-1);
@@ -66,7 +66,7 @@ public class MyNetworkManager : NetworkManager
                 LobbySpawnControl.Instance.RefreshSpawnPoints();
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
                 Debug.Log($"currentSpawnTran {currentSpawnTran is null}");
-                var telIdent = currentSpawnTran.GetComponent<NetworkIdentity>();
+                var telIdent = currentSpawnTran.gameObject.GetComponent<NetworkIdentity>();
                 //currentSpawnTran = GetStartPosition();
 
                 var play = Connect(conn, gamePlayerPref, telIdent);
