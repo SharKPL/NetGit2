@@ -53,7 +53,7 @@ public class MyNetworkManager : NetworkManager
         switch (GameManager.Instance.CurrentEnumGameState)
         {
             case GameState.Lobby:
-                
+                GetStartPosition();
                 currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
                 var telIdentity = currentSpawnTran.GetComponent<NetworkIdentity>();
                 //currentSpawnTran = GetStartPosition();
