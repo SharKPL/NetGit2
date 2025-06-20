@@ -27,7 +27,7 @@ public class BaseInteract : NetworkBehaviour,IInteractable
     [ClientRpc]
     private void RpcFixGen()
     {
-        AudioManager.PlaySound(genSource, genFixSound);
+        AudioManager.PlayLoopSound(genSource, genFixSound);
     }
 
     [Command(requiresAuthority = false)]
