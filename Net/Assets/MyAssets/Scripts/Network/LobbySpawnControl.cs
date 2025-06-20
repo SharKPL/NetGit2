@@ -34,6 +34,7 @@ public class LobbySpawnControl : MonoBehaviour
 
     public Transform GetSpawnPoint(int connectionId)
     {
+        Debug.LogError("GetSpawnPoint");
         if (connectionId < spawnPoints.Count)
         {
             return spawnPoints[connectionId];
