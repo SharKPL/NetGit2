@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Item Object
+  - Concrete
+  - Polka
+  - Emptybox
+  - Locker
+  - Door
+  - Wood
+  - Bed
+  - Metal
+  - DestroyWoodConcrete
+  - PointInPolka
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

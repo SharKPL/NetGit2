@@ -215,7 +215,10 @@ public class LobbySteam : MonoBehaviour
         MyNetworkManager.Instance.networkAddress = SteamMatchmaking.GetLobbyData(new CSteamID(LobbyID.m_SteamID), HOST_ADDRESS_KEY);
         lobbyKey = SteamMatchmaking.GetLobbyData(new CSteamID(LobbyID.m_SteamID), LOBBY_KEY);
         if(NetworkClient.active) return;
-        MyNetworkManager.Instance.StartClient();
+        if (!NetworkClient.isConnected)
+        {
+            MyNetworkManager.Instance.StartClient();
+        }
     }
 
     private void OnJoinRequest(GameLobbyJoinRequested_t callback)
