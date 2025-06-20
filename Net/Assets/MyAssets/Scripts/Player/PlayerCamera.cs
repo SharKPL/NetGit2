@@ -1,9 +1,10 @@
+using Mirror;
 using UnityEngine;
 using Zenject;
 
 namespace MUSOAR
 {
-    public class PlayerCamera : MonoBehaviour, ISaveable
+    public class PlayerCamera : NetworkBehaviour, ISaveable
     {
         [Header("Ссылки")]
         [SerializeField] private Camera playerCamera;
@@ -31,6 +32,19 @@ namespace MUSOAR
         private void Awake()
         {
             inputManager = InputManager.Instance;
+            //playerMovement = GetComponentInParent<PlayerMovement>();
+            //playerRigController = GetComponentInParent<PlayerRigController>();
+        }
+
+        public override void OnStartClient()
+        {
+            base.OnStartClient();
+
+            if (!isLocalPlayer)
+            {
+                playerCamera.gameObject.SetActive(false);
+            }
+
             playerMovement = GetComponentInParent<PlayerMovement>();
             playerRigController = GetComponentInParent<PlayerRigController>();
         }
