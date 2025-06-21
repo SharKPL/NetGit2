@@ -61,6 +61,9 @@ public class Inventory : NetworkBehaviour
     [ClientRpc]
     private void RpcAddItem(uint itemNetId, string itemName)
     {
+        // У хоста уже добавлено на сервере
+        //if (isServer && isLocalPlayer)
+        //    return;
         if (!NetworkClient.spawned.TryGetValue(itemNetId, out NetworkIdentity identity))
         {
             Debug.LogWarning($"[CLIENT] Item with netId {itemNetId} not found.");
@@ -97,9 +100,9 @@ public class Inventory : NetworkBehaviour
         item.gameObject.SetActive(false);
 
         // Добавить на сервере для хоста
-        if (!itemList.ContainsKey(item.ItemName))
-            itemList[item.ItemName] = new List<Item>();
-        itemList[item.ItemName].Add(item);
+        //if (!itemList.ContainsKey(item.ItemName))
+        //    itemList[item.ItemName] = new List<Item>();
+        //itemList[item.ItemName].Add(item);
 
         RpcAddItem(netIdentity.netId, item.ItemName);
     }
@@ -107,6 +110,7 @@ public class Inventory : NetworkBehaviour
     [ClientRpc]
     private void RpcRemoveItem(uint itemNetId, string itemName, bool active)
     {
+
         if (!NetworkClient.spawned.TryGetValue(itemNetId, out NetworkIdentity identity))
         {
             Debug.LogWarning($"[CLIENT] Item with netId {itemNetId} not found.");
