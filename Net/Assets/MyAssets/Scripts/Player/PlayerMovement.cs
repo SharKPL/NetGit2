@@ -305,6 +305,13 @@ namespace MUSOAR
             }
 
             currentSpeed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
+
+            if (float.IsNaN(currentSpeed))
+            {
+                currentSpeed = 0f;
+                Debug.LogWarning("PlayerMovement: currentSpeed was NaN, reset to 0");
+            }
+
             lastMoveDirection = moveDirection;
         }
 
