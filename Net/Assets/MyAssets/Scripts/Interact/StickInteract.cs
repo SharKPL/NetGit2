@@ -23,10 +23,22 @@ public class StickInteract : NetworkBehaviour, IInteractable
         if (Inventory.Instance.TryGetItem(needItem))
         {
             Inventory.Instance.CmdRemoveItem(needItem, false);
-            stickRenderer.material = stickFixMat;
-            stickCol.isTrigger = false;
-            gameObject.layer = 0;
+            CmdUpdateStick();
         }
+    }
+
+    [ClientRpc]
+    private void RpcUpdateStick()
+    {
+        stickRenderer.material = stickFixMat;
+        stickCol.isTrigger = false;
+        gameObject.layer = 0;
+    }
+
+    [Command(requiresAuthority = false)]
+    private void CmdUpdateStick()
+    {
+        RpcUpdateStick();
     }
 
 }
