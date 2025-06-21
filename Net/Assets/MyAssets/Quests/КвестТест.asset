@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94230dfa023eddd40b3db45e5ea07653, type: 3}
+  m_Name: "\u041A\u0432\u0435\u0441\u0442\u0422\u0435\u0441\u0442"
+  m_EditorClassIdentifier: 
+  questName: "\u041A\u0432\u0435\u0441\u0442\u0422\u0435\u0441\u0442"
+  questDescription: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435"
+  questlocation: 
+  questStepType: 0
+  steps:
+  - {fileID: 11400000, guid: fea7f535b3bf53f489172a1adc39d3d1, type: 2}
+  stepIndex: 0
+  quest_coordinates: {x: 0, y: 0, z: 0}
+  isCompleted: 1

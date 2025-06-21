@@ -66,6 +66,8 @@ namespace MUSOAR
         [SyncVar] private MoveState currentMoveState;
         [SerializeField] private Transform cameraTransform;
 
+        [SerializeField] private GameObject helmet;
+
         private Vector3 moveDirection;
         private Vector3 lastMoveDirection;
         [SyncVar] private Vector3 velocity;
@@ -95,34 +97,26 @@ namespace MUSOAR
         public Vector2 MovementInput => movementInput;
         public bool IsGrounded => isGrounded;
 
+
         
-        /*
         public override void OnStartClient()
         {
-            //Debug.Log($"{netIdentity} OnStartMove1");
-            //base.OnStartClient();
-            //Debug.Log($"{netIdentity} OnStartMove2");
-
-            //playerCamera = GetComponentInChildren<PlayerCamera>();
-            //playerCamera.gameObject.SetActive(false);
-            //inputManager.TurnAllControl(false);
+            
             if (!netIdentity.isLocalPlayer)
             {
-                playerCamera.gameObject.SetActive(false);
-                inputManager.TurnAllControl(false);
-                
+                if(helmet!=null) helmet.SetActive(false);
             }
         }
 
-        public override void OnStartAuthority()
-        {
-            base.OnStartAuthority();
-            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
-            Debug.Log("StartAuth");
-            playerCamera.gameObject.SetActive(true);
-            inputManager.TurnAllControl(true);
-        }
-        */
+        //public override void OnStartAuthority()
+        //{
+        //    base.OnStartAuthority();
+        //    if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
+        //    Debug.Log("StartAuth");
+        //    playerCamera.gameObject.SetActive(true);
+        //    inputManager.TurnAllControl(true);
+        //}
+        
 
         public void Teleport(Vector3 pos)
         {

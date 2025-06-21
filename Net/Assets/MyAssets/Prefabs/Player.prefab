@@ -2330,6 +2330,7 @@ MonoBehaviour:
   controller: {fileID: 1068207021323427330}
   animator: {fileID: 8566936144810733376}
   cameraTransform: {fileID: 334562030208109122}
+  helmet: {fileID: 6088838483783060779}
 --- !u!114 &6169082249918739515
 MonoBehaviour:
   m_ObjectHideFlags: 0

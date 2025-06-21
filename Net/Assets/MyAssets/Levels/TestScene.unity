@@ -3385,7 +3385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7571903822595997757, guid: 362509226fbcd1c488087e75a25c71b1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 300.00064
+      value: 300.00037
       objectReference: {fileID: 0}
     - target: {fileID: 7870062633248870139, guid: 362509226fbcd1c488087e75a25c71b1, type: 3}
       propertyPath: m_Name
@@ -132112,6 +132112,7 @@ MonoBehaviour:
   questView: {fileID: 1079087304}
   markerController: {fileID: 0}
   quests:
+  - {fileID: 11400000, guid: 8ec01581ee7c76c46a888988c294a7f2, type: 2}
   - {fileID: 11400000, guid: 0976790ef3e806a4a87fd8c1d45f8954, type: 2}
   - {fileID: 11400000, guid: ed3728f71fa951f4c9ba2b20fcd8f196, type: 2}
   - {fileID: 11400000, guid: db0689470ef12cf4ebcdd35ce43c3668, type: 2}
@@ -160639,6 +160640,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142194794}
   m_Mesh: {fileID: -2432090755550338912, guid: fa69797978349f24ba93664c2ec2d9ea, type: 3}
+--- !u!1001 &2142551373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1280375753334038545, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: sceneId
+      value: 169557356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.05246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.029999971
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.943329
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532364668401464504, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060465967279176269, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: StepName
+      value: "\u0428\u0430\u0433\u041A\u0432\u0435\u0441\u0442\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024054604827868848, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: m_Name
+      value: QuestTrigger (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
 --- !u!1 &2145382730
 GameObject:
   m_ObjectHideFlags: 0
@@ -163673,6 +163739,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4060465967279176269, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
+      propertyPath: StepName
+      value: 1_1
+      objectReference: {fileID: 0}
     - target: {fileID: 8024054604827868848, guid: d7180efea5c57df468a5ae31c07ab755, type: 3}
       propertyPath: m_Name
       value: QuestTrigger
@@ -163837,3 +163907,4 @@ SceneRoots:
   - {fileID: 1754734113}
   - {fileID: 8509288675765268869}
   - {fileID: 1182630978}
+  - {fileID: 2142551373}
