@@ -18,10 +18,11 @@ public class Inventory : NetworkBehaviour
     {
         base.OnStartClient();
         itemList = new Dictionary<string, List<Item>>();
-        if (!isLocalPlayer) return;
-        if (instance == null)
+
+        if (isLocalPlayer)
         {
-            instance = this;
+            if (instance == null)
+                instance = this;
         }
     }
     //private void Awake()
@@ -36,84 +37,114 @@ public class Inventory : NetworkBehaviour
     //{
     //    itemList = new Dictionary<string, List<Item>>();
     //}
-    public void AddItem(Item item)
+    //public void AddItem(Item item)
+    //{
+    //    Debug.Log($"Add {item.ItemName}");
+    //    if (itemList.ContainsKey(item.ItemName))
+    //    {
+    //        itemList[item.ItemName].Add(item);
+    //    }
+    //    else
+    //    {
+    //        List<Item> list = new List<Item>();
+    //        list.Add(item);
+    //        itemList.Add(item.ItemName, list);
+    //    }
+    //    GlobalEventManager.TakeItemEvent?.Invoke(item.ItemName);
+    //    item.gameObject.transform.SetParent(transform);
+    //    item.gameObject.transform.transform.position = transform.position;
+    //    item.gameObject.SetActive(false);
+    //}
+
+
+
+    [ClientRpc]
+    private void RpcAddItem(uint itemNetId, string itemName)
     {
-        Debug.Log($"Add {item.ItemName}");
-        if (itemList.ContainsKey(item.ItemName))
+        if (!NetworkClient.spawned.TryGetValue(itemNetId, out NetworkIdentity identity))
         {
-            itemList[item.ItemName].Add(item);
+            Debug.LogWarning($"[CLIENT] Item with netId {itemNetId} not found.");
+            return;
         }
-        else
-        {
-            List<Item> list = new List<Item>();
-            list.Add(item);
-            itemList.Add(item.ItemName, list);
-        }
-        GlobalEventManager.TakeItemEvent?.Invoke(item.ItemName);
-        item.gameObject.transform.SetParent(transform);
-        item.gameObject.transform.transform.position = transform.position;
+
+        Item item = identity.GetComponent<Item>();
+        if (item == null) return;
+
+        // Добавить в инвентарь
+        if (!itemList.ContainsKey(itemName))
+            itemList[itemName] = new List<Item>();
+        itemList[itemName].Add(item);
+
+        item.transform.SetParent(transform);
+        item.transform.position = transform.position;
         item.gameObject.SetActive(false);
-    }
 
-
-
-    [TargetRpc]
-    private void TargetAddItem(NetworkConnection target,Item item)
-    {
-        
-        Debug.Log($"Add {item.ItemName}");
-        if (itemList.ContainsKey(item.ItemName))
-        {
-            itemList[item.ItemName].Add(item);
-            Debug.Log($"��������{item.ItemName}");
-        }
-        else
-        {
-            Debug.Log($"����������{item.ItemName}");
-            List<Item> list = new List<Item>();
-            list.Add(item);
-            itemList.Add(item.ItemName, list);
-        }
-        
-
-
-        GlobalEventManager.TakeItemEvent?.Invoke(item.ItemName);
+        if (isLocalPlayer)
+            GlobalEventManager.TakeItemEvent?.Invoke(itemName);
     }
 
     [Command(requiresAuthority = false)]
     public void CmdAddItem(Item item)
     {
-        Debug.LogError("ni");
-        item.gameObject.transform.SetParent(transform);
-        item.gameObject.transform.transform.position = transform.position;
-        item.gameObject.SetActive(false);
-        TargetAddItem(connectionToClient,item);
-    }
-
-    [TargetRpc]
-    private void TargetRemoveItem(NetworkConnection target,string itemName, bool active)
-    {
-
-        itemList[itemName].RemoveAt(0);
-        if (itemList[itemName].Count == 0)
+        if (!item.TryGetComponent(out NetworkIdentity netIdentity))
         {
-            itemList.Remove(itemName);
-            Debug.Log($"Remove {itemName}");
+            Debug.LogError("Item has no NetworkIdentity!");
+            return;
         }
 
+        item.transform.SetParent(transform);
+        item.transform.position = transform.position;
+        item.gameObject.SetActive(false);
 
-        GlobalEventManager.UpdateInventoryUI?.Invoke();
+        // Добавить на сервере для хоста
+        if (!itemList.ContainsKey(item.ItemName))
+            itemList[item.ItemName] = new List<Item>();
+        itemList[item.ItemName].Add(item);
 
+        RpcAddItem(netIdentity.netId, item.ItemName);
+    }
+
+    [ClientRpc]
+    private void RpcRemoveItem(uint itemNetId, string itemName, bool active)
+    {
+        if (!NetworkClient.spawned.TryGetValue(itemNetId, out NetworkIdentity identity))
+        {
+            Debug.LogWarning($"[CLIENT] Item with netId {itemNetId} not found.");
+            return;
+        }
+
+        Item item = identity.GetComponent<Item>();
+        if (item == null) return;
+
+        if (itemList.ContainsKey(itemName))
+        {
+            itemList[itemName].Remove(item);
+            if (itemList[itemName].Count == 0)
+                itemList.Remove(itemName);
+        }
+
+        item.transform.parent = null;
+        item.gameObject.SetActive(active);
+
+        if (isLocalPlayer)
+            GlobalEventManager.UpdateInventoryUI?.Invoke();
     }
 
     [Command(requiresAuthority = false)]
     public void CmdRemoveItem(string itemName, bool active)
     {
-        Debug.LogError($"connectionToClient null:{connectionToClient is null}");
-        if (!itemList.ContainsKey(itemName)) return;
-        itemList[itemName][0].transform.parent = null;
-        itemList[itemName][0].gameObject.SetActive(active);
-        TargetRemoveItem(connectionToClient,itemName, active);
+        if (!itemList.ContainsKey(itemName) || itemList[itemName].Count == 0)
+            return;
+
+        Item item = itemList[itemName][0];
+        itemList[itemName].RemoveAt(0);
+        if (itemList[itemName].Count == 0)
+            itemList.Remove(itemName);
+
+        item.transform.parent = null;
+        item.gameObject.SetActive(active);
+
+        RpcRemoveItem(item.netIdentity.netId, itemName, active);
     }
 
 
