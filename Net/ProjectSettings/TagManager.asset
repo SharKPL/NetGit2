@@ -16,6 +16,7 @@ TagManager:
   - DestroyWoodConcrete
   - PointInPolka
   - SpawnPoint
+  - QuestTrigger
   layers:
   - Default
   - TransparentFX

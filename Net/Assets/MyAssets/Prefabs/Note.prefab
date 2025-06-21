@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 779452021968807951}
   - component: {fileID: 5897556163031395324}
   - component: {fileID: 7108578975199432069}
+  - component: {fileID: 7604153596875516188}
   m_Layer: 8
   m_Name: Note
   m_TagString: Untagged
@@ -69,9 +70,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc77b2c69997be498518bb4cb5b0b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   note: {fileID: 0}
   noteSource: {fileID: 7108578975199432069}
   noteClip: {fileID: 8300000, guid: 7ee46aeaf129b1e43ad9dafd52cb0d38, type: 3}
+  isQuest: 0
+  isComplete: 0
+  stepName: "\u041F\u0440\u043E\u0447\u0438\u0442\u0430\u0442\u044C \u0437\u0430\u043F\u0438\u0441\u043A\u0443"
 --- !u!82 &7108578975199432069
 AudioSource:
   m_ObjectHideFlags: 0
@@ -169,6 +176,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7604153596875516188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071244229754707922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1869719611
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &8290955673546754740
 GameObject:
   m_ObjectHideFlags: 0

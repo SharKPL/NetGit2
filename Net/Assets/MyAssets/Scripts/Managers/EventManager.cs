@@ -16,4 +16,8 @@ public static class GlobalEventManager
     public static UnityEvent<string> ShowNote = new UnityEvent<string>();
 
     public static UnityEvent<string> ShowEndGameText = new UnityEvent<string>();
+
+    public static UnityEvent OnQuestCompleted = new UnityEvent();
+    public static UnityEvent OnQuestViewUpdated = new UnityEvent();
+    public static UnityEvent<string> OnQuestStepCompleted = new UnityEvent<string>();
 }
