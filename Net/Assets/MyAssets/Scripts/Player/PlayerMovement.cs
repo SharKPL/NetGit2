@@ -34,7 +34,7 @@ namespace MUSOAR
         [SerializeField] private float airControl = 0.5f;
 
         [Header("Прыжок")]
-        [SerializeField] private float jumpForce = 5f;
+        [SerializeField] private float jumpForce = 1f;
         [SerializeField] private float jumpCooldown = 0.5f;
         [SerializeField] private float groundCheckRadius = 0.2f;
         [SerializeField] private float groundCheckOffset = 0.5f;
@@ -170,7 +170,7 @@ namespace MUSOAR
             if (teleport) return;
             //if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             //if (!isSwitchTo) return;
-            if (!isLocalPlayer) return;
+            if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             GetMovementInput();
             HandleMovement();
             HandleJump();

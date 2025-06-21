@@ -48,29 +48,25 @@ public class Inventory : NetworkBehaviour
 
 
 
-    [ClientRpc]
-    private void RpcAddItem(Item item)
+    [TargetRpc]
+    private void TargetAddItem(NetworkConnection target,Item item)
     {
-        if (netIdentity.isOwned)
+        
+        Debug.Log($"Add {item.ItemName}");
+        if (itemList.ContainsKey(item.ItemName))
         {
-            Debug.Log($"Add {item.ItemName}");
-            if (itemList.ContainsKey(item.ItemName))
-            {
-                itemList[item.ItemName].Add(item);
-                Debug.Log($"��������{item.ItemName}");
-            }
-            else
-            {
-                Debug.Log($"����������{item.ItemName}");
-                List<Item> list = new List<Item>();
-                list.Add(item);
-                itemList.Add(item.ItemName, list);
-            }
+            itemList[item.ItemName].Add(item);
+            Debug.Log($"��������{item.ItemName}");
         }
+        else
+        {
+            Debug.Log($"����������{item.ItemName}");
+            List<Item> list = new List<Item>();
+            list.Add(item);
+            itemList.Add(item.ItemName, list);
+        }
+        
 
-        item.gameObject.transform.SetParent(transform);
-        item.gameObject.transform.transform.position = transform.position;
-        item.gameObject.SetActive(false);
 
         GlobalEventManager.TakeItemEvent?.Invoke(item.ItemName);
     }
@@ -78,35 +74,35 @@ public class Inventory : NetworkBehaviour
     [Command(requiresAuthority = false)]
     public void CmdAddItem(Item item)
     {
-        RpcAddItem(item);
+        item.gameObject.transform.SetParent(transform);
+        item.gameObject.transform.transform.position = transform.position;
+        item.gameObject.SetActive(false);
+        TargetAddItem(connectionToClient,item);
     }
 
-    [ClientRpc]
-    private void RpcRemoveItem(string itemName, bool active)
+    [TargetRpc]
+    private void TargetRemoveItem(NetworkConnection target,string itemName, bool active)
     {
-        if (!itemList.ContainsKey(itemName)) return;
-        itemList[itemName][0].transform.parent = null;
-        itemList[itemName][0].gameObject.SetActive(active);
-        if (netIdentity.isOwned)
+
+        itemList[itemName].RemoveAt(0);
+        if (itemList[itemName].Count == 0)
         {
-            itemList[itemName].RemoveAt(0);
-            if (itemList[itemName].Count == 0)
-            {
-                itemList.Remove(itemName);
-                Debug.Log($"Remove {itemName}");
-            }
-
-
-            GlobalEventManager.UpdateInventoryUI?.Invoke();
+            itemList.Remove(itemName);
+            Debug.Log($"Remove {itemName}");
         }
 
+
+        GlobalEventManager.UpdateInventoryUI?.Invoke();
 
     }
 
     [Command(requiresAuthority = false)]
     public void CmdRemoveItem(string itemName, bool active)
     {
-        RpcRemoveItem(itemName, active);
+        if (!itemList.ContainsKey(itemName)) return;
+        itemList[itemName][0].transform.parent = null;
+        itemList[itemName][0].gameObject.SetActive(active);
+        TargetRemoveItem(connectionToClient,itemName, active);
     }
 
 

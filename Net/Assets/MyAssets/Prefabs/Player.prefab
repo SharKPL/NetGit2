@@ -2306,7 +2306,7 @@ MonoBehaviour:
   deceleration: 8
   turnSpeed: 5
   airControl: 0.2
-  jumpForce: 2
+  jumpForce: 0.5
   jumpCooldown: 0.5
   groundCheckRadius: 0.245
   groundCheckOffset: 0

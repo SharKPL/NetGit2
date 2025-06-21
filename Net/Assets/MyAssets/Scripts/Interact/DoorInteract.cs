@@ -27,7 +27,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
 
     [SyncVar] private Quaternion curRot = Quaternion.identity;
 
-    private bool canTrigger=true;
+    [SyncVar]private bool canTrigger=true;
 
 
     private Quaternion targetRotation; 
