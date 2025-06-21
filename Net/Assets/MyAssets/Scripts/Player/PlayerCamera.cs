@@ -16,7 +16,7 @@ namespace MUSOAR
         [SerializeField] private Vector3 cameraOffset = new Vector3(0f, 0f, 0f);
         
         private PlayerMovement playerMovement;
-        private PlayerRigController playerRigController;
+        [SerializeField] private PlayerRigController playerRigController;
         private InputManager inputManager;
 
         private Vector2 cameraInput;
@@ -46,7 +46,8 @@ namespace MUSOAR
             }
 
             playerMovement = GetComponentInParent<PlayerMovement>();
-            playerRigController = GetComponentInParent<PlayerRigController>();
+            if(playerRigController == null) playerRigController = GetComponentInParent<PlayerRigController>();
+
         }
 
         private void Start()

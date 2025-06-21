@@ -375,6 +375,7 @@ namespace MUSOAR
             if (isGrounded && velocity.y < 0)
             {
                 velocity.y = -2f;
+
             }
         }
 
@@ -391,6 +392,8 @@ namespace MUSOAR
             {
                 CmdLandingAnim();
             }
+            HardLandingEnd();
+            CmdHardLandEnd();
             isFalling = false;
         }
         [ClientRpc]
@@ -494,6 +497,18 @@ namespace MUSOAR
         {
             animator.SetBool("HardLanding", false);
             enableInput = true;
+        }
+
+        [ClientRpc]
+        private void RpcHardLandEnd()
+        {
+            HardLandingEnd();
+        }
+
+        [Command]
+        private void CmdHardLandEnd()
+        {
+            RpcHardLandEnd();
         }
 
      

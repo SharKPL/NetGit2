@@ -1832,6 +1832,7 @@ MonoBehaviour:
   minVerticalAngle: -75
   maxVerticalAngle: 75
   cameraOffset: {x: 0, y: 0.05, z: 0}
+  playerRigController: {fileID: 4616293377941779532}
 --- !u!1 &3038907083578218618
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2105,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4806249028724853717}
+  - component: {fileID: 8566936144810733376}
+  - component: {fileID: 5075284671335749302}
+  - component: {fileID: 4616293377941779532}
   m_Layer: 7
   m_Name: PlayerBase
   m_TagString: Untagged
@@ -2130,6 +2134,61 @@ Transform:
   - {fileID: 5458934563744175770}
   m_Father: {fileID: 352862867367184418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8566936144810733376
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3664104842455775724}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f56fd4c15a1bec04baa1a6e9150f6134, type: 3}
+  m_Controller: {fileID: 9100000, guid: 8f0ae9f0c542b5146878774ca345c2f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5075284671335749302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3664104842455775724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RigLayers:
+  - m_Rig: {fileID: 4060006350007031104}
+    m_Active: 1
+  m_Effectors: []
+--- !u!114 &4616293377941779532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3664104842455775724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e75040a1884c8a41bbde85b796513fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headIK: {fileID: 8485267776513649779}
+  upperChestIK: {fileID: 2963324690528779943}
+  headBone: {fileID: 966373893104504111}
+  upperChestBone: {fileID: 3672200273870961058}
+  disableDelay: 0.25
 --- !u!1 &3843693277061433721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,13 +2199,10 @@ GameObject:
   m_Component:
   - component: {fileID: 352862867367184418}
   - component: {fileID: 1068207021323427330}
-  - component: {fileID: 8950157303348004569}
   - component: {fileID: 4641093219753851436}
   - component: {fileID: 3129315424630106925}
-  - component: {fileID: 4539730517494241937}
   - component: {fileID: 6169082249918739515}
   - component: {fileID: 5135801266646380748}
-  - component: {fileID: 2668138405017365001}
   - component: {fileID: 4995180349645228409}
   - component: {fileID: 1749385878339618048}
   - component: {fileID: -1651586711611479200}
@@ -2202,28 +2258,6 @@ CharacterController:
   m_SkinWidth: 0.025
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.1, z: 0}
---- !u!95 &8950157303348004569
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3843693277061433721}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f56fd4c15a1bec04baa1a6e9150f6134, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8f0ae9f0c542b5146878774ca345c2f3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4641093219753851436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,25 +2323,8 @@ MonoBehaviour:
   playerCamera: {fileID: 4240887098768484084}
   playerHealth: {fileID: 6169082249918739515}
   controller: {fileID: 1068207021323427330}
-  animator: {fileID: 8950157303348004569}
+  animator: {fileID: 8566936144810733376}
   cameraTransform: {fileID: 334562030208109122}
---- !u!114 &4539730517494241937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3843693277061433721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e75040a1884c8a41bbde85b796513fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  headIK: {fileID: 8485267776513649779}
-  upperChestIK: {fileID: 2963324690528779943}
-  headBone: {fileID: 966373893104504111}
-  upperChestBone: {fileID: 3672200273870961058}
-  disableDelay: 0.25
 --- !u!114 &6169082249918739515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2338,22 +2355,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 
---- !u!114 &2668138405017365001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3843693277061433721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RigLayers:
-  - m_Rig: {fileID: 4060006350007031104}
-    m_Active: 1
-  m_Effectors: []
 --- !u!114 &4995180349645228409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,7 +2388,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   clientAuthority: 0
-  animator: {fileID: 8950157303348004569}
+  animator: {fileID: 8566936144810733376}
 --- !u!114 &-1651586711611479200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2944,7 +2945,7 @@ Transform:
   m_GameObject: {fileID: 5311779393850888434}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.85, z: 0}
+  m_LocalPosition: {x: 0.371, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

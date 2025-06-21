@@ -61,13 +61,13 @@ public class PlayerInteract : NetworkBehaviour
                 return;
             }
             var item = hitInfo.collider.gameObject.GetComponent<Item>();
-            if (item == null)
+            if (item != null)
             {
-                Debug.Log("NoItem");
-                return;
+                Debug.Log($"Item:{item.name}");
+                CmdTakeItemSound();
+                Inventory.Instance.CmdAddItem(item);
             }
-            CmdTakeItemSound();
-            Inventory.Instance.CmdAddItem(item);
+            
 
         }
         else

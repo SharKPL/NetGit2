@@ -71,7 +71,7 @@ public class Inventory : NetworkBehaviour
         GlobalEventManager.TakeItemEvent?.Invoke(item.ItemName);
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     public void CmdAddItem(Item item)
     {
         RpcAddItem(item);

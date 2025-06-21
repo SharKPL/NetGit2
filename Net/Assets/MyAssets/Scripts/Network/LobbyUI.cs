@@ -45,12 +45,14 @@ public class LobbyUI : NetworkBehaviour
 
     private void StartGame()
     {
-        Debug.Log(MyNetworkManager.Instance.AllPlayersReady());
-        if (MyNetworkManager.Instance.AllPlayersReady())
-        {
-            GameManager.Instance.SwitchState(GameState.InGame);
-            MyNetworkManager.Instance.ChangeScene(GameState.InGame);
-        }
+        //Debug.Log(MyNetworkManager.Instance.AllPlayersReady());
+        //if (MyNetworkManager.Instance.AllPlayersReady())
+        //{
+        //    GameManager.Instance.SwitchState(GameState.InGame);
+        //    MyNetworkManager.Instance.ChangeScene(GameState.InGame);
+        //}
+        GameManager.Instance.SwitchState(GameState.InGame);
+        MyNetworkManager.Instance.ChangeScene(GameState.InGame);
     }
 
     private void OnReadyClicked()

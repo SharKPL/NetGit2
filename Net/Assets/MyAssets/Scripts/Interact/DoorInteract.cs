@@ -25,14 +25,27 @@ public class DoorInteract : NetworkBehaviour,IInteractable
 
     [SyncVar] private bool hisOpen = false;
 
+    [SyncVar] private Quaternion curRot = Quaternion.identity;
+
     private bool canTrigger=true;
 
 
     private Quaternion targetRotation; 
     private Quaternion startRotation;
 
-    void Start()
+
+    public override void OnStartClient()
     {
+        Debug.Log($"curRot:{curRot},null:{curRot == null}");
+        base.OnStartClient();
+        if (curRot != null && curRot!= Quaternion.identity)
+        {
+            door.transform.rotation = curRot;
+        }
+        else
+        {
+            curRot=door.transform.rotation;
+        }
         startRotation = door.transform.rotation;
         targetRotation = startRotation * Quaternion.Euler(0, 0, openAngle);
     }
@@ -101,6 +114,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         }
         canTrigger = true;
         door.transform.rotation = target;
+        curRot = door.transform.rotation;
     }
 
     [ClientRpc]

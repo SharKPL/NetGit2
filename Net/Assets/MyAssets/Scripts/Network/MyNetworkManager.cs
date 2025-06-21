@@ -3,6 +3,7 @@ using MUSOAR;
 using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MyNetworkManager : NetworkManager 
@@ -40,74 +41,121 @@ public class MyNetworkManager : NetworkManager
     private Dictionary<NetworkConnectionToClient, bool> readyStates = new Dictionary<NetworkConnectionToClient, bool>();
 
 
-    public override void OnServerConnect(NetworkConnectionToClient conn)
-    {
-        base.OnServerConnect(conn);
-        Debug.LogError("OnServerConnect");
-       
-    }
+
+
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
-        Debug.LogError("OnServerAddPlayer");
-        //base.OnServerAddPlayer(conn);
+        playerPrefab = GameManager.Instance.CurrentEnumGameState == GameState.Lobby ? lobbyPlayerPref : gamePlayerPref;
+        Transform startPos = GetStartPosition();
+        GameObject player = startPos != null
+            ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
+            : Instantiate(playerPrefab);
+
+        player.name = $"{playerPrefab.name} [connId={conn.connectionId}]";
+        NetworkServer.AddPlayerForConnection(conn, player);
+
+        CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
         switch (GameManager.Instance.CurrentEnumGameState)
         {
             case GameState.Lobby:
-
-                currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
-                var telIdentity = currentSpawnTran.GetComponent<NetworkIdentity>();
-                //currentSpawnTran = GetStartPosition();
-                var player = Connect(conn, lobbyPlayerPref, telIdentity);
-
-                CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers-1);
-                
-                var playerInfo = player.GetComponent<LobbyPlayerInfo>();
-                playerInfo.SetSteamId(steamID.m_SteamID);
+                Debug.LogError("Lobby");
+                Debug.Log($"SteamID:{SteamID}");
+                player.GetComponent<NetworkIdentity>().GetComponent<LobbyPlayerInfo>().SetSteamId(SteamID.m_SteamID);
                 break;
             case GameState.InGame:
-                LobbySpawnControl.Instance.RefreshSpawnPoints();
-                currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
-                Debug.Log($"currentSpawnTran {currentSpawnTran is null}");
-                var telIdent = currentSpawnTran.GetComponent<NetworkIdentity>();
-                //currentSpawnTran = GetStartPosition();
-
-                var play = Connect(conn, gamePlayerPref, telIdent);
-                CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
-                var name=SteamHelper.GetPlayerName(SteamID);
-                play.GetComponent<PlayerData>().SetPlayerName(name);
+                Debug.LogError("InGame");
+                var name = SteamHelper.GetPlayerName(SteamID);
+                player.GetComponent<NetworkIdentity>().GetComponent<PlayerData>().SetPlayerName(name);
                 break;
             default:
                 break;
         }
-
     }
-    private NetworkIdentity Connect(NetworkConnectionToClient conn,GameObject pref, NetworkIdentity teleportIden)
-    {
-        
-        GameObject playerInstance = Instantiate(pref, teleportIden.transform);
-        NetworkServer.AddPlayerForConnection(conn, playerInstance);
 
-        var netIdent = playerInstance.GetComponent<NetworkIdentity>();
-        if (GameControlManager.Instance == null)
-        {
-            Debug.LogError("GameControlManager.Instance is NULL");
-        }
-        else
-        {
-            GameControlManager.Instance.InitializePlayer(conn, ref netIdent, teleportIden);
-        }
-        //GameControlManager.Instance.InitializePlayer(conn, ref netIdent, spawnTransform);
-        IncreaseCounter();
-        if (NetworkServer.active)
-        {
-            readyStates[conn] = true;
-        }
-        else
-        {
-            readyStates[conn] = false;
-        }
-        return playerInstance.GetComponent<NetworkIdentity>();
-    }
+    //public override void OnServerReady(NetworkConnectionToClient conn)
+    //{
+    //    base.OnServerReady(conn);
+    //    CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
+    //    switch (GameManager.Instance.CurrentEnumGameState)
+    //    {
+    //        case GameState.Lobby:
+    //            Debug.LogError("Lobby");
+    //            conn.identity.GetComponent<LobbyPlayerInfo>().SetSteamId(SteamID.m_SteamID);
+    //            //playerInfo.SetSteamId(SteamID.m_SteamID);
+    //            break;
+    //        case GameState.InGame:
+    //            Debug.LogError("InGame");
+    //            var name = SteamHelper.GetPlayerName(SteamID);
+    //            conn.identity.GetComponent<PlayerData>().SetPlayerName(name);
+    //            break;
+    //        default:
+    //            break;
+    //    }
+
+    //}
+
+    //public override void OnServerAddPlayer(NetworkConnectionToClient conn)
+    //{
+    //    Debug.LogError("OnServerAddPlayer");
+    //    //base.OnServerAddPlayer(conn);
+    //    switch (GameManager.Instance.CurrentEnumGameState)
+    //    {
+    //        case GameState.Lobby:
+
+    //            currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
+    //            var telIdentity = currentSpawnTran.GetComponent<NetworkIdentity>();
+    //            //currentSpawnTran = GetStartPosition();
+    //            var player = Connect(conn, lobbyPlayerPref, telIdentity);
+
+    //            CSteamID steamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
+
+    //            var playerInfo = player.GetComponent<LobbyPlayerInfo>();
+    //            playerInfo.SetSteamId(steamID.m_SteamID);
+    //            break;
+    //        case GameState.InGame:
+    //            LobbySpawnControl.Instance.RefreshSpawnPoints();
+    //            currentSpawnTran = LobbySpawnControl.Instance.GetSpawnPoint(conn.connectionId);
+    //            Debug.Log($"currentSpawnTran {currentSpawnTran is null}");
+    //            var telIdent = currentSpawnTran.GetComponent<NetworkIdentity>();
+    //            //currentSpawnTran = GetStartPosition();
+
+    //            var play = Connect(conn, gamePlayerPref, telIdent);
+    //            CSteamID SteamID = SteamMatchmaking.GetLobbyMemberByIndex(LobbySteam.Instance.LobbyID, numPlayers - 1);
+    //            var name = SteamHelper.GetPlayerName(SteamID);
+    //            play.GetComponent<PlayerData>().SetPlayerName(name);
+    //            break;
+    //        default:
+    //            break;
+    //    }
+
+    //}
+    //private NetworkIdentity Connect(NetworkConnectionToClient conn, GameObject pref, NetworkIdentity teleportIden)
+    //{
+
+    //    GameObject playerInstance = Instantiate(pref, teleportIden.transform);
+    //    NetworkServer.AddPlayerForConnection(conn, playerInstance);
+
+    //    var netIdent = playerInstance.GetComponent<NetworkIdentity>();
+    //    if (GameControlManager.Instance == null)
+    //    {
+    //        Debug.LogError("GameControlManager.Instance is NULL");
+    //    }
+    //    else
+    //    {
+    //        GameControlManager.Instance.InitializePlayer(conn, ref netIdent, teleportIden);
+    //    }
+    //    //GameControlManager.Instance.InitializePlayer(conn, ref netIdent, spawnTransform);
+    //    IncreaseCounter();
+    //    if (NetworkServer.active)
+    //    {
+    //        readyStates[conn] = true;
+    //    }
+    //    else
+    //    {
+    //        readyStates[conn] = false;
+    //    }
+    //    return playerInstance.GetComponent<NetworkIdentity>();
+    //}
 
 
     public override void OnServerDisconnect(NetworkConnectionToClient conn)

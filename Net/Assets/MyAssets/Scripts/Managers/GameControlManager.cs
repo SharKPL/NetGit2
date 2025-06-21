@@ -93,7 +93,7 @@ public class GameControlManager : NetworkBehaviour
             yield return null;
         }
         player.SetParent(null);
-        player.GetComponent<Animator>().applyRootMotion = true;
+        //player.GetComponent<Animator>().applyRootMotion = true;
 
         Debug.Log($"CorStart, pos{teleportTran.position} end");
     }

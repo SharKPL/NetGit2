@@ -18,7 +18,8 @@ public class TeleportZone : NetworkBehaviour
         Debug.Log(other.name);
         if (other.GetComponent<MUSOAR.PlayerMovement>())
         {
-            var tran = LobbySpawnControl.Instance.GetOnlySpawnPoint();
+            //var tran = LobbySpawnControl.Instance.GetOnlySpawnPoint();
+            var tran = MyNetworkManager.Instance.GetStartPosition();
             other.GetComponent<MUSOAR.PlayerMovement>().CmdTeleport(tran.position);
         }
 
