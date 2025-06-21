@@ -3367,9 +3367,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6268635253812100942, guid: 362509226fbcd1c488087e75a25c71b1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268635253812100942, guid: 362509226fbcd1c488087e75a25c71b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6268635253812100942, guid: 362509226fbcd1c488087e75a25c71b1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7571903822595997757, guid: 362509226fbcd1c488087e75a25c71b1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 300.00058
+      value: 309.06787
       objectReference: {fileID: 0}
     - target: {fileID: 7870062633248870139, guid: 362509226fbcd1c488087e75a25c71b1, type: 3}
       propertyPath: m_Name
@@ -14519,7 +14531,7 @@ GameObject:
   - component: {fileID: 176912038}
   - component: {fileID: 176912037}
   - component: {fileID: 176912036}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hospitalBrench (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

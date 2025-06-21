@@ -60,12 +60,12 @@ namespace MUSOAR
         //private PlayerEnergyConsumptionConfig playerEnergyConsumptionConfig;
         [SerializeField] private CharacterController controller;
         [SerializeField] private Animator animator;
-        private MoveState currentMoveState;
+        [SyncVar]private MoveState currentMoveState;
         [SerializeField]private Transform cameraTransform;
 
         private Vector3 moveDirection;
         private Vector3 lastMoveDirection;
-        private Vector3 velocity;
+        [SyncVar]private Vector3 velocity;
 
         private Vector2 speedVelocity;
         private Vector2 movementInput;

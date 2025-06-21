@@ -23,7 +23,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
 
     [SerializeField] private float rotationSpeed = 250f;
 
-    [SyncVar] private bool hisOpen = false;
+    [SyncVar] private bool hisOpen;
 
     [SyncVar] private Quaternion curRot = Quaternion.identity;
 
@@ -41,13 +41,17 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         if (curRot != null && curRot!= Quaternion.identity)
         {
             door.transform.rotation = curRot;
+            startRotation = curRot;
+            targetRotation = startRotation * Quaternion.Euler(0, 0, openAngle);
         }
         else
         {
-            curRot=door.transform.rotation;
+            hisOpen = false;
+            curRot =door.transform.rotation;
+            startRotation = door.transform.rotation;
+            targetRotation = startRotation * Quaternion.Euler(0, 0, openAngle);
         }
-        startRotation = door.transform.rotation;
-        targetRotation = startRotation * Quaternion.Euler(0, 0, openAngle);
+
     }
     public void Interact()
     {

@@ -51,23 +51,27 @@ public class Inventory : NetworkBehaviour
     [ClientRpc]
     private void RpcAddItem(Item item)
     {
-        Debug.Log($"Add {item.ItemName}");
-        if (itemList.ContainsKey(item.ItemName))
+        if (netIdentity.isOwned)
         {
-            itemList[item.ItemName].Add(item);
-            Debug.Log($"��������{item.ItemName}");
+            Debug.Log($"Add {item.ItemName}");
+            if (itemList.ContainsKey(item.ItemName))
+            {
+                itemList[item.ItemName].Add(item);
+                Debug.Log($"��������{item.ItemName}");
+            }
+            else
+            {
+                Debug.Log($"����������{item.ItemName}");
+                List<Item> list = new List<Item>();
+                list.Add(item);
+                itemList.Add(item.ItemName, list);
+            }
         }
-        else
-        {
-            Debug.Log($"����������{item.ItemName}");
-            List<Item> list = new List<Item>();
-            list.Add(item);
-            itemList.Add(item.ItemName, list);
-        }
+
         item.gameObject.transform.SetParent(transform);
         item.gameObject.transform.transform.position = transform.position;
         item.gameObject.SetActive(false);
-        if (!isLocalPlayer) return;
+
         GlobalEventManager.TakeItemEvent?.Invoke(item.ItemName);
     }
 
@@ -83,16 +87,23 @@ public class Inventory : NetworkBehaviour
         if (!itemList.ContainsKey(itemName)) return;
         itemList[itemName][0].transform.parent = null;
         itemList[itemName][0].gameObject.SetActive(active);
-        itemList[itemName].RemoveAt(0);
-        if (itemList[itemName].Count == 0)
+        if (netIdentity.isOwned)
         {
-            itemList.Remove(itemName);
-            Debug.Log($"Remove {itemName}");
+            itemList[itemName].RemoveAt(0);
+            if (itemList[itemName].Count == 0)
+            {
+                itemList.Remove(itemName);
+                Debug.Log($"Remove {itemName}");
+            }
+
+
+            GlobalEventManager.UpdateInventoryUI?.Invoke();
         }
-        GlobalEventManager.UpdateInventoryUI?.Invoke();
+
+
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     public void CmdRemoveItem(string itemName, bool active)
     {
         RpcRemoveItem(itemName, active);
