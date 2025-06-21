@@ -461,8 +461,9 @@ namespace MUSOAR
                 clampedMouseX = 0;
 
             smoothMouseX = Mathf.SmoothDamp(smoothMouseX, clampedMouseX, ref mouseXVelocity, animationSmoothTime);
-
-            CmdUpdateAnims();
+            animator.SetFloat("MouseX", smoothMouseX);
+            
+            animator.SetBool("IsGrounded", isGrounded);
         }
 
         [ClientRpc]
@@ -488,20 +489,6 @@ namespace MUSOAR
         private void CmdPlayDeathAnimation()
         {
             RpcPlayDeathAnimation();
-        }
-
-        [ClientRpc]
-        private void RpcUpdateAnims()
-        {
-            //animator.SetFloat("MouseX", smoothMouseX);
-
-            animator.SetBool("IsGrounded", isGrounded);
-        }
-
-        [Command]
-        private void CmdUpdateAnims()
-        {
-            RpcUpdateAnims();
         }
 
 

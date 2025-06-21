@@ -48,8 +48,8 @@ public class Inventory : NetworkBehaviour
 
 
 
-    [TargetRpc]
-    private void TargetAddItem(Item item)
+    [ClientRpc]
+    private void RpcAddItem(Item item)
     {
         Debug.Log($"Add {item.ItemName}");
         if (itemList.ContainsKey(item.ItemName))
@@ -74,7 +74,7 @@ public class Inventory : NetworkBehaviour
     [Command(requiresAuthority = false)]
     public void CmdAddItem(Item item)
     {
-        TargetAddItem(item);
+        RpcAddItem(item);
     }
 
     [ClientRpc]
