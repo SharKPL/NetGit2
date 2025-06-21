@@ -17,7 +17,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
 
     [SerializeField] GameObject door;
 
-    [SerializeField] [SyncVar] private bool hisUnocked;
+    [SerializeField] private bool hisUnocked;
 
     [SerializeField] private float openAngle = 90f;
 
@@ -64,7 +64,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         else if(Inventory.Instance.TryGetItem(needItem) && !hisUnocked)
         {
             Inventory.Instance.CmdRemoveItem(needItem, false);
-            hisUnocked = true;
+            RpcOpenDoor();
             CmdPlayDoorFix();
             Debug.Log("DoorOpen");
         }
@@ -86,6 +86,18 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         }
 
         hisOpen = !hisOpen;
+    }
+
+    [ClientRpc]
+    private void RpcOpenDoor()
+    {
+        hisUnocked = true;
+    }
+
+    [Command]
+    private void CmdOpenDoor()
+    {
+        RpcOpenDoor();
     }
 
     [ClientRpc]
