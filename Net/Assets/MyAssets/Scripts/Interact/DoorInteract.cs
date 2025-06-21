@@ -64,7 +64,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         else if(Inventory.Instance.TryGetItem(needItem) && !hisUnocked)
         {
             Inventory.Instance.CmdRemoveItem(needItem, false);
-            RpcOpenDoor();
+            CmdOpenDoor();
             CmdPlayDoorFix();
             Debug.Log("DoorOpen");
         }
@@ -94,7 +94,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         hisUnocked = true;
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     private void CmdOpenDoor()
     {
         RpcOpenDoor();
