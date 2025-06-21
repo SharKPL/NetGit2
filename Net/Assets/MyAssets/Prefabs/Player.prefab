@@ -2202,6 +2202,7 @@ GameObject:
   - component: {fileID: 4641093219753851436}
   - component: {fileID: 3129315424630106925}
   - component: {fileID: 6169082249918739515}
+  - component: {fileID: -8034858230736052953}
   - component: {fileID: 5135801266646380748}
   - component: {fileID: 4995180349645228409}
   - component: {fileID: 1749385878339618048}
@@ -2223,7 +2224,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4806249028724853717}
@@ -2313,6 +2314,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 257
+  jumpEnergyCost: 25
+  runEnergyCost: 10
   minFallDamageHeight: 2.5
   fallDamageMultiplier: 20
   netAnimator: {fileID: 1749385878339618048}
@@ -2321,6 +2324,7 @@ MonoBehaviour:
   cameraCrouchingHeight: -0.25
   cameraPlayerDeadHeight: 0.3
   playerCamera: {fileID: 4240887098768484084}
+  playerSuitEnergy: {fileID: -8034858230736052953}
   playerHealth: {fileID: 6169082249918739515}
   controller: {fileID: 1068207021323427330}
   animator: {fileID: 8566936144810733376}
@@ -2342,6 +2346,21 @@ MonoBehaviour:
   syncInterval: 0
   maxHealth: 100
   respawnDelay: 3
+--- !u!114 &-8034858230736052953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843693277061433721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0d3618493295d4aa30fa9831d07089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSuitEnergy: 100
+  energyRegenRate: 10
+  regenDelay: 2
 --- !u!114 &5135801266646380748
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,6 +40,10 @@ namespace MUSOAR
         [SerializeField] private float groundCheckOffset = 0.5f;
         [SerializeField] private LayerMask groundLayer;
 
+        [Header("Выносливость")]
+        [SerializeField] private float jumpEnergyCost = 15f;
+        [SerializeField] private float runEnergyCost = 2f;
+
         [Header("Урон от падения")]
         [SerializeField] private float minFallDamageHeight = 5f;
         [SerializeField] private float fallDamageMultiplier = 10f;
@@ -54,22 +58,21 @@ namespace MUSOAR
         [SerializeField] private float cameraPlayerDeadHeight = 0.3f;
 
         private InputManager inputManager = InputManager.Instance;
-        [SerializeField]private PlayerCamera playerCamera;
-        //private PlayerSuitEnergy playerSuitEnergy;
+        [SerializeField] private PlayerCamera playerCamera;
+        [SerializeField] private PlayerSuitEnergy playerSuitEnergy;
         [SerializeField] private PlayerHealth playerHealth;
-        //private PlayerEnergyConsumptionConfig playerEnergyConsumptionConfig;
         [SerializeField] private CharacterController controller;
         [SerializeField] private Animator animator;
-        [SyncVar]private MoveState currentMoveState;
-        [SerializeField]private Transform cameraTransform;
+        [SyncVar] private MoveState currentMoveState;
+        [SerializeField] private Transform cameraTransform;
 
         private Vector3 moveDirection;
         private Vector3 lastMoveDirection;
-        [SyncVar]private Vector3 velocity;
+        [SyncVar] private Vector3 velocity;
 
         private Vector2 speedVelocity;
         private Vector2 movementInput;
-        [SyncVar]private float smoothMouseX;
+        [SyncVar] private float smoothMouseX;
         private float mouseXVelocity;
         private float clampedMouseX;
 
@@ -78,12 +81,12 @@ namespace MUSOAR
         private float lastJumpTime;
         private float fallStartY;
         
-        [SyncVar]private bool isFalling;
+        [SyncVar] private bool isFalling;
         private bool isWalkMode = true;
-        [SyncVar]private bool isGrounded;
+        [SyncVar] private bool isGrounded;
         private bool enableInput = true;
-
         private bool isSwitchTo = false;
+        [SyncVar] bool teleport = false;
 
         public MoveState CurrentMoveState => currentMoveState;
         public float CurrentSpeed => currentSpeed;
@@ -91,8 +94,6 @@ namespace MUSOAR
         public float CurrentMoveSpeed => moveSpeed;
         public Vector2 MovementInput => movementInput;
         public bool IsGrounded => isGrounded;
-
-        [SyncVar] bool teleport = false;
 
         
         /*
@@ -146,13 +147,11 @@ namespace MUSOAR
             teleport = true;
             animator.applyRootMotion = false;
 
-            // Останавливаем текущее движение
             velocity = Vector3.zero;
 
             controller.enabled = false;
             transform.position = pos;
 
-            // Небольшая задержка для синхронизации
             yield return new WaitForFixedUpdate();
 
             controller.enabled = true;
@@ -161,9 +160,6 @@ namespace MUSOAR
 
             Debug.Log($"Player teleported to {pos}");
         }
-
-
-
 
         private void Update()
         {
@@ -177,15 +173,12 @@ namespace MUSOAR
             HandleMovement();
             HandleJump();
             HandleGravity();
-
-
             HandleCrouch();
             HandleCameraPosition();
         }
 
         private void HandleCrouch()
         {
-
             float targetHeight = InputManager.Instance.GetCrouchAction() ? crouchingHeight : standingHeight;
             float currentHeight = controller.height;
 
@@ -320,21 +313,17 @@ namespace MUSOAR
             if (!enableInput) return;
 
             if (inputManager.IsJump() && isGrounded && Time.time >= lastJumpTime + jumpCooldown)
-            {
-                /*   
-                if (playerSuitEnergy.TrySpendEnergyInstant(playerEnergyConsumptionConfig.JumpEnergyCost))
+            {             
+                if (playerSuitEnergy.TrySpendEnergyInstant(jumpEnergyCost))
                 {
                     velocity.y = Mathf.Sqrt(jumpForce * -2f * Physics.gravity.y);
                     lastJumpTime = Time.time;
-                    animator.SetTrigger("Jump");
+                    CmdJumpAnim();
+                    //animator.SetTrigger("Jump");
                 }
-                */
-
-                velocity.y = Mathf.Sqrt(jumpForce * -2f * Physics.gravity.y);
-                lastJumpTime = Time.time;
-                CmdJumpAnim();
             }
         }
+
         [ClientRpc]
         private void RpcJumpAnim()
         {
@@ -397,12 +386,14 @@ namespace MUSOAR
             CmdHardLandEnd();
             isFalling = false;
         }
+
         [ClientRpc]
         private void RpcHardLandAnim(bool b_anim, bool b_input)
         {
             animator.SetBool("HardLanding", b_anim);
             enableInput = b_input;
         }
+
         [Command]
         private void CmdHardLandAnim(bool b_anim, bool b_input)
         {
@@ -415,6 +406,7 @@ namespace MUSOAR
             netAnimator.SetTrigger("Landing");
             animator.SetTrigger("Landing");
         }
+
         [Command]
         private void CmdLandingAnim()
         {
@@ -426,7 +418,7 @@ namespace MUSOAR
                 currentMoveState = velocity.y > 0 ? MoveState.Jump : MoveState.Fall;
             else if (input.magnitude < 0.1f)
                 currentMoveState = MoveState.Idle;
-            else if (inputManager.IsRun() /*&& playerSuitEnergy.TrySpendEnergy(playerEnergyConsumptionConfig.SprintEnergyCostPerSecond)*/)
+            else if (inputManager.IsRun() && playerSuitEnergy.TrySpendEnergy(runEnergyCost))
                 currentMoveState = MoveState.Run;
             else
                 currentMoveState = isWalkMode ? MoveState.Walk : MoveState.Move;
@@ -493,9 +485,6 @@ namespace MUSOAR
         {
             RpcPlayDeathAnimation();
         }
-
-
-
         public void HardLandingEnd()
         {
             animator.SetBool("HardLanding", false);
@@ -514,7 +503,6 @@ namespace MUSOAR
             RpcHardLandEnd();
         }
 
-     
 
         // Save/Load
         public void GetSaveData(SaveData saveData)

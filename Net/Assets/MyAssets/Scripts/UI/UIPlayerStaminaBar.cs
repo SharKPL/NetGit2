@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 namespace MUSOAR
 {
     public class UIPlayerStaminaBar : UIWindow
