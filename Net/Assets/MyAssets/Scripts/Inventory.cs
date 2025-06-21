@@ -14,19 +14,28 @@ public class Inventory : NetworkBehaviour
 
     public Dictionary<string, List<Item>> ItemList { get { return itemList; } }
 
-
-    private void Awake()
+    public override void OnStartClient()
     {
+        base.OnStartClient();
+        itemList = new Dictionary<string, List<Item>>();
+        if (!isLocalPlayer) return;
         if (instance == null)
         {
             instance = this;
         }
     }
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //    }
+    //}
 
-    private void Start()
-    {
-        itemList = new Dictionary<string, List<Item>>();
-    }
+    //private void Start()
+    //{
+    //    itemList = new Dictionary<string, List<Item>>();
+    //}
     public void AddItem(Item item)
     {
         Debug.Log($"Add {item.ItemName}");
@@ -74,6 +83,7 @@ public class Inventory : NetworkBehaviour
     [Command(requiresAuthority = false)]
     public void CmdAddItem(Item item)
     {
+        Debug.LogError("ni");
         item.gameObject.transform.SetParent(transform);
         item.gameObject.transform.transform.position = transform.position;
         item.gameObject.SetActive(false);
@@ -99,6 +109,7 @@ public class Inventory : NetworkBehaviour
     [Command(requiresAuthority = false)]
     public void CmdRemoveItem(string itemName, bool active)
     {
+        Debug.LogError($"connectionToClient null:{connectionToClient is null}");
         if (!itemList.ContainsKey(itemName)) return;
         itemList[itemName][0].transform.parent = null;
         itemList[itemName][0].gameObject.SetActive(active);
@@ -117,11 +128,7 @@ public class Inventory : NetworkBehaviour
 
     public bool TryGetItem(string name)
     {
-        //if (itemList.ContainsKey(name))
-        //{
-        //    CmdRemoveItem(name,false);
-        //    GlobalEventManager.UpdateInventoryUI?.Invoke();
-        //}
+
         return itemList.ContainsKey(name);
     }
 }

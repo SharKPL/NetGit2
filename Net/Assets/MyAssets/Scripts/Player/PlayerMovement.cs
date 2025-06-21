@@ -170,13 +170,14 @@ namespace MUSOAR
             if (teleport) return;
             //if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             //if (!isSwitchTo) return;
+            UpdateAnimator();
+            CheckGround();
             if (!netIdentity.isLocalPlayer && !netIdentity.isOwned) return;
             GetMovementInput();
             HandleMovement();
             HandleJump();
             HandleGravity();
-            UpdateAnimator();
-            CheckGround();
+
 
             HandleCrouch();
             HandleCameraPosition();
@@ -449,20 +450,22 @@ namespace MUSOAR
 
         private void UpdateAnimator()
         {
-            Vector3 localVelocity = transform.InverseTransformDirection(controller.velocity);
-            float diagonal = (Mathf.Abs(inputManager.GetMovementInput().x) > 0.1f && Mathf.Abs(inputManager.GetMovementInput().y) > 0.1f) ? 1.41f : 1f;
+            if (isLocalPlayer)
+            {
+                Vector3 localVelocity = transform.InverseTransformDirection(controller.velocity);
+                float diagonal = (Mathf.Abs(inputManager.GetMovementInput().x) > 0.1f && Mathf.Abs(inputManager.GetMovementInput().y) > 0.1f) ? 1.41f : 1f;
 
-            CmdUpdateSpeedAnim(localVelocity, diagonal);
-            CmdSetCrouchAnimation(InputManager.Instance.GetCrouchAction());
+                CmdUpdateSpeedAnim(localVelocity, diagonal);
 
-            if (enableInput)
-                clampedMouseX = Mathf.Clamp(inputManager.GetLookInput().x, -1f, 1f);
-            else
-                clampedMouseX = 0;
+                if (enableInput)
+                    clampedMouseX = Mathf.Clamp(inputManager.GetLookInput().x, -1f, 1f);
+                else
+                    clampedMouseX = 0;
 
-            smoothMouseX = Mathf.SmoothDamp(smoothMouseX, clampedMouseX, ref mouseXVelocity, animationSmoothTime);
-            animator.SetFloat("MouseX", smoothMouseX);
-            
+                smoothMouseX = Mathf.SmoothDamp(smoothMouseX, clampedMouseX, ref mouseXVelocity, animationSmoothTime);
+                animator.SetFloat("MouseX", smoothMouseX);
+            }
+
             animator.SetBool("IsGrounded", isGrounded);
         }
 

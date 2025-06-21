@@ -59,6 +59,7 @@ public class DoorInteract : NetworkBehaviour,IInteractable
         if (hisUnocked && canTrigger)
         {
             CmdToggleDoor();
+            CmdPlayDoorOpenClose();
         }
         else if(Inventory.Instance.TryGetItem(needItem) && !hisUnocked)
         {
@@ -77,12 +78,10 @@ public class DoorInteract : NetworkBehaviour,IInteractable
     {
         if (hisOpen)
         {
-            CmdPlayDoorOpenClose();
             StartCoroutine(RotateDoor(startRotation, rotationSpeed));
         }
         else
         {
-            CmdPlayDoorOpenClose();
             StartCoroutine(RotateDoor(targetRotation, rotationSpeed));
         }
 

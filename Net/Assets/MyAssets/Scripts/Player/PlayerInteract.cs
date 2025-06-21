@@ -48,7 +48,7 @@ public class PlayerInteract : NetworkBehaviour
 
     private void Interact()
     {
-        if(!isLocalPlayer) return ;
+        if(!isLocalPlayer) return;
         Vector3 direction = transform.forward;
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, maxDistance, interactMask))
