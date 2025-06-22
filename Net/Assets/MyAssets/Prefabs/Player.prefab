@@ -4184,7 +4184,7 @@ MonoBehaviour:
   walkBobAmount: 0.002
   runBobAmount: 0.005
   idleBobFrequency: 3
-  walkBobFrequency: 18
+  walkBobFrequency: 11
   runBobFrequency: 14
   tiltAmount: 3
   tiltSpeed: 10

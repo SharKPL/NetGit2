@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 namespace MUSOAR
 {
-    public class LevelsManager
+    public class LevelsManager : MonoBehaviour
     {
-        private AllLevelsConfig allLevelsConfig;
+        [SerializeField] private SaveController saveController;
+        [SerializeField] private AllLevelsConfig allLevelsConfig;
+
         private LevelConfig currentLevel;
         private LevelConfig levelToLoad;
 
+        /*
         [Inject]
         private void Construct(AllLevelsConfig allLevelsConfig)
         {
             this.allLevelsConfig = allLevelsConfig;
         }
+        */
 
         public void LoadLevel(LevelData levelData) // Используйте для загрузки уровня
         {
@@ -33,7 +37,7 @@ namespace MUSOAR
             SceneManager.LoadSceneAsync(LevelData.LoadingScreen.ToString(), LoadSceneMode.Additive).completed += operation =>
             {
                 var loadingController = GameObject.FindAnyObjectByType<LoadingScreenController>(); 
-                loadingController.InitializeLoading(levelConfig.LevelData.ToString());
+                loadingController.InitializeLoading(levelConfig.LevelData.ToString(), saveController);
             };
         }
 

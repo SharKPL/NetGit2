@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private TMP_InputField keyField;
     [SerializeField] private GameObject LobbyUIPrefab;
     [SerializeField] private GameObject menuPrefab;
-    void Start()
+    private void Start()
     {
         //playBtn.onClick.AddListener(OpenLobby);
         //quitBtn.onClick.AddListener(QuitGame);

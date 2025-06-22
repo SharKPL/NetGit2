@@ -23,15 +23,18 @@ namespace MUSOAR
         
         private string sceneToLoad;
 
+        /*
         [Inject]
         private void Construct(SaveController saveController)
         {
             this.saveController = saveController;
         }
+        */
 
-        public void InitializeLoading(string sceneName)
+        public void InitializeLoading(string sceneName, SaveController saveContr)
         {
             sceneToLoad = sceneName;
+            saveController = saveContr;
             StartLoadingProcess();
         }
 

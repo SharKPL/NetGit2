@@ -4,7 +4,7 @@ namespace MUSOAR
     {
         LoadingScreen,
         MainMenu,
-        Level_1,
+        Lobby,
         TestScene,
     }
 }

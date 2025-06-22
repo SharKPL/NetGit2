@@ -45,7 +45,7 @@ namespace MUSOAR
         private void OnReturnToShipButtonClick()
         {
             HideTransitionWindow();
-            levelsManager.LoadLevel(LevelData.Level_1);
+            levelsManager.LoadLevel(LevelData.TestScene);
         }
 
         private void OnToNextLevelButtonClick()
