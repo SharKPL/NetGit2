@@ -1105,12 +1105,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2612705547027177360, guid: 1120e99d890363a458331b1e84140718, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.24282815
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612705547027177360, guid: 1120e99d890363a458331b1e84140718, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.6861389
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612705547027177360, guid: 1120e99d890363a458331b1e84140718, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.053000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612705547027177360, guid: 1120e99d890363a458331b1e84140718, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5152778
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612705547027177360, guid: 1120e99d890363a458331b1e84140718, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2612705547027177360, guid: 1120e99d890363a458331b1e84140718, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612705547027177360, guid: 1120e99d890363a458331b1e84140718, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612705547027177360, guid: 1120e99d890363a458331b1e84140718, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 2640416791937013513, guid: 1120e99d890363a458331b1e84140718, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6245,10 +6269,10 @@ MonoBehaviour:
   FirstInit: 1
   MaterialTerrain:
     keys:
-    - {fileID: 2100000, guid: b955a9e6cfb668348a9ae55112574521, type: 2}
     - {fileID: 2100000, guid: 59e100908ea488b4f8dd898f2cd9771d, type: 2}
-    - {fileID: 2100000, guid: 86948c7ad464fe847853a953ec1b2729, type: 2}
     - {fileID: 2100000, guid: 8f0887924d784104d9bd6fd59508ca2e, type: 2}
+    - {fileID: 2100000, guid: b955a9e6cfb668348a9ae55112574521, type: 2}
+    - {fileID: 2100000, guid: 86948c7ad464fe847853a953ec1b2729, type: 2}
     values:
     - {fileID: 1019880764}
     - {fileID: 1019880764}
@@ -6278,7 +6302,7 @@ Transform:
   m_GameObject: {fileID: 1945395358}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -110.5, z: 0}
+  m_LocalPosition: {x: 1.6601562, y: -110.5, z: 12.109375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

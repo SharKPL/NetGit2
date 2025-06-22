@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94230dfa023eddd40b3db45e5ea07653, type: 3}
+  m_Name: "\u041D\u0430 \u0432\u044B\u0445\u043E\u0434!"
+  m_EditorClassIdentifier: 
+  questName: "\u041D\u0430 \u0432\u044B\u0445\u043E\u0434!"
+  questDescription: "\u0422\u0435\u043F\u0435\u0440\u044C \u043F\u043E\u0440\u0430
+    \u0432\u044B\u0431\u0438\u0440\u0430\u0442\u044C\u0441\u044F \u0438\u0437 \u044D\u0442\u043E\u0439
+    \u0434\u044B\u0440\u044B"
+  questlocation: "\u041E\u043A\u0440\u0435\u0441\u0442\u043D\u043E\u0441\u0442\u0438"
+  questStepType: 0
+  steps:
+  - {fileID: 11400000, guid: c08d316300c903c4b975cc9afbc874cd, type: 2}
+  - {fileID: 11400000, guid: b4925aed0a441ef4bb99b5164bab9eae, type: 2}
+  - {fileID: 11400000, guid: 5ef6ed824f5d8274f9c3de55ce981e40, type: 2}
+  stepIndex: 0
+  quest_coordinates: {x: 0, y: 0, z: 0}
+  isCompleted: 0

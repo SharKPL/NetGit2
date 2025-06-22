@@ -10,7 +10,7 @@ public class NoteInteract : NetworkBehaviour,IInteractable
     [SerializeField] private AudioClip noteClip;
 
     [SerializeField] private bool isQuest;
-    [SyncVar][SerializeField] private bool isComplete;
+    //[SyncVar][SerializeField] private bool isComplete;
 
     [SerializeField] string stepName;
 
@@ -19,11 +19,11 @@ public class NoteInteract : NetworkBehaviour,IInteractable
     public void Interact()
     {
         Debug.LogError("Quest");
-        if (isQuest && !isComplete)
+        if (isQuest)
         {
             Debug.LogError("QuestNote");
             CmdQuestStepComplete();
-            isComplete = true;
+            //isComplete = true;
         }
         GlobalEventManager.ShowNote?.Invoke(note.text);
         AudioManager.PlaySound(noteSource, noteClip);
