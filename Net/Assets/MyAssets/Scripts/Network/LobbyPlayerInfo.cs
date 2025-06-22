@@ -18,6 +18,8 @@ public class LobbyPlayerInfo : NetworkBehaviour
     {
         base.OnStartClient();
         avatarImageLoaded = Callback<AvatarImageLoaded_t>.Create(OnAvatarImageLoaded);
+        if (!netIdentity.isLocalPlayer) return;
+        if (EndGameFade.Instance != null) EndGameFade.Instance.StartTransition();
     }
 
     private void OnAvatarImageLoaded(AvatarImageLoaded_t callback)

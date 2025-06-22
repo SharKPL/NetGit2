@@ -4,7 +4,7 @@ using Mirror;
 
 public class ChildInteract : NetworkBehaviour,IInteractable
 {
-    [SyncVar]private bool hisFix=false;
+    private bool hisFix=false;
     [SerializeField] private Collider coll;
 
     public bool HisFix { get { return hisFix; } }
@@ -13,10 +13,23 @@ public class ChildInteract : NetworkBehaviour,IInteractable
     {
         coll.gameObject.SetActive(false);
     }
-    public void Fix()
+    //public void Fix()
+    //{
+    //    hisFix = true;
+    //    coll.gameObject.SetActive(true);
+    //}
+
+    [ClientRpc]
+    public void RpcFix()
     {
         hisFix = true;
         coll.gameObject.SetActive(true);
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdFix()
+    {
+        RpcFix();
     }
 
     public void Interact()

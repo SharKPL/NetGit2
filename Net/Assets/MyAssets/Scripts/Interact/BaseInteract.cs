@@ -16,7 +16,7 @@ public class BaseInteract : NetworkBehaviour,IInteractable
         if (Inventory.Instance.TryGetItem(needItem) && !chldInter.HisFix)
         {
             Inventory.Instance.CmdRemoveItem(needItem, false);
-            chldInter.Fix();
+            chldInter.CmdFix();
             Debug.Log("FixChild");
             CmdFixGen();
             gameObject.layer = 0;

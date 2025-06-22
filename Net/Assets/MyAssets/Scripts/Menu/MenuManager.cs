@@ -41,6 +41,11 @@ namespace MUSOAR
             Cursor.visible = true;
         }
 
+        private void Start()
+        {
+            EndGameFade.Instance.StartTransition();
+        }
+
         private void OnPlaySingleButtonClick()
         {
             singleplayerWindow.Initialize(this);

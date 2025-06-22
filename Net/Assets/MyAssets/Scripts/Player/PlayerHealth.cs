@@ -17,6 +17,13 @@ public class PlayerHealth : NetworkBehaviour
         currentHealth = maxHealth;
     }
 
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+        if (!netIdentity.isLocalPlayer) return;
+        if (EndGameFade.Instance != null) EndGameFade.Instance.StartTransition();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))

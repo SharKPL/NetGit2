@@ -36,7 +36,17 @@ public class LobbyUI : NetworkBehaviour
             ClientUnReadyBtn.gameObject.SetActive(false);
             hostStartBtn.gameObject.SetActive(false);
         }
+        //if (!netIdentity.isLocalPlayer) return;
+        //if (EndGameFade.Instance != null) EndGameFade.Instance.StartTransition();
     }
+
+
+    //public override void OnStartAuthority()
+    //{
+    //    Debug.Log("OnStartAuthority");
+    //    base.OnStartAuthority();
+
+    //}
 
     private void QuitLobby()
     {

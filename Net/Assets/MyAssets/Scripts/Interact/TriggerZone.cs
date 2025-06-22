@@ -10,13 +10,17 @@ public class TriggerZone : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.LogError("End");
         CmdEndGame();
     }
 
     private IEnumerator EndGameRoutine()
     {
         Debug.Log("EndGame1");
-        InputManager.Instance.TurnAllControl(false);
+        if (InputManager.Instance != null)
+            InputManager.Instance.TurnAllControl(false);
+        else
+            Debug.LogWarning("InputManager.Instance is null!");
         GlobalEventManager.ShowEndGameText?.Invoke(endText);
         yield return new WaitForSeconds(timeToEnd);
         MyNetworkManager.Instance.ChangeScene(GameState.Menu);
@@ -26,12 +30,14 @@ public class TriggerZone : NetworkBehaviour
     [Command(requiresAuthority = false)]
     private void CmdEndGame()
     {
+        Debug.LogError("CmdEndGame");
         RpcEndGame();
     }
 
     [ClientRpc]
     private void RpcEndGame()
     {
+        Debug.LogError("RpcEndGame");
         StartCoroutine(EndGameRoutine());
     }
 }
