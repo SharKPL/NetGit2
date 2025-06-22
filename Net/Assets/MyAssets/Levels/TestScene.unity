@@ -3821,7 +3821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7571903822595997757, guid: 362509226fbcd1c488087e75a25c71b1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 300.001
+      value: 300.00006
       objectReference: {fileID: 0}
     - target: {fileID: 7870062633248870139, guid: 362509226fbcd1c488087e75a25c71b1, type: 3}
       propertyPath: m_Name
@@ -117375,7 +117375,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  coll: {fileID: 1602434071}
+  coll: {fileID: 6374348920406563142}
 --- !u!114 &1462434038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128560,11 +128560,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602298188}
   m_Mesh: {fileID: 5772862957685911713, guid: fae90059690d45649b97cf63da4bd663, type: 3}
---- !u!65 &1602434071 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 7433499393477863466, guid: c3d6c0ccc38ac9c4b9567f835ee5e360, type: 3}
-  m_PrefabInstance: {fileID: 6374348920406563141}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1602990478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 183500, guid: b01fa194940f0624ca7e3df13bed1969, type: 3}
@@ -173949,6 +173944,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d6c0ccc38ac9c4b9567f835ee5e360, type: 3}
+--- !u!1 &6374348920406563142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8661194525618134454, guid: c3d6c0ccc38ac9c4b9567f835ee5e360, type: 3}
+  m_PrefabInstance: {fileID: 6374348920406563141}
+  m_PrefabAsset: {fileID: 0}
 --- !u!222 &6439637603174613686
 CanvasRenderer:
   m_ObjectHideFlags: 0

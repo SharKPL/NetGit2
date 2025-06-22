@@ -5,26 +5,26 @@ using Mirror;
 public class ChildInteract : NetworkBehaviour,IInteractable
 {
     private bool hisFix=false;
-    [SerializeField] private Collider coll;
+    [SerializeField] private GameObject coll;
 
     public bool HisFix { get { return hisFix; } }
 
-    private void Start()
+    public override void OnStartClient()
     {
-        coll.gameObject.SetActive(false);
+        base.OnStartClient();
+        coll.SetActive(false);
     }
-    //public void Fix()
-    //{
-    //    hisFix = true;
-    //    coll.gameObject.SetActive(true);
-    //}
+    public void Fix()
+    {
+        hisFix = true;
+        coll.SetActive(true);
+    }
 
     [ClientRpc]
     public void RpcFix()
     {
         Debug.LogError("RpcChildFix");
-        hisFix = true;
-        coll.gameObject.SetActive(true);
+        Fix();
     }
 
     [Command(requiresAuthority = false)]
