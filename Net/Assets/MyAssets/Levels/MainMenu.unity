@@ -6269,10 +6269,10 @@ MonoBehaviour:
   FirstInit: 1
   MaterialTerrain:
     keys:
-    - {fileID: 2100000, guid: 59e100908ea488b4f8dd898f2cd9771d, type: 2}
-    - {fileID: 2100000, guid: 8f0887924d784104d9bd6fd59508ca2e, type: 2}
     - {fileID: 2100000, guid: 86948c7ad464fe847853a953ec1b2729, type: 2}
     - {fileID: 2100000, guid: b955a9e6cfb668348a9ae55112574521, type: 2}
+    - {fileID: 2100000, guid: 59e100908ea488b4f8dd898f2cd9771d, type: 2}
+    - {fileID: 2100000, guid: 8f0887924d784104d9bd6fd59508ca2e, type: 2}
     values:
     - {fileID: 1019880764}
     - {fileID: 1019880764}
@@ -6323,7 +6323,7 @@ MonoBehaviour:
   m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
+  m_CameraType: 1
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
