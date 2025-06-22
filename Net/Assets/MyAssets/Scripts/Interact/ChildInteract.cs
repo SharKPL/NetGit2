@@ -22,6 +22,7 @@ public class ChildInteract : NetworkBehaviour,IInteractable
     [ClientRpc]
     public void RpcFix()
     {
+        Debug.LogError("RpcChildFix");
         hisFix = true;
         coll.gameObject.SetActive(true);
     }
@@ -29,6 +30,7 @@ public class ChildInteract : NetworkBehaviour,IInteractable
     [Command(requiresAuthority = false)]
     public void CmdFix()
     {
+        Debug.LogError("CmdChildFix");
         RpcFix();
     }
 
