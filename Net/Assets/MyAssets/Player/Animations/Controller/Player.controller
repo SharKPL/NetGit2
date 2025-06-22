@@ -381,13 +381,13 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: FB_Speed
-  m_BlendParameterY: RL_Speed
+  m_BlendParameter: RL_Speed
+  m_BlendParameterY: FB_Speed
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
-  m_BlendType: 3
+  m_BlendType: 2
 --- !u!1101 &-4236169645773683888
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

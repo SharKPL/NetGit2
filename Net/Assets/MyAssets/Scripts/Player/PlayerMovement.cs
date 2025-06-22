@@ -139,17 +139,18 @@ namespace MUSOAR
         private IEnumerator TeleportCoroutine(Vector3 pos)
         {
             teleport = true;
-            animator.applyRootMotion = false;
+            //animator.applyRootMotion = false;
 
             velocity = Vector3.zero;
 
             controller.enabled = false;
+            
             transform.position = pos;
 
             yield return new WaitForFixedUpdate();
 
             controller.enabled = true;
-            animator.applyRootMotion = true;
+            //animator.applyRootMotion = true;
             teleport = false;
 
             Debug.Log($"Player teleported to {pos}");
@@ -196,10 +197,12 @@ namespace MUSOAR
             if (InputManager.Instance.GetCrouchAction())
             {
                 targetHeight = cameraCrouchingHeight;
+                CmdSetCrouchAnimation(true);
             }
             else
             {
                 targetHeight = cameraStandingHeight;
+                CmdSetCrouchAnimation(false);
             }
 
             Vector3 currentCameraPos = cameraTransform.localPosition;
@@ -377,14 +380,14 @@ namespace MUSOAR
             {
                 float damage = (fallDistance - minFallDamageHeight) * fallDamageMultiplier;
                 //playerHealth.TakeDamage(damage);
-                CmdHardLandAnim(true,false);
+                //CmdHardLandAnim(true,false);
             }
             else
             {
                 CmdLandingAnim();
             }
-            HardLandingEnd();
-            CmdHardLandEnd();
+            //HardLandingEnd();
+            //CmdHardLandEnd();
             isFalling = false;
         }
 

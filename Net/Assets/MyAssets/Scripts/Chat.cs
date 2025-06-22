@@ -10,7 +10,7 @@ public class Chat : NetworkBehaviour
 {
     [SerializeField] private TMP_InputField input;
     [SerializeField] private Button msgBtn;
-    [Range(5,50)]
+    [Range(5,80)]
     [SerializeField] private int msgLong=20;
 
     

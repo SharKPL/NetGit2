@@ -911,7 +911,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 2497106002754787046, guid: f56fd4c15a1bec04baa1a6e9150f6134, type: 3}
   m_Bones:
@@ -2329,7 +2329,7 @@ MonoBehaviour:
   playerHealth: {fileID: 6169082249918739515}
   controller: {fileID: 1068207021323427330}
   animator: {fileID: 8566936144810733376}
-  cameraTransform: {fileID: 334562030208109122}
+  cameraTransform: {fileID: 5333330666406821756}
   helmet: {fileID: 6088838483783060779}
 --- !u!114 &6169082249918739515
 MonoBehaviour:
@@ -3648,7 +3648,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 6796121518194019630, guid: f56fd4c15a1bec04baa1a6e9150f6134, type: 3}
   m_Bones:

@@ -26,4 +26,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e253e4ad5eac0ad4f9e54e392f88dad4, type: 2}
   stepIndex: 0
   quest_coordinates: {x: 0, y: 0, z: 0}
-  isCompleted: 1
+  isCompleted: 0

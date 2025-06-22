@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepName: "\u041D\u0430\u0439\u0442\u0438 \u043A\u043B\u044E\u0447\u0438 \u0432
     \u0441\u0442\u043E\u043B\u043E\u0432\u043E\u0439"
-  isCompleted: 1
+  isCompleted: 0
